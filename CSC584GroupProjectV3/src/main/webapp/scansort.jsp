@@ -166,6 +166,7 @@
 									<th>Parcel Weight</th>
 									<th>Parcel Status</th>
 									<th>Staff Id</th>
+									<th>Actions</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -177,6 +178,9 @@
 										<td><c:out value="${parcel.parcelWeight}" /></td>
 										<td><c:out value="${parcel.parcelStatus}" /></td>
 										<td><c:out value="${parcel.staffId}" /></td>
+									<td><a href="ParcelController?action=view&staffId=<c:out value="${parcel.parcelId}"/>">View</a> |
+									<a href="ParcelController?action=update&staffId=<c:out value="${parcel.parcelId}"/>">Update</a> |
+									<a href="ParcelController?action=delete&staffId=<c:out value="${parcel.parcelId}"/>">Delete</a> </td>
 									</tr>
 								</c:forEach>
 							</tbody>

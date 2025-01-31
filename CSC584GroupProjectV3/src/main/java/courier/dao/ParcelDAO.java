@@ -24,7 +24,7 @@ public class ParcelDAO {
 			con = ConnectionManager.getConnection();
 
 			//3. create statement
-			sql = "INSERT INTO parcel(parcel_name,parcel_address,parcel_weight,parcel_status,staffId)VALUES(?,?,?,?,?,?)";
+			sql = "INSERT INTO parcel(parcelName,parcelAddress,parcelWeight,parcelStatus,staffId)VALUES(?,?,?,?,?,?)";
 			ps=con.prepareStatement(sql);
 			ps.setString(1,parcel.getParcelName());
 			ps.setString(2,parcel.getParcelAddress());
@@ -62,10 +62,10 @@ public class ParcelDAO {
 			while (rs.next()) { 
 				Parcel parcel = new Parcel();
 				parcel.setParcelId(rs.getInt("parcelId"));	  
-				parcel.setParcelName(rs.getString("parcel_name"));
-				parcel.setParcelAddress(rs.getString("parcel_address"));
-				parcel.setParcelWeight(rs.getDouble("parcel_weight"));
-				parcel.setParcelStatus(rs.getString("parcel_status"));
+				parcel.setParcelName(rs.getString("parcelName"));
+				parcel.setParcelAddress(rs.getString("parcelAddress"));
+				parcel.setParcelWeight(rs.getDouble("parcelWeight"));
+				parcel.setParcelStatus(rs.getString("parcelStatus"));
 				parcel.setStaffId(rs.getInt("staffId"));
 				parcels.add(parcel);
 
@@ -97,10 +97,10 @@ public class ParcelDAO {
 
 			if (rs.next()) {	            
 				parcel.setParcelId(rs.getInt("parcelId"));	  
-				parcel.setParcelName(rs.getString("parcel_name"));
-				parcel.setParcelAddress(rs.getString("parcel_address"));
-				parcel.setParcelWeight(rs.getDouble("parcel_weight"));
-				parcel.setParcelStatus(rs.getString("parcel_status"));
+				parcel.setParcelName(rs.getString("parcelName"));
+				parcel.setParcelAddress(rs.getString("parcelAddress"));
+				parcel.setParcelWeight(rs.getDouble("parcelWeight"));
+				parcel.setParcelStatus(rs.getString("parcelStatus"));
 				parcel.setStaffId(rs.getInt("staffId"));
 			}
 
@@ -143,7 +143,7 @@ public class ParcelDAO {
 			con = ConnectionManager.getConnection();
 
 			//3. create statement 
-			sql = "UPDATE parcel SET parcel_name=?, parcel_address=?, parcel_weight=?, parcel_status=?, staffId=? WHERE parcelId=?";
+			sql = "UPDATE parcel SET parcelName=?, parcelAddress=?, parcelWeight=?, parcelStatus=?, staffId=? WHERE parcelId=?";
 			ps=con.prepareStatement(sql);
 			ps.setString(1,parcel.getParcelName());
 			ps.setString(2,parcel.getParcelAddress());
