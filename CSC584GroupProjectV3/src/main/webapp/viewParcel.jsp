@@ -1,9 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
 <meta charset="utf-8">
 <title>FLDExpress</title>
@@ -152,40 +151,17 @@
 
 			<!-- Form Start -->
 			<div class="container-fluid pt-4 px-4">
-				<div class="bg-secondary rounded p-4">
-					<h6 class="mb-4">Parcel Tracking</h6>
-
-					<!-- Table -->
-					<div class="table-responsive">
-						<table class="table table-bordered table-striped table-hover mb-0">
-							<thead class="bg-primary text-white">
-								<tr>
-									<th>Parcel Id</th>
-									<th>Parcel Name</th>
-									<th>Parcel Address</th>
-									<th>Parcel Weight</th>
-									<th>Parcel Status</th>
-									<th>Staff Id</th>
-									<th>Actions</th>
-								</tr>
-							</thead>
-							<tbody>
-								<c:forEach items="${parcels}" var="parcel">
-									<tr>
-										<td><c:out value="${parcel.parcelId}" /></td>
-										<td><c:out value="${parcel.parcelName}" /></td>
-										<td><c:out value="${parcel.parcelAddress}" /></td>
-										<td><c:out value="${parcel.parcelWeight}" /></td>
-										<td><c:out value="${parcel.parcelStatus}" /></td>
-										<td><c:out value="${parcel.staffId}" /></td>
-									<td><a href="ParcelController?action=viewParcel&parcelId=<c:out value="${parcel.parcelId}"/>">View</a> |
-									<a href="ParcelController?action=updateParcel&parcelId=<c:out value="${parcel.parcelId}"/>">Update</a> |
-									<a href="ParcelController?action=deleteParcel&parcelId=<c:out value="${parcel.parcelId}"/>">Delete</a> </td>
-									</tr>
-								</c:forEach>
-							</tbody>
-						</table>
-					</div>
+				<div class="row g-4">
+					<div class="col-sm-12 col-xl-6">
+                        <div class="bg-secondary rounded h-100 p-4">
+                            <h6 class="mb-4">Parcel <c:out value="${parcel.parcelId}"/> </h6>
+                            Parcel Name: <c:out value="${parcel.parcelName}"/><br>
+                            Parcel Address: <c:out value="${parcel.parcelAddress}"/><br>
+                            Parcel Weight: <c:out value="${parcel.parcelWeight}"/><br>
+                            Parcel Status: <c:out value="${parcel.parcelStatus}"/><br>
+                            Staff Id: <c:out value="${parcel.staffId}"/><br>
+                    	</div>
+                    </div>
 				</div>
 			</div>
 			<!-- Form End -->
@@ -231,5 +207,4 @@
 	<!-- Template Javascript -->
 	<script src="js/main.js"></script>
 </body>
-
 </html>

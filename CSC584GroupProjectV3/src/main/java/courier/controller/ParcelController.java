@@ -9,6 +9,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 import courier.dao.ParcelDAO;
+import courier.model.Parcel;
 
 /**
  * Servlet implementation class ParcelController
@@ -19,6 +20,8 @@ public class ParcelController extends HttpServlet {
 	private int parcelId;
 	private String action="", forward="";
 	private static String LIST = "scansort.jsp";
+	private static String UPDATE = "updateParcel.jsp";
+	private static String VIEW = "viewParcel.jsp";	
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -27,7 +30,6 @@ public class ParcelController extends HttpServlet {
         super();
         // TODO Auto-generated constructor stub
     }
-
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
@@ -35,12 +37,26 @@ public class ParcelController extends HttpServlet {
 		// TODO Auto-generated method stub
 		action = request.getParameter("action");
 
-		//view all parcels
 		if(action.equalsIgnoreCase("listParcels")) {
-			System.out.println("LIST");
 			forward = LIST;
 			request.setAttribute("parcels", ParcelDAO.getAllParcels());        
-		}		
+		} 
+		if(action.equalsIgnoreCase("viewParcel")) {
+			forward = VIEW;
+			parcelId = Integer.parseInt(request.getParameter("parcelId"));
+			request.setAttribute("parcel", ParcelDAO.getParcelById(parcelId));
+		}	
+		if(action.equalsIgnoreCase("updateParcel")) { 
+			forward = UPDATE;
+			parcelId = Integer.parseInt(request.getParameter("parcelId"));
+			request.setAttribute("parcel", ParcelDAO.getParcelById(parcelId));	        
+		}
+		if(action.equalsIgnoreCase("deleteParcel")) {
+			forward = LIST;
+			parcelId = Integer.parseInt(request.getParameter("parcelId"));
+			ParcelDAO.deleteParcel(parcelId);
+			request.setAttribute("parcels", ParcelDAO.getAllParcels());        
+		}
 
 		view = request.getRequestDispatcher(forward);
 		view.forward(request, response);
@@ -51,7 +67,27 @@ public class ParcelController extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		Parcel parcel = new Parcel();
+
+		parcel.setParcelName(request.getParameter("parcelName"));
+		parcel.setParcelAddress(request.getParameter("parcelAddress"));
+		parcel.setParcelWeight(Double.parseDouble(request.getParameter("parcelWeight")));
+		parcel.setParcelStatus(request.getParameter("parcelStatus"));
+		parcel.setStaffId(Integer.parseInt(request.getParameter("staffId")));
+		
+		String parcelId = request.getParameter("parcelId");
+
+		if(parcelId != null) {
+			parcel.setParcelId(Integer.parseInt(request.getParameter("parcelId")));
+			ParcelDAO.updateParcel(parcel);
+		} else {
+			ParcelDAO.addParcel(parcel);
+		}
+
+		forward = LIST;
+		request.setAttribute("parcels", ParcelDAO.getAllParcels()); 
+		view = request.getRequestDispatcher(forward);
+		view.forward(request, response);
 	}
 
 }
