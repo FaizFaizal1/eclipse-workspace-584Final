@@ -21,7 +21,8 @@ public class ParcelController extends HttpServlet {
 	private String action="", forward="";
 	private static String LIST = "scansort.jsp";
 	private static String UPDATE = "updateParcel.jsp";
-	private static String VIEW = "viewParcel.jsp";	
+	private static String VIEW = "viewParcel.jsp";
+	private static String ADD = "addParcel.jsp";	
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -40,18 +41,21 @@ public class ParcelController extends HttpServlet {
 		if(action.equalsIgnoreCase("listParcels")) {
 			forward = LIST;
 			request.setAttribute("parcels", ParcelDAO.getAllParcels());        
-		} 
-		if(action.equalsIgnoreCase("viewParcel")) {
+		}
+		else if(action.equalsIgnoreCase("addParcel")) {
+			forward = ADD;
+		}
+		else if(action.equalsIgnoreCase("viewParcel")) {
 			forward = VIEW;
 			parcelId = Integer.parseInt(request.getParameter("parcelId"));
 			request.setAttribute("parcel", ParcelDAO.getParcelById(parcelId));
 		}	
-		if(action.equalsIgnoreCase("updateParcel")) { 
+		else if(action.equalsIgnoreCase("updateParcel")) { 
 			forward = UPDATE;
 			parcelId = Integer.parseInt(request.getParameter("parcelId"));
 			request.setAttribute("parcel", ParcelDAO.getParcelById(parcelId));	        
 		}
-		if(action.equalsIgnoreCase("deleteParcel")) {
+		else if(action.equalsIgnoreCase("deleteParcel")) {
 			forward = LIST;
 			parcelId = Integer.parseInt(request.getParameter("parcelId"));
 			ParcelDAO.deleteParcel(parcelId);

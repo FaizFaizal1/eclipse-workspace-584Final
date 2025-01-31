@@ -24,13 +24,13 @@ public class ParcelDAO {
 			con = ConnectionManager.getConnection();
 
 			//3. create statement
-			sql = "INSERT INTO parcel(parcelName,parcelAddress,parcelWeight,parcelStatus,staffId)VALUES(?,?,?,?,?,?)";
+			sql = "INSERT INTO parcel(parcelName,parcelAddress,parcelWeight,parcelStatus,staffId)VALUES(?,?,?,?,?)";
 			ps=con.prepareStatement(sql);
 			ps.setString(1,parcel.getParcelName());
 			ps.setString(2,parcel.getParcelAddress());
 			ps.setDouble(3,parcel.getParcelWeight());
-			ps.setString(5,parcel.getParcelStatus());
-			ps.setInt(6,parcel.getStaffId());
+			ps.setString(4,parcel.getParcelStatus());
+			ps.setInt(5,parcel.getStaffId());
 
 			//4. execute query
 			ps.executeUpdate();
