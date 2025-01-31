@@ -10,6 +10,8 @@ import java.io.IOException;
 
 import courier.dao.PaymentDAO;
 import courier.dao.PaymentDAO;
+import courier.model.Payment;
+import courier.dao.PaymentDAO;
 
 /**
  * Servlet implementation class PaymentController
@@ -19,10 +21,10 @@ public class PaymentController extends HttpServlet {
 	private RequestDispatcher view;
 	private int paymentId;
 	private String action="", forward="";
-	private static String LIST = "payment.jsp";
-	private static String UPDATE = "updatePayment.jsp";
-	private static String VIEW = "viewPayment.jsp";
-	private static String ADD = "addPayment.jsp";	
+	private static String LIST = "/payment/paymentList.jsp";
+	private static String UPDATE = "/payment/updatePayment.jsp";
+	private static String VIEW = "/payment/viewPayment.jsp";
+	private static String ADD = "/payment/addPayment.jsp";	
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -38,7 +40,7 @@ public class PaymentController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		action = request.getParameter("action");
 
-		//view all parcels
+		//view all payments
 		if(action.equalsIgnoreCase("listPayments")) {
 			System.out.println("LIST");
 			forward = LIST;
@@ -73,7 +75,26 @@ public class PaymentController extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		Payment payment = new Payment();
+
+		payment.setPaymentAmount(Double.parseDouble(request.getParameter("paymentAmount")));
+		payment.setPaymentDate(request.getParameter("paymentDate"));
+		payment.setPaymentStatus(request.getParameter("paymentStatus"));
+		payment.setParcelId(Integer.parseInt(request.getParameter("parcelId")));
+		
+		String paymentId = request.getParameter("paymentId");
+
+		if(paymentId != null) {
+			payment.setPaymentId(Integer.parseInt(request.getParameter("paymentId")));
+			PaymentDAO.updatePayment(payment);
+		} else {
+			PaymentDAO.addPayment(payment);
+		}
+
+		forward = LIST;
+		request.setAttribute("payments", PaymentDAO.getAllPayments()); 
+		view = request.getRequestDispatcher(forward);
+		view.forward(request, response);
 	}
 
 }

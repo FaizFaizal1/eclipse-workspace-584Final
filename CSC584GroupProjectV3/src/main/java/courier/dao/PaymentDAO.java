@@ -24,7 +24,7 @@ public class PaymentDAO {
 			con = ConnectionManager.getConnection();
 
 			// 3. create statement
-			sql = "INSERT INTO payment(payment_amount,payment_date,payment_status,staffId)VALUES(?,?,?,?)";
+			sql = "INSERT INTO payment(paymentAmount,paymentDate,paymentStatus,parcelId)VALUES(?,?,?,?)";
 			ps = con.prepareStatement(sql);
 			ps.setDouble(1, payment.getPaymentAmount());
 			ps.setString(2, payment.getPaymentDate());
@@ -60,9 +60,9 @@ public class PaymentDAO {
 			while (rs.next()) {
 				Payment payment = new Payment();
 				payment.setPaymentId(rs.getInt("paymentId"));
-				payment.setPaymentAmount(rs.getDouble("payment_amount"));
-				payment.setPaymentDate(rs.getString("payment_date"));
-				payment.setPaymentStatus(rs.getString("payment_status"));
+				payment.setPaymentAmount(rs.getDouble("paymentAmount"));
+				payment.setPaymentDate(rs.getString("paymentDate"));
+				payment.setPaymentStatus(rs.getString("paymentStatus"));
 				payment.setParcelId(rs.getInt("parcelId"));
 				payments.add(payment);
 			}
@@ -92,9 +92,9 @@ public class PaymentDAO {
 
 			if (rs.next()) {
 				payment.setPaymentId(rs.getInt("paymentId"));
-				payment.setPaymentAmount(rs.getDouble("payment_amount"));
-				payment.setPaymentDate(rs.getString("payment_date"));
-				payment.setPaymentStatus(rs.getString("payment_status"));
+				payment.setPaymentAmount(rs.getDouble("paymentAmount"));
+				payment.setPaymentDate(rs.getString("paymentDate"));
+				payment.setPaymentStatus(rs.getString("paymentStatus"));
 				payment.setParcelId(rs.getInt("parcelId"));
 			}
 
@@ -137,12 +137,13 @@ public class PaymentDAO {
 			con = ConnectionManager.getConnection();
 
 			// 3. create statement
-			sql = "UPDATE payment SET payment_amount=?, payment_date=?, payment_status=?, parcelId=? WHERE paymentId=?";
+			sql = "UPDATE payment SET paymentAmount=?, paymentDate=?, paymentStatus=?, parcelId=? WHERE paymentId=?";
 			ps = con.prepareStatement(sql);
 			ps.setDouble(1, payment.getPaymentAmount());
 			ps.setString(2, payment.getPaymentDate());
 			ps.setString(3, payment.getPaymentStatus());
 			ps.setInt(4, payment.getParcelId());
+			ps.setInt(5, payment.getPaymentId());
 
 			// 4. execute query
 			ps.executeUpdate();

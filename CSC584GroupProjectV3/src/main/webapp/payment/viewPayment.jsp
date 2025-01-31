@@ -1,9 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
 <meta charset="utf-8">
 <title>FLDExpress</title>
@@ -94,11 +93,9 @@
 					</div>
 					<a href="upd_profile.html" class="nav-item nav-link"><i
 						class="fa fa-address-card me-2"></i>Update Profile</a> <a
-						href="scansort.html" class="nav-item nav-link"><i
+						href="scansort.html" class="nav-item nav-link active"><i
 						class="fa fa-boxes me-2"></i>Scan & Sort</a> <a
-						href="trackdelivery.html" class="nav-item nav-link"><i
-						class="fa fa-truck-moving me-2"></i>Track Delivery</a> <a
-						href="payment.html" class="nav-item nav-link active"><i
+						href="payment.html" class="nav-item nav-link"><i
 						class="fa fa-chart-bar me-2"></i>Payment</a>
 					<div class="nav-item dropdown">
 						<a href="#" class="nav-link dropdown-toggle"
@@ -129,7 +126,7 @@
 					class="fa fa-bars"></i>
 				</a>
 				<form class="d-none d-md-flex ms-4">
-					<input class="form-control bg-white border-0" type="search"
+					<input class="form-control bg-dark border-0" type="search"
 						placeholder="Search">
 				</form>
 				<div class="navbar-nav align-items-center ms-auto">
@@ -152,45 +149,22 @@
 			<!-- Navbar End -->
 
 
-			<!-- Payment Section Start -->
+			<!-- Form Start -->
 			<div class="container-fluid pt-4 px-4">
-				<div class="bg-secondary rounded p-4">
-					<h6 class="mb-4">Payment Details</h6>
-
-					<!-- Table -->
-					<div class="table-responsive">
-						<table class="table table-bordered table-striped table-hover mb-0">
-							<thead class="bg-primary text-white">
-								<tr>
-									<th>Payment Id</th>
-									<th>Payment Amount (RM)</th>
-									<th>Payment Date</th>
-									<th>Payment Status</th>
-									<th>Parcel Id</th>
-								</tr>
-							</thead>
-							<tbody>
-								<c:forEach items="${payments}" var="payment">
-									<tr>
-										<td><c:out value="${payment.paymentId}" /></td>
-										<td><c:out value="${payment.paymentAmount}" /></td>
-										<td><c:out value="${payment.paymentDate}" /></td>
-										<td><c:out value="${payment.paymentStatus}" /></td>
-										<td><c:out value="${payment.parcelId}" /></td>
-									</tr>
-								</c:forEach>
-							</tbody>
-							<tfoot>
-								<tr>
-									<th colspan="4" class="text-end">Total Payment Amount:</th>
-									<th>RM </th>
-								</tr>
-							</tfoot>
-						</table>
-					</div>
+				<div class="row g-4">
+					<div class="col-sm-12 col-xl-6">
+                        <div class="bg-secondary rou
+                        nded h-100 p-4">
+                            <h6 class="mb-4">Payment <c:out value="${payment.paymentId}"/> </h6>
+                            Payment Amount: <c:out value="${payment.paymentAmount}"/><br>
+                            Payment Date: <c:out value="${payment.paymentDate}"/><br>
+                            Payment Status: <c:out value="${payment.paymentStatus}"/><br>
+                            Parcel Id: <c:out value="${payment.parcelId}"/><br>
+                    	</div>
+                    </div>
 				</div>
 			</div>
-			<!-- Payment Section End -->
+			<!-- Form End -->
 
 
 			<!-- Footer Start -->
@@ -233,5 +207,4 @@
 	<!-- Template Javascript -->
 	<script src="js/main.js"></script>
 </body>
-
 </html>
