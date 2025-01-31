@@ -22,7 +22,6 @@ import java.io.IOException;
 public class LoginController extends HttpServlet {
 	private static final long serialVersionUId = 1L;
 	private HttpSession session;
-	private RequestDispatcher view;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
@@ -59,7 +58,7 @@ public class LoginController extends HttpServlet {
 			//set staff session if staff is valid
 			if (staff.isValid()) {
 				System.out.println("staff");
-	            HttpSession session = request.getSession(true);
+	            session = request.getSession(true);
 	            session.setAttribute("sessionId", staff.getStaffId());
 	            session.setAttribute("sessionEmail", staff.getStaffEmail());
 	            session.setAttribute("sessionRole", staff.getStaffRole());
