@@ -62,11 +62,11 @@
         					</c:if>
 	                        <div class="form-floating mb-3">
 	                            <input type="text" class="form-control" id="staffId" name="staffId" placeholder="Id">
-	                            <label for="staffId">StaffId</label>
+	                            <label for="staffId">Staff Id</label>
 	                        </div>
 	                        <div class="form-floating mb-4">
-	                            <input type="password" class="form-control" id="staff_password" name="staff_password" placeholder="Password">
-	                            <label for="staff_password">Password</label>
+	                            <input type="password" class="form-control" id="staffPassword" name="staffPassword" placeholder="Password">
+	                            <label for="staffPassword">Password</label>
 	                        </div>
 	                        <div class="d-flex align-items-center justify-content-between mb-4">
 	                            <a href="">Forgot Password</a>

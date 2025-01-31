@@ -49,8 +49,8 @@ public class LoginController extends HttpServlet {
 
 			//retrieve and set email and password
 			staff.setStaffId(Integer.parseInt(request.getParameter("staffId")));
-			staff.setStaffPassword(request.getParameter("staff_password"));
-			staff.setStaffEmail(request.getParameter("staff_email"));
+			staff.setStaffPassword(request.getParameter("staffPassword"));
+			staff.setStaffEmail(request.getParameter("staffEmail"));
 
 			//call courier() in StaffDAO
 			staff = StaffDAO.login(staff);

@@ -21,44 +21,44 @@
 <br><br>
 <form action="UpdateDispatcherController" method="POST">
  <div class="mb-3">
-    <label for="dispatcher_first_name" class="form-label">dispatcher_first_name</label>    
-    <input type="text" class="form-control" id="dispatcher_first_name" name="dispatcher_first_name" placeholder="dispatcher_first_name.." required>   
+    <label for="dispatcherFirstName" class="form-label">Dispatcher First Name</label>    
+    <input type="text" class="form-control" id="dispatcherFirstName" name="dispatcherFirstName" placeholder="dispatcherFirstName.." required>   
   </div>
  <div class="mb-3">
-    <label for="dispatcher_last_name" class="form-label">dispatcher_last_name</label>    
-    <input type="text" class="form-control" id="dispatcher_last_name" name="dispatcher_last_name" placeholder="dispatcher_last_name.." required>   
+    <label for=dispatcherLastName class="form-label">Dispatcher Last Name</label>    
+    <input type="text" class="form-control" id=dispatcherLastName name=dispatcherLastName placeholder="dispatcher_last_name.." required>   
   </div>
  <div class="mb-3">
-    <label for="dispatcher_phone_number" class="form-label">dispatcher_phone_number</label>    
-    <input type="text" class="form-control" id="dispatcher_phone_number" name="dispatcher_phone_number" placeholder="dispatcher_phone_number.." required>   
+    <label for="dispatcherPhoneNumber" class="form-label">Dispatcher Phone Number</label>    
+    <input type="text" class="form-control" id="dispatcherPhoneNumber" name="dispatcherPhoneNumber" placeholder="dispatcherPhoneNumber.." required>   
   </div>
  <div class="mb-3">
-    <label for="dispatcher_address" class="form-label">dispatcher_address</label>    
-    <input type="text" class="form-control" id="dispatcher_address" name="dispatcher_address" placeholder="dispatcher_address.." required>   
+    <label for="dispatcherAddress" class="form-label">Dispatcher Address</label>    
+    <input type="text" class="form-control" id="dispatcherAddress" name="dispatcherAddress" placeholder="dispatcherAddress.." required>   
   </div>
  <div class="mb-3">
-    <label for="dispatcher_email" class="form-label">dispatcher_email</label>    
-    <input type="email" class="form-control" id="dispatcher_email" name="dispatcher_email" placeholder="dispatcher_email.." required>   
+    <label for="dispatcherEmail" class="form-label">Dispatcher Email</label>    
+    <input type="email" class="form-control" id="dispatcherEmail" name="dispatcherEmail" placeholder="dispatcherEmail.." required>   
   </div>
   <div class="mb-3">
-    <label for="dispatcher_password" class="form-label">dispatcher_password</label>    
-    <input type="password" class="form-control" id="dispatcher_password" name="dispatcher_password" placeholder="dispatcher_password.." required>   
+    <label for="dispatcherPassword" class="form-label">Dispatcher Password</label>    
+    <input type="password" class="form-control" id="dispatcherPassword" name="dispatcherPassword" placeholder="dispatcherPassword.." required>   
   </div>
   <div class="mb-3">
-    <label for="dispatcher_status" class="form-label">dispatcher_status_${staff.staffId}</label> <br>   
-    <input type="radio" id="dispatcher_status" name="dispatcher_status" value="Active">Active
-    <input type="radio" id="dispatcher_status" name="dispatcher_status" value="Inactive">Inactive
+    <label for="dispatcherStatus" class="form-label">Dispatcher Status</label> <br>   
+    <input type="radio" id="dispatcherStatus" name="dispatcherStatus" value="Active">Active
+    <input type="radio" id="dispatcherStatus" name="dispatcherStatus" value="Inactive">Inactive
   </div>
   <div class="mb-3">
-    <label for="dispatcher_employment_type" class="form-label">dispatcher_employment_type_${staff.staffRole}</label> <br>   
-    <input type="radio" id="dispatcher_employment_type" name="dispatcher_employment_type" value="Full-time">Full-time
-    <input type="radio" id="dispatcher_employment_type" name="dispatcher_employment_type" value="Part-time">Part-time
+    <label for="dispatcherEmploymentType" class="form-label">Dispatcher Employment Type</label> <br>   
+    <input type="radio" id="dispatcherEmploymentType" name="dispatcherEmploymentType" value="Full-time">Full-time
+    <input type="radio" id="dispatcherEmploymentType" name="dispatcherEmploymentType" value="Part-time">Part-time
   </div>
   <div class="mb-3">
     <input type="hidden" id="staffId" name="staffId" value="${staff.staffId}">
   </div>
   <div class="mb-3">
-    <input type="hidden" id="staff_role" name="staff_role" value="${staff.staffRole}">   	
+    <input type="hidden" id="staffRole" name="staffRole" value="${staff.staffRole}">   	
   </div>
   <div class="mb-3">
     <input type="submit" class="btn btn-primary" value="Submit"> 

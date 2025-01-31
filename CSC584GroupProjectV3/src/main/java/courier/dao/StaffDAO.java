@@ -38,7 +38,7 @@ public class StaffDAO {
 			con = ConnectionManager.getConnection();
 			
 			//3. create statement
-			sql = "SELECT * FROM staff WHERE staffId = ? AND staff_password = ?";
+			sql = "SELECT * FROM staff WHERE staffId = ? AND staffPassword = ?";
 			ps = con.prepareStatement(sql);
 			ps.setInt(1, staff.getStaffId());
 			ps.setString(2, sb.toString());
@@ -49,13 +49,13 @@ public class StaffDAO {
 			// if staff exists set the isValid variable to true
 			if (rs.next()) {
 				staff.setStaffId(rs.getInt("staffId"));
-				staff.setStaffFirstName(rs.getString("staff_first_name"));
-				staff.setStaffLastName(rs.getString("staff_last_name"));
-				staff.setStaffPhoneNumber(rs.getString("staff_phone_number"));
-				staff.setStaffEmail(rs.getString("staff_email"));
-				staff.setStaffAddress(rs.getString("staff_address"));
+				staff.setStaffFirstName(rs.getString("staffFirstName"));
+				staff.setStaffLastName(rs.getString("staffLastName"));
+				staff.setStaffPhoneNumber(rs.getString("staffPhoneNumber"));
+				staff.setStaffEmail(rs.getString("staffEmail"));
+				staff.setStaffAddress(rs.getString("staffAddress"));
 				staff.setStaffDateOfHire(rs.getString("staff_date_of_hire"));
-				staff.setStaffPassword(rs.getString("staff_password"));
+				staff.setStaffPassword(rs.getString("staffPassword"));
 				staff.setLoggedIn(true);
 				}
 			// if staff does not exist set the isValid variable to false
@@ -90,7 +90,7 @@ public class StaffDAO {
 			con = ConnectionManager.getConnection();
 			
 			//3. create statement  
-			sql = "INSERT INTO staff(staff_first_name,staff_last_name,staff_phone_number,staff_email,staff_address,staff_password,staff_role)VALUES(?,?,?,?,?,?,?)";
+			sql = "INSERT INTO staff(staffFirstName,staffLastName,staffPhoneNumber,staffEmail,staffAddress,staffPassword,staffRole)VALUES(?,?,?,?,?,?,?)";
 			ps=con.prepareStatement(sql);
 			ps.setString(1,staff.getStaffFirstName());
 			ps.setString(2,staff.getStaffLastName());
@@ -129,7 +129,7 @@ public class StaffDAO {
 				sb.append(Integer.toString((byteData[i] & 0xff) + 0x100, 16).substring(1));
 			}
 			
-			sql = "UPDATE staff SET staff_first_name=?, staff_last_name=?, staff_phone_number=?, staff_email=?, staff_address=?, staff_password=?, staff_role=? WHERE staffId=?";
+			sql = "UPDATE staff SET staffFirstName=?, staffLastName=?, staffPhoneNumber=?, staffEmail=?, staffAddress=?, staffPassword=?, staffRole=? WHERE staffId=?";
 			ps=con.prepareStatement(sql);
 			ps.setString(1,staff.getStaffFirstName());
 			ps.setString(2,staff.getStaffLastName());
@@ -159,7 +159,7 @@ public class StaffDAO {
 			con = ConnectionManager.getConnection();
 			
 			//3. create statement  
-			sql = "SELECT * FROM staff WHERE staff_email=?";
+			sql = "SELECT * FROM staff WHERE staffEmail=?";
 			ps=con.prepareStatement(sql);
 			ps.setString(1,staff.getStaffEmail());
 			
@@ -169,13 +169,13 @@ public class StaffDAO {
 			// if staff exists set the isValid variable to true
 			if (rs.next()) {
 				staff.setStaffId(rs.getInt("staffId"));
-				staff.setStaffFirstName(rs.getString("staff_first_name"));
-				staff.setStaffLastName(rs.getString("staff_last_name"));
-				staff.setStaffPhoneNumber(rs.getString("staff_phone_number"));
-				staff.setStaffEmail(rs.getString("staff_email"));
-				staff.setStaffAddress(rs.getString("staff_address"));
+				staff.setStaffFirstName(rs.getString("staffFirstName"));
+				staff.setStaffLastName(rs.getString("staffLastName"));
+				staff.setStaffPhoneNumber(rs.getString("staffPhoneNumber"));
+				staff.setStaffEmail(rs.getString("staffEmail"));
+				staff.setStaffAddress(rs.getString("staffAddress"));
 				staff.setStaffDateOfHire(rs.getString("staff_date_of_hire"));
-				staff.setStaffPassword(rs.getString("staff_password"));
+				staff.setStaffPassword(rs.getString("staffPassword"));
 				staff.setLoggedIn(true);
 			}
 			// if staff does not exist set the isValid variable to false
@@ -210,14 +210,14 @@ public class StaffDAO {
 
 			if (rs.next()) {	            
 				staff.setStaffId(rs.getInt("staffId"));
-				staff.setStaffFirstName(rs.getString("staff_first_name"));
-				staff.setStaffLastName(rs.getString("staff_last_name"));
-				staff.setStaffPhoneNumber(rs.getString("staff_phone_number"));
-				staff.setStaffEmail(rs.getString("staff_email"));
-				staff.setStaffAddress(rs.getString("staff_address"));
+				staff.setStaffFirstName(rs.getString("staffFirstName"));
+				staff.setStaffLastName(rs.getString("staffLastName"));
+				staff.setStaffPhoneNumber(rs.getString("staffPhoneNumber"));
+				staff.setStaffEmail(rs.getString("staffEmail"));
+				staff.setStaffAddress(rs.getString("staffAddress"));
 				staff.setStaffDateOfHire(rs.getString("staff_date_of_hire"));
-				staff.setStaffPassword(rs.getString("staff_password"));
-				staff.setStaffRole(rs.getString("staff_role"));
+				staff.setStaffPassword(rs.getString("staffPassword"));
+				staff.setStaffRole(rs.getString("staffRole"));
 			}
 			//5. close connection
 			con.close();
@@ -237,7 +237,7 @@ public class StaffDAO {
 			con = ConnectionManager.getConnection();
 			
 			//3. create statement  
-			sql = "SELECT * FROM staff WHERE staff_email=?";
+			sql = "SELECT * FROM staff WHERE staffEmail=?";
 			ps=con.prepareStatement(sql);
 			ps.setString(1, email);
 			
@@ -246,13 +246,13 @@ public class StaffDAO {
 
 			if (rs.next()) {	            
 				staff.setStaffId(rs.getInt("staffId"));
-				staff.setStaffFirstName(rs.getString("staff_first_name"));
-				staff.setStaffLastName(rs.getString("staff_last_name"));
-				staff.setStaffPhoneNumber(rs.getString("staff_phone_number"));
-				staff.setStaffEmail(rs.getString("staff_email"));
-				staff.setStaffAddress(rs.getString("staff_address"));
+				staff.setStaffFirstName(rs.getString("staffFirstName"));
+				staff.setStaffLastName(rs.getString("staffLastName"));
+				staff.setStaffPhoneNumber(rs.getString("staffPhoneNumber"));
+				staff.setStaffEmail(rs.getString("staffEmail"));
+				staff.setStaffAddress(rs.getString("staffAddress"));
 				staff.setStaffDateOfHire(rs.getString("staff_date_of_hire"));
-				staff.setStaffPassword(rs.getString("staff_password"));
+				staff.setStaffPassword(rs.getString("staffPassword"));
 			}
 			
 			System.out.println("Staff with email " + email + " found");
@@ -283,13 +283,13 @@ public class StaffDAO {
 			while (rs.next()) {
 				Staff staff = new Staff();
 				staff.setStaffId(rs.getInt("staffId"));
-				staff.setStaffFirstName(rs.getString("staff_first_name"));
-				staff.setStaffLastName(rs.getString("staff_last_name"));
-				staff.setStaffPhoneNumber(rs.getString("staff_phone_number"));
-				staff.setStaffEmail(rs.getString("staff_email"));
-				staff.setStaffAddress(rs.getString("staff_address"));
+				staff.setStaffFirstName(rs.getString("staffFirstName"));
+				staff.setStaffLastName(rs.getString("staffLastName"));
+				staff.setStaffPhoneNumber(rs.getString("staffPhoneNumber"));
+				staff.setStaffEmail(rs.getString("staffEmail"));
+				staff.setStaffAddress(rs.getString("staffAddress"));
 				staff.setStaffDateOfHire(rs.getString("staff_date_of_hire"));
-				staff.setStaffPassword(rs.getString("staff_password"));
+				staff.setStaffPassword(rs.getString("staffPassword"));
 				staff.setDispatcher(DispatcherDAO.getDispatcherById(rs.getInt("staffId")));
 				staffs.add(staff);
 			}
@@ -320,13 +320,13 @@ public class StaffDAO {
 				while (rs.next()) {
 					Staff staff = new Staff();
 					staff.setStaffId(rs.getInt("staffId"));
-					staff.setStaffFirstName(rs.getString("staff_first_name"));
-					staff.setStaffLastName(rs.getString("staff_last_name"));
-					staff.setStaffPhoneNumber(rs.getString("staff_phone_number"));
-					staff.setStaffEmail(rs.getString("staff_email"));
-					staff.setStaffAddress(rs.getString("staff_address"));
+					staff.setStaffFirstName(rs.getString("staffFirstName"));
+					staff.setStaffLastName(rs.getString("staffLastName"));
+					staff.setStaffPhoneNumber(rs.getString("staffPhoneNumber"));
+					staff.setStaffEmail(rs.getString("staffEmail"));
+					staff.setStaffAddress(rs.getString("staffAddress"));
 					staff.setStaffDateOfHire(rs.getString("staff_date_of_hire"));
-					staff.setStaffPassword(rs.getString("staff_password"));
+					staff.setStaffPassword(rs.getString("staffPassword"));
 					staff.setAdmin(AdminDAO.getAdminById(rs.getInt("staffId")));
 					staffs.add(staff);
 				}
@@ -347,7 +347,7 @@ public class StaffDAO {
 			con = ConnectionManager.getConnection();
 			
 			//3. create statement 
-			sql = "DELETE FROM staff WHERE staff_email=?";
+			sql = "DELETE FROM staff WHERE staffEmail=?";
 			ps=con.prepareStatement(sql);
 			ps.setString(1, email);
 			

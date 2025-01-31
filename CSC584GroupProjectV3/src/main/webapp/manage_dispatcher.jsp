@@ -69,7 +69,7 @@ if (session == null || session.getAttribute("sessionEmail") == null) {
     <td><c:out value="${dispatcher.staff.staffDateOfHire}" /></td>
     <td><c:out value="${dispatcher.dispatcherStatus}" /></td>
     <td><c:out value="${dispatcher.dispatcherEmploymentType}" /></td>   
-    <td><a href="<c:url value='DeleteDispatcherController?staff_email=${dispatcher.staff.staffEmail}'/>" class="btn btn-primary">Delete Dispatcher</a></td>
+    <td><a href="<c:url value='DeleteDispatcherController?staffEmail=${dispatcher.staff.staffEmail}'/>" class="btn btn-primary">Delete Dispatcher</a></td>
     <td><a href="<c:url value='/ProductController?action=viewProduct&pid=${product.pid}'/>" class="btn btn-primary">View Product</a></td>     
      </tr>	   
     </c:forEach>       

@@ -160,12 +160,12 @@
 						<table class="table table-bordered table-striped table-hover mb-0">
 							<thead class="bg-primary text-white">
 								<tr>
-									<th>ParcelId</th>
+									<th>Parcel Id</th>
 									<th>Parcel Name</th>
 									<th>Parcel Address</th>
 									<th>Parcel Weight</th>
 									<th>Parcel Status</th>
-									<th>StaffId</th>
+									<th>Staff Id</th>
 								</tr>
 							</thead>
 							<tbody>

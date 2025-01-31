@@ -44,13 +44,13 @@ public class UpdateStaffController extends HttpServlet {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		Staff staff = new Staff();
-		staff.setStaffFirstName(request.getParameter("staff_first_name"));
-		staff.setStaffLastName((request.getParameter("staff_last_name")));
-		staff.setStaffPhoneNumber((request.getParameter("staff_phone_number")));
-		staff.setStaffEmail((request.getParameter("staff_email")));
-		staff.setStaffAddress((request.getParameter("staff_address")));
-		staff.setStaffPassword(request.getParameter("staff_password"));
-		staff.setStaffRole(request.getParameter("staff_role"));
+		staff.setStaffFirstName(request.getParameter("staffFirstName"));
+		staff.setStaffLastName((request.getParameter("staffLastName")));
+		staff.setStaffPhoneNumber((request.getParameter("staffPhoneNumber")));
+		staff.setStaffEmail((request.getParameter("staffEmail")));
+		staff.setStaffAddress((request.getParameter("staffAddress")));
+		staff.setStaffPassword(request.getParameter("staffPassword"));
+		staff.setStaffRole(request.getParameter("staffRole"));
 
 		String staffId = request.getParameter("staffId");
 

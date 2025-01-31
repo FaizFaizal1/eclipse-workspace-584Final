@@ -22,33 +22,33 @@
 <br><br>
 <form action="RegisterController" method="POST">
  <div class="mb-3">
-    <label for="staff_first_name" class="form-label">staff_first_name</label>    
-    <input type="text" class="form-control" id="staff_first_name" name="staff_first_name" placeholder="staff_first_name.." required>   
+    <label for="staffFirstName" class="form-label">Staff First Name</label>    
+    <input type="text" class="form-control" id="staffFirstName" name="staffFirstName" placeholder="staffFirstName.." required>   
   </div>
  <div class="mb-3">
-    <label for="staff_last_name" class="form-label">staff_last_name</label>    
-    <input type="text" class="form-control" id="staff_last_name" name="staff_last_name" placeholder="staff_last_name.." required>   
+    <label for="staffLastName" class="form-label">Staff Last Name</label>    
+    <input type="text" class="form-control" id="staffLastName" name="staffLastName" placeholder="staffLastName.." required>   
   </div>
  <div class="mb-3">
-    <label for="staff_phone_number" class="form-label">staff_phone_number</label>    
-    <input type="text" class="form-control" id="staff_phone_number" name="staff_phone_number" placeholder="staff_phone_number.." required>   
+    <label for="staffPhoneNumber" class="form-label">Staff Phone Number</label>    
+    <input type="text" class="form-control" id="staffPhoneNumber" name="staffPhoneNumber" placeholder="staffPhoneNumber.." required>   
   </div>
  <div class="mb-3">
-    <label for="staff_email" class="form-label">staff_email</label>    
-    <input type="email" class="form-control" id="staff_email" name="staff_email" placeholder="staff_email.." required>   
+    <label for="staffEmail" class="form-label">Staff Email</label>    
+    <input type="email" class="form-control" id="staffEmail" name="staffEmail" placeholder="staffEmail.." required>   
   </div>
  <div class="mb-3">
-    <label for="staff_address" class="form-label">staff_address</label>    
-    <input type="text" class="form-control" id="staff_address" name="staff_address" placeholder="staff_address.." required>   
+    <label for="staffAddress" class="form-label">Staff Address</label>    
+    <input type="text" class="form-control" id="staffAddress" name="staffAddress" placeholder="staffAddress.." required>   
   </div>
   <div class="mb-3">
-    <label for="staff_password" class="form-label">staff_password</label>    
-    <input type="password" class="form-control" id="staff_password" name="staff_password" placeholder="staff_password.." required>   
+    <label for="staffPassword" class="form-label">Staff Password</label>    
+    <input type="password" class="form-control" id="staffPassword" name="staffPassword" placeholder="staffPassword.." required>   
   </div>
   <div class="mb-3">
-    <label for="staff_role" class="form-label">staff_role</label> <br>   
-    <input type="radio" id="staff_role" name="staff_role" value="Dispatcher">Dispatcher
-    <input type="radio" id="staff_role" name="staff_role" value="Admin">Admin   
+    <label for="staffRole" class="form-label">Staff Role</label> <br>   
+    <input type="radio" id="staffRole" name="staffRole" value="Dispatcher">Dispatcher
+    <input type="radio" id="staffRole" name="staffRole" value="Admin">Admin   
   </div>
   <div class="mb-3">
     <input type="submit" class="btn btn-primary" value="Submit"> 

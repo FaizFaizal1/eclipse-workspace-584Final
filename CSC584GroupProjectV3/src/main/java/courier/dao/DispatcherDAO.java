@@ -35,8 +35,8 @@ public class DispatcherDAO {
 			while (rs.next()) { 
 				Dispatcher dispatcher = new Dispatcher();
 				dispatcher.setStaffId(rs.getInt("staffId"));	  
-				dispatcher.setDispatcherStatus(rs.getString("dispatcher_status"));
-				dispatcher.setDispatcherEmploymentType(rs.getString("dispatcher_employment_type"));
+				dispatcher.setDispatcherStatus(rs.getString("dispatcherStatus"));
+				dispatcher.setDispatcherEmploymentType(rs.getString("dispatcherEmploymentType"));
 				dispatcher.setStaff(StaffDAO.getStaffById(rs.getInt("staffId")));
 				dispatchers.add(dispatcher);
 			} 
@@ -66,8 +66,8 @@ public class DispatcherDAO {
 
 			if (rs.next()) {	            
 				dispatcher.setStaffId(rs.getInt("staffId"));	  
-				dispatcher.setDispatcherStatus(rs.getString("dispatcher_status"));
-				dispatcher.setDispatcherEmploymentType(rs.getString("dispatcher_employment_type"));
+				dispatcher.setDispatcherStatus(rs.getString("dispatcherStatus"));
+				dispatcher.setDispatcherEmploymentType(rs.getString("dispatcherEmploymentType"));
 			}
 
 			//5. close connection
@@ -109,7 +109,7 @@ public class DispatcherDAO {
 			con = ConnectionManager.getConnection();
 
 			//3. create statement 
-			sql = "UPDATE dispatcher SET dispatcher_status=?, dispatcher_employment_type=? WHERE staffId=?";
+			sql = "UPDATE dispatcher SET dispatcherStatus=?, dispatcherEmploymentType=? WHERE staffId=?";
 			ps=con.prepareStatement(sql);
 			ps.setString(1,dispatcher.getDispatcherStatus());
 			ps.setString(2,dispatcher.getDispatcherEmploymentType());

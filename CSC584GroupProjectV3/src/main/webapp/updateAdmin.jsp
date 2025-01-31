@@ -21,39 +21,39 @@
 <br><br>
 <form action="AdminController?action=updateProfile" method="POST">
  <div class="mb-3">
-    <label for="dispatcher_first_name" class="form-label">admin_first_name</label>    
-    <input type="text" class="form-control" id="admin_first_name" name="admin_first_name" placeholder="admin_first_name.." required>   
+    <label for="adminFirstName" class="form-label">Admin First Name</label>    
+    <input type="text" class="form-control" id="adminFirstName" name="adminFirstName" placeholder="adminFirstName.." required>   
   </div>
  <div class="mb-3">
-    <label for="admin_last_name" class="form-label">admin_last_name</label>    
-    <input type="text" class="form-control" id="admin_last_name" name="admin_last_name" placeholder="admin_last_name.." required>   
+    <label for="adminLastName" class="form-label">Admin Last Name</label>    
+    <input type="text" class="form-control" id="adminLastName" name="adminLastName" placeholder="adminLastName.." required>   
   </div>
  <div class="mb-3">
-    <label for="admin_phone_number" class="form-label">admin_phone_number</label>    
-    <input type="text" class="form-control" id="admin_phone_number" name="admin_phone_number" placeholder="admin_phone_number.." required>   
+    <label for="adminPhoneNumber" class="form-label">Admin Phone Number</label>    
+    <input type="text" class="form-control" id="adminPhoneNumber" name="adminPhoneNumber" placeholder="adminPhoneNumber.." required>   
   </div>
  <div class="mb-3">
-    <label for="admin_address" class="form-label">admin_address</label>    
-    <input type="text" class="form-control" id="admin_address" name="admin_address" placeholder="admin_address.." required>   
+    <label for="adminAddress" class="form-label">Admin Address</label>    
+    <input type="text" class="form-control" id="adminAddress" name="adminAddress" placeholder="adminAddress.." required>   
   </div>
  <div class="mb-3">
-    <label for="admin_email" class="form-label">admin_email</label>    
-    <input type="email" class="form-control" id="admin_email" name="admin_email" placeholder="admin_email.." required>   
+    <label for="adminEmail" class="form-label">Admin Email</label>    
+    <input type="email" class="form-control" id="adminEmail" name="adminEmail" placeholder="adminEmail.." required>   
   </div>
   <div class="mb-3">
-    <label for="admin_password" class="form-label">admin_password</label>    
-    <input type="password" class="form-control" id="admin_password" name="admin_password" placeholder="admin_password.." required>   
+    <label for="adminPassword" class="form-label">Admin Password</label>    
+    <input type="password" class="form-control" id="adminPassword" name="adminPassword" placeholder="adminPassword.." required>   
   </div>
   <div class="mb-3">
-    <label for="admin_role" class="form-label">admin_role</label> <br>   
-    <input type="radio" id="admin_role" name="admin_role" value="Lead">Lead
-    <input type="radio" id="admin_role" name="admin_role" value="Member">Member
+    <label for="adminRole" class="form-label">Admin Role</label> <br>   
+    <input type="radio" id="adminRole" name="adminRole" value="Lead">Lead
+    <input type="radio" id="adminRole" name="adminRole" value="Member">Member
   </div>
   <div class="mb-3">
     <input type="hidden" id="staffId" name="staffId" value="${staff.staffId}">
   </div>
   <div class="mb-3">
-    <input type="hidden" id="staff_role" name="staff_role" value="${staff.staffRole}">   	
+    <input type="hidden" id="staffRole" name="staffRole" value="${staff.staffRole}">   	
   </div>
   <div class="mb-3">
     <input type="submit" class="btn btn-primary" value="Submit"> 

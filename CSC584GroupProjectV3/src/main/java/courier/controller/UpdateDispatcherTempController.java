@@ -31,8 +31,8 @@ public class UpdateDispatcherTempController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Dispatcher dispatcher = new Dispatcher();
 		
-		dispatcher.setDispatcherEmploymentType(request.getParameter("dispatcher_employment_type"));
-		dispatcher.setDispatcherStatus(request.getParameter("dispatcher_status"));
+		dispatcher.setDispatcherEmploymentType(request.getParameter("dispatcherEmploymentType"));
+		dispatcher.setDispatcherStatus(request.getParameter("dispatcherStatus"));
 		dispatcher.setStaffId(Integer.parseInt(request.getParameter("staffId")));
 		
 		DispatcherDAO.updateDispatcher(dispatcher);

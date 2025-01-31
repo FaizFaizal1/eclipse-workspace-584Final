@@ -28,7 +28,7 @@ public class DeleteDispatcherController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String email = request.getParameter("staff_email");
+		String email = request.getParameter("staffEmail");
 		StaffDAO.deleteStaff(email);
 		
 		response.sendRedirect("index.jsp");

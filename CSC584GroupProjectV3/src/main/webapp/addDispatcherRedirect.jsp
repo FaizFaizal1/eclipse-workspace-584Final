@@ -10,8 +10,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta http-equiv = "refresh" content = "1"; url = "http://localhost:8080/CSC584GroupProject/UpdateDispatcherTempController?dispatcher_employment_type=
-	${staff.dispatcher.employmentType}&staffId=${staff.staffId}&dispatcher_status=Inactive" />
+	<meta http-equiv = "refresh" content = "1"; url = "http://localhost:8080/CSC584GroupProject/UpdateDispatcherTempController?dispatcherEmploymentType=
+	${staff.dispatcher.employmentType}&staffId=${staff.staffId}&dispatcherStatus=Inactive" />
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 	<title>Redirect</title>
 </head>
@@ -23,31 +23,31 @@
 <br><br>
 <form action="UpdateDispatcherTempController" method="POST">
  <div class="mb-3">
-    <label for="dispatcher_first_name" class="form-label">dispatcher_first_name</label>    
-    <input type="text" class="form-control" id="dispatcher_first_name" name="dispatcher_first_name" placeholder="dispatcher_first_name.." required value="${staff.staffFirstName}">   
+    <label for="dispatcherFirstName" class="form-label">dispatcherFirstName</label>    
+    <input type="text" class="form-control" id="dispatcherFirstName" name="dispatcherFirstName" placeholder="dispatcherFirstName.." required value="${staff.staffFirstName}">   
   </div>
  <div class="mb-3">
-    <label for="dispatcher_last_name" class="form-label">dispatcher_last_name</label>    
-    <input type="text" class="form-control" id="dispatcher_last_name" name="dispatcher_last_name" placeholder="dispatcher_last_name.." required value="${staff.staffLastName}">   
+    <label for=dispatcherLastName class="form-label">dispatcher_last_name</label>    
+    <input type="text" class="form-control" id=dispatcherLastName name=dispatcherLastName placeholder="dispatcher_last_name.." required value="${staff.staffLastName}">   
   </div>
  <div class="mb-3">
-    <label for="dispatcher_phone_number" class="form-label">dispatcher_phone_number</label>    
-    <input type="text" class="form-control" id="dispatcher_phone_number" name="dispatcher_phone_number" placeholder="dispatcher_phone_number.." required value="${staff.staffPhoneNumber}">   
+    <label for="dispatcherPhoneNumber" class="form-label">dispatcherPhoneNumber</label>    
+    <input type="text" class="form-control" id="dispatcherPhoneNumber" name="dispatcherPhoneNumber" placeholder="dispatcherPhoneNumber.." required value="${staff.staffPhoneNumber}">   
   </div>
  <div class="mb-3">
-    <label for="dispatcher_email" class="form-label">dispatcher_email</label>    
-    <input type="email" class="form-control" id="dispatcher_email" name="dispatcher_email" placeholder="dispatcher_email.." required value="${staff.staffEmail}">   
+    <label for="dispatcherEmail" class="form-label">dispatcherEmail</label>    
+    <input type="email" class="form-control" id="dispatcherEmail" name="dispatcherEmail" placeholder="dispatcherEmail.." required value="${staff.staffEmail}">   
   </div>
  <div class="mb-3">
-    <label for="dispatcher_address" class="form-label">dispatcher_address</label>    
-    <input type="text" class="form-control" id="dispatcher_address" name="dispatcher_address" placeholder="dispatcher_address.." required value="${staff.staffAddress}">   
+    <label for="dispatcherAddress" class="form-label">dispatcherAddress</label>    
+    <input type="text" class="form-control" id="dispatcherAddress" name="dispatcherAddress" placeholder="dispatcherAddress.." required value="${staff.staffAddress}">   
   </div>
   <div class="mb-3">
-    <label for="dispatcher_password" class="form-label">dispatcher_password</label>    
-    <input type="password" class="form-control" id="dispatcher_password" name="dispatcher_password" placeholder="dispatcher_password.." required value="${staff.staffPassword}">   
+    <label for="dispatcherPassword" class="form-label">dispatcherPassword</label>    
+    <input type="password" class="form-control" id="dispatcherPassword" name="dispatcherPassword" placeholder="dispatcherPassword.." required value="${staff.staffPassword}">   
   </div>
   <div class="mb-3">
-    <label for="dispatcher_employment_type" class="form-label">dispatcher_employment_type</label> <br>
+    <label for="dispatcherEmploymentType" class="form-label">dispatcherEmploymentType</label> <br>
   </div>
   <div class="mb-3">
     <input type="hidden" id="dispatcher_role" name="dispatcher_role" value="Dispatcher">

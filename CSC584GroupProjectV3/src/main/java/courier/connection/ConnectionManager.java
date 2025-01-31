@@ -10,7 +10,7 @@ import java.sql.*;
 public class ConnectionManager {
     private static Connection con;
     private static final String DB_DRIVER = "com.mysql.cj.jdbc.Driver";
-    private static final String DB_CONNECTION = "jdbc:mysql://localhost/csc584_group_project";
+    private static final String DB_CONNECTION = "jdbc:mysql://localhost/csc584gp";
     private static final String DB_USER = "root";
     private static final String DB_PASSWORD = "";
     

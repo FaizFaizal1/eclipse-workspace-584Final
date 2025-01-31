@@ -63,15 +63,15 @@ public class AdminController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Admin admin = new Admin();
 		Staff staff = new Staff();
-		staff.setStaffFirstName(request.getParameter("admin_first_name"));
-		staff.setStaffLastName((request.getParameter("admin_last_name")));
-		staff.setStaffPhoneNumber((request.getParameter("admin_phone_number")));
-		staff.setStaffEmail((request.getParameter("admin_email")));
-		staff.setStaffAddress((request.getParameter("admin_address")));
-		staff.setStaffPassword(request.getParameter("admin_password"));
-		staff.setStaffRole(request.getParameter("staff_role"));
+		staff.setStaffFirstName(request.getParameter("adminFirstName"));
+		staff.setStaffLastName((request.getParameter("adminLastName")));
+		staff.setStaffPhoneNumber((request.getParameter("adminPhoneNumber")));
+		staff.setStaffEmail((request.getParameter("adminEmail")));
+		staff.setStaffAddress((request.getParameter("adminAddress")));
+		staff.setStaffPassword(request.getParameter("adminPassword"));
+		staff.setStaffRole(request.getParameter("staffRole"));
 		
-		admin.setAdminRole(request.getParameter("admin_role"));
+		admin.setAdminRole(request.getParameter("adminRole"));
 		
 		String staffId = request.getParameter("staffId");
 		

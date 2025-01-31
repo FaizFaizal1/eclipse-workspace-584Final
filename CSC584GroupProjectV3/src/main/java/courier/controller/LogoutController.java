@@ -34,7 +34,7 @@ public class LogoutController extends HttpServlet {
 			session = request.getSession(true);
 			//set current session to null.
             session.setAttribute("staffId", null);
-            session.setAttribute("staff_password", null);//
+            session.setAttribute("staffPassword", null);//
 			//destroy session
 			session.invalidate();			
 			//redirect to login page						  

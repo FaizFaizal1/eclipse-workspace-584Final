@@ -41,15 +41,15 @@ public class AddDispatcherController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Dispatcher dispatcher = new Dispatcher();
 		Staff staff = new Staff();
-		staff.setStaffFirstName(request.getParameter("dispatcher_first_name"));
-		staff.setStaffLastName((request.getParameter("dispatcher_last_name")));
-		staff.setStaffPhoneNumber((request.getParameter("dispatcher_phone_number")));
-		staff.setStaffEmail((request.getParameter("dispatcher_email")));
-		staff.setStaffAddress((request.getParameter("dispatcher_address")));
-		staff.setStaffPassword(request.getParameter("dispatcher_password"));
-		staff.setStaffRole(request.getParameter("staff_role"));
-		dispatcher.setDispatcherStatus(request.getParameter("dispatcher_status"));
-		dispatcher.setDispatcherEmploymentType(request.getParameter("dispatcher_employment_type"));
+		staff.setStaffFirstName(request.getParameter("dispatcherFirstName"));
+		staff.setStaffLastName((request.getParameter("dispatcherLastName")));
+		staff.setStaffPhoneNumber((request.getParameter("dispatcherPhoneNumber")));
+		staff.setStaffEmail((request.getParameter("dispatcherEmail")));
+		staff.setStaffAddress((request.getParameter("dispatcherAddress")));
+		staff.setStaffPassword(request.getParameter("dispatcherPassword"));
+		staff.setStaffRole(request.getParameter("staffRole"));
+		dispatcher.setDispatcherStatus(request.getParameter("dispatcherStatus"));
+		dispatcher.setDispatcherEmploymentType(request.getParameter("dispatcherEmploymentType"));
 
 		dispatcher.setStaff(staff);
 		
