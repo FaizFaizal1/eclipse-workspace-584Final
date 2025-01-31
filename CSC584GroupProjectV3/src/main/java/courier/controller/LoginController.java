@@ -7,6 +7,8 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
+import courier.dao.AdminDAO;
+import courier.dao.DispatcherDAO;
 import courier.dao.StaffDAO;
 import courier.model.Admin;
 import courier.model.Staff;
@@ -48,27 +50,38 @@ public class LoginController extends HttpServlet {
 			Staff staff = new Staff();
 
 			//retrieve and set email and password
-			staff.setStaffId(Integer.parseInt(request.getParameter("staffId")));
-			staff.setStaffPassword(request.getParameter("staffPassword"));
 			staff.setStaffEmail(request.getParameter("staffEmail"));
+			staff.setStaffPassword(request.getParameter("staffPassword"));
 
-			//call courier() in StaffDAO
+
 			staff = StaffDAO.login(staff);
 
 			//set staff session if staff is valid
-			if (staff.isLoggedIn()) {
+			if (staff.isValid()) {
 				System.out.println("staff");
 	            HttpSession session = request.getSession(true);
 	            session.setAttribute("sessionId", staff.getStaffId());
-	            session.setAttribute("sessionEmail", staff.getStaffEmail());//set current session based on email
+	            session.setAttribute("sessionEmail", staff.getStaffEmail());
+	            session.setAttribute("sessionRole", staff.getStaffRole());
+	            
+				request.setAttribute("staff", StaffDAO.getStaffByEmail(staff.getStaffEmail()));
+	            
+				if(staff.getStaffRole().equalsIgnoreCase("admin")) {
+					request.setAttribute("admin", AdminDAO.getAdminById(staff.getStaffId()));
+					System.out.print(staff.getStaffEmail()+" Login successfully");
 
-	            // Redirect to avoid resubmission
-	            request.setAttribute("staffId", request.getParameter("staffId"));
-	            request.getRequestDispatcher("index.jsp").forward(request, response);
+					//TO DO create admin dashboard
+		            request.getRequestDispatcher("adminDashboard.jsp").forward(request, response);
+				}
+				else {
+					request.setAttribute("dispatcher", DispatcherDAO.getDispatcherById(staff.getStaffId()));		
+
+					//TO DO create dispatcher dashboard
+		            request.getRequestDispatcher("dispatcherDashboard.jsp").forward(request, response);
+				}		
 	        } else {
-	        	System.out.println("staff else");
-	            //response.sendRedirect("invalidLogin.jsp");
-	        	// Set error attribute and forward back to courier.jsp
+	        	System.out.println("Invalid login credentials");
+
 	            request.setAttribute("errorMessage", "Invalid email or password. Please try again.");
 	            request.getRequestDispatcher("signin.jsp").forward(request, response);
 	        }

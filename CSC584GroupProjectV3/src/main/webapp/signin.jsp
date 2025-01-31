@@ -61,8 +61,8 @@
             					<div class="error-message">${errorMessage}</div>
         					</c:if>
 	                        <div class="form-floating mb-3">
-	                            <input type="text" class="form-control" id="staffId" name="staffId" placeholder="Id">
-	                            <label for="staffId">Staff Id</label>
+	                            <input type="text" class="form-control" id="staffEmail" name="staffEmail" placeholder="Staff Email">
+	                            <label for="staffId">Staff Email</label>
 	                        </div>
 	                        <div class="form-floating mb-4">
 	                            <input type="password" class="form-control" id="staffPassword" name="staffPassword" placeholder="Password">

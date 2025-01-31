@@ -38,9 +38,9 @@ public class StaffDAO {
 			con = ConnectionManager.getConnection();
 			
 			//3. create statement
-			sql = "SELECT * FROM staff WHERE staffId = ? AND staffPassword = ?";
+			sql = "SELECT * FROM staff WHERE staffEmail = ? AND staffPassword = ?";
 			ps = con.prepareStatement(sql);
-			ps.setInt(1, staff.getStaffId());
+			ps.setString(1, staff.getStaffEmail());
 			ps.setString(2, sb.toString());
 			
 		    //4. execute query
@@ -54,13 +54,14 @@ public class StaffDAO {
 				staff.setStaffPhoneNumber(rs.getString("staffPhoneNumber"));
 				staff.setStaffEmail(rs.getString("staffEmail"));
 				staff.setStaffAddress(rs.getString("staffAddress"));
-				staff.setStaffDateOfHire(rs.getString("staff_date_of_hire"));
+				staff.setStaffDateOfHire(rs.getString("staffDateOfHire"));
 				staff.setStaffPassword(rs.getString("staffPassword"));
-				staff.setLoggedIn(true);
+				staff.setStaffRole(rs.getString("staffRole"));
+				staff.setValid(true);
 				}
 			// if staff does not exist set the isValid variable to false
 			else{
-				staff.setLoggedIn(false);
+				staff.setValid(false);
 			}
 
 			//5. close connection
@@ -174,7 +175,7 @@ public class StaffDAO {
 				staff.setStaffPhoneNumber(rs.getString("staffPhoneNumber"));
 				staff.setStaffEmail(rs.getString("staffEmail"));
 				staff.setStaffAddress(rs.getString("staffAddress"));
-				staff.setStaffDateOfHire(rs.getString("staff_date_of_hire"));
+				staff.setStaffDateOfHire(rs.getString("staffDateOfHire"));
 				staff.setStaffPassword(rs.getString("staffPassword"));
 				staff.setLoggedIn(true);
 			}
@@ -215,7 +216,7 @@ public class StaffDAO {
 				staff.setStaffPhoneNumber(rs.getString("staffPhoneNumber"));
 				staff.setStaffEmail(rs.getString("staffEmail"));
 				staff.setStaffAddress(rs.getString("staffAddress"));
-				staff.setStaffDateOfHire(rs.getString("staff_date_of_hire"));
+				staff.setStaffDateOfHire(rs.getString("staffDateOfHire"));
 				staff.setStaffPassword(rs.getString("staffPassword"));
 				staff.setStaffRole(rs.getString("staffRole"));
 			}
@@ -251,7 +252,7 @@ public class StaffDAO {
 				staff.setStaffPhoneNumber(rs.getString("staffPhoneNumber"));
 				staff.setStaffEmail(rs.getString("staffEmail"));
 				staff.setStaffAddress(rs.getString("staffAddress"));
-				staff.setStaffDateOfHire(rs.getString("staff_date_of_hire"));
+				staff.setStaffDateOfHire(rs.getString("staffDateOfHire"));
 				staff.setStaffPassword(rs.getString("staffPassword"));
 			}
 			
@@ -288,7 +289,7 @@ public class StaffDAO {
 				staff.setStaffPhoneNumber(rs.getString("staffPhoneNumber"));
 				staff.setStaffEmail(rs.getString("staffEmail"));
 				staff.setStaffAddress(rs.getString("staffAddress"));
-				staff.setStaffDateOfHire(rs.getString("staff_date_of_hire"));
+				staff.setStaffDateOfHire(rs.getString("staffDateOfHire"));
 				staff.setStaffPassword(rs.getString("staffPassword"));
 				staff.setDispatcher(DispatcherDAO.getDispatcherById(rs.getInt("staffId")));
 				staffs.add(staff);
@@ -325,7 +326,7 @@ public class StaffDAO {
 					staff.setStaffPhoneNumber(rs.getString("staffPhoneNumber"));
 					staff.setStaffEmail(rs.getString("staffEmail"));
 					staff.setStaffAddress(rs.getString("staffAddress"));
-					staff.setStaffDateOfHire(rs.getString("staff_date_of_hire"));
+					staff.setStaffDateOfHire(rs.getString("staffDateOfHire"));
 					staff.setStaffPassword(rs.getString("staffPassword"));
 					staff.setAdmin(AdminDAO.getAdminById(rs.getInt("staffId")));
 					staffs.add(staff);
