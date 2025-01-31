@@ -3,7 +3,7 @@ package courier.model;
 import java.io.Serializable;
 
 public class Staff implements Serializable {
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUId = 1L;
 	private int staffId;
 	private String staffFirstName;
 	private String staffLastName;
@@ -23,11 +23,11 @@ public class Staff implements Serializable {
 
 	}
 
-	public int getStaffID() {
+	public int getStaffId() {
 		return staffId;
 	}
 
-	public void setStaffID(int staffId) {
+	public void setStaffId(int staffId) {
 		this.staffId = staffId;
 	}
 
@@ -96,7 +96,7 @@ public class Staff implements Serializable {
 	}
 
 	public static long getSerialversionuid() {
-		return serialVersionUID;
+		return serialVersionUId;
 	}
 	
 	public Dispatcher getDispatcher() {

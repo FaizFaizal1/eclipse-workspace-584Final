@@ -29,7 +29,7 @@ public class PaymentDAO {
 			ps.setDouble(1, payment.getPaymentAmount());
 			ps.setString(2, payment.getPaymentDate());
 			ps.setString(3, payment.getPaymentStatus());
-			ps.setInt(4, payment.getParcelID());
+			ps.setInt(4, payment.getParcelId());
 
 			// 4. execute query
 			ps.executeUpdate();
@@ -59,11 +59,11 @@ public class PaymentDAO {
 
 			while (rs.next()) {
 				Payment payment = new Payment();
-				payment.setPaymentID(rs.getInt("paymentId"));
+				payment.setPaymentId(rs.getInt("paymentId"));
 				payment.setPaymentAmount(rs.getDouble("payment_amount"));
 				payment.setPaymentDate(rs.getString("payment_date"));
 				payment.setPaymentStatus(rs.getString("payment_status"));
-				payment.setParcelID(rs.getInt("parcelId"));
+				payment.setParcelId(rs.getInt("parcelId"));
 				payments.add(payment);
 			}
 			// 5. close connection
@@ -91,11 +91,11 @@ public class PaymentDAO {
 			rs = ps.executeQuery();
 
 			if (rs.next()) {
-				payment.setPaymentID(rs.getInt("paymentId"));
+				payment.setPaymentId(rs.getInt("paymentId"));
 				payment.setPaymentAmount(rs.getDouble("payment_amount"));
 				payment.setPaymentDate(rs.getString("payment_date"));
 				payment.setPaymentStatus(rs.getString("payment_status"));
-				payment.setParcelID(rs.getInt("parcelId"));
+				payment.setParcelId(rs.getInt("parcelId"));
 			}
 
 			// 5. close connection
@@ -142,7 +142,7 @@ public class PaymentDAO {
 			ps.setDouble(1, payment.getPaymentAmount());
 			ps.setString(2, payment.getPaymentDate());
 			ps.setString(3, payment.getPaymentStatus());
-			ps.setInt(4, payment.getParcelID());
+			ps.setInt(4, payment.getParcelId());
 
 			// 4. execute query
 			ps.executeUpdate();

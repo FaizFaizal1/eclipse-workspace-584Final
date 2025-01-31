@@ -15,7 +15,7 @@ import courier.model.Dispatcher;
  */
 @WebServlet("/UpdateDispatcherTempController")
 public class UpdateDispatcherTempController extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUId = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -33,7 +33,7 @@ public class UpdateDispatcherTempController extends HttpServlet {
 		
 		dispatcher.setDispatcherEmploymentType(request.getParameter("dispatcher_employment_type"));
 		dispatcher.setDispatcherStatus(request.getParameter("dispatcher_status"));
-		dispatcher.setStaffID(Integer.parseInt(request.getParameter("staffId")));
+		dispatcher.setStaffId(Integer.parseInt(request.getParameter("staffId")));
 		
 		DispatcherDAO.updateDispatcher(dispatcher);
 	}

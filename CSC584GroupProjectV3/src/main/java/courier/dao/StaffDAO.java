@@ -40,7 +40,7 @@ public class StaffDAO {
 			//3. create statement
 			sql = "SELECT * FROM staff WHERE staffId = ? AND staff_password = ?";
 			ps = con.prepareStatement(sql);
-			ps.setInt(1, staff.getStaffID());
+			ps.setInt(1, staff.getStaffId());
 			ps.setString(2, sb.toString());
 			
 		    //4. execute query
@@ -48,7 +48,7 @@ public class StaffDAO {
 
 			// if staff exists set the isValid variable to true
 			if (rs.next()) {
-				staff.setStaffID(rs.getInt("staffId"));
+				staff.setStaffId(rs.getInt("staffId"));
 				staff.setStaffFirstName(rs.getString("staff_first_name"));
 				staff.setStaffLastName(rs.getString("staff_last_name"));
 				staff.setStaffPhoneNumber(rs.getString("staff_phone_number"));
@@ -138,7 +138,7 @@ public class StaffDAO {
 			ps.setString(5,staff.getStaffAddress());
 			ps.setString(6,sb.toString());
 			ps.setString(7,staff.getStaffRole());
-			ps.setInt(8, staff.getStaffID());
+			ps.setInt(8, staff.getStaffId());
 			
 			ps.executeUpdate();
 			
@@ -168,7 +168,7 @@ public class StaffDAO {
 
 			// if staff exists set the isValid variable to true
 			if (rs.next()) {
-				staff.setStaffID(rs.getInt("staffId"));
+				staff.setStaffId(rs.getInt("staffId"));
 				staff.setStaffFirstName(rs.getString("staff_first_name"));
 				staff.setStaffLastName(rs.getString("staff_last_name"));
 				staff.setStaffPhoneNumber(rs.getString("staff_phone_number"));
@@ -209,7 +209,7 @@ public class StaffDAO {
 			rs = ps.executeQuery();
 
 			if (rs.next()) {	            
-				staff.setStaffID(rs.getInt("staffId"));
+				staff.setStaffId(rs.getInt("staffId"));
 				staff.setStaffFirstName(rs.getString("staff_first_name"));
 				staff.setStaffLastName(rs.getString("staff_last_name"));
 				staff.setStaffPhoneNumber(rs.getString("staff_phone_number"));
@@ -245,7 +245,7 @@ public class StaffDAO {
 			rs = ps.executeQuery();
 
 			if (rs.next()) {	            
-				staff.setStaffID(rs.getInt("staffId"));
+				staff.setStaffId(rs.getInt("staffId"));
 				staff.setStaffFirstName(rs.getString("staff_first_name"));
 				staff.setStaffLastName(rs.getString("staff_last_name"));
 				staff.setStaffPhoneNumber(rs.getString("staff_phone_number"));
@@ -282,7 +282,7 @@ public class StaffDAO {
 
 			while (rs.next()) {
 				Staff staff = new Staff();
-				staff.setStaffID(rs.getInt("staffId"));
+				staff.setStaffId(rs.getInt("staffId"));
 				staff.setStaffFirstName(rs.getString("staff_first_name"));
 				staff.setStaffLastName(rs.getString("staff_last_name"));
 				staff.setStaffPhoneNumber(rs.getString("staff_phone_number"));
@@ -319,7 +319,7 @@ public class StaffDAO {
 
 				while (rs.next()) {
 					Staff staff = new Staff();
-					staff.setStaffID(rs.getInt("staffId"));
+					staff.setStaffId(rs.getInt("staffId"));
 					staff.setStaffFirstName(rs.getString("staff_first_name"));
 					staff.setStaffLastName(rs.getString("staff_last_name"));
 					staff.setStaffPhoneNumber(rs.getString("staff_phone_number"));

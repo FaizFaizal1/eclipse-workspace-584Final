@@ -18,7 +18,7 @@ import courier.model.Staff;
  * Servlet implementation class UpdateDispatcherController
  */
 public class AddDispatcherController extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUId = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -55,8 +55,8 @@ public class AddDispatcherController extends HttpServlet {
 		
 		try {
 			StaffDAO.addStaff(dispatcher.getStaff());
-			int staffId = StaffDAO.getStaffByEmail(dispatcher.getStaff().getStaffEmail()).getStaffID();
-			dispatcher.setStaffID(staffId);
+			int staffId = StaffDAO.getStaffByEmail(dispatcher.getStaff().getStaffEmail()).getStaffId();
+			dispatcher.setStaffId(staffId);
 			DispatcherDAO.updateDispatcher(dispatcher);
 		} catch (NoSuchAlgorithmException e) {
 			e.printStackTrace();

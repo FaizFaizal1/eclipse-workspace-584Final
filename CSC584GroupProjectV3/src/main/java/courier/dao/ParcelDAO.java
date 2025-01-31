@@ -30,7 +30,7 @@ public class ParcelDAO {
 			ps.setString(2,parcel.getParcelAddress());
 			ps.setDouble(3,parcel.getParcelWeight());
 			ps.setString(5,parcel.getParcelStatus());
-			ps.setInt(6,parcel.getStaffID());
+			ps.setInt(6,parcel.getStaffId());
 
 			//4. execute query
 			ps.executeUpdate();
@@ -61,12 +61,12 @@ public class ParcelDAO {
 
 			while (rs.next()) { 
 				Parcel parcel = new Parcel();
-				parcel.setParcelID(rs.getInt("parcelId"));	  
+				parcel.setParcelId(rs.getInt("parcelId"));	  
 				parcel.setParcelName(rs.getString("parcel_name"));
 				parcel.setParcelAddress(rs.getString("parcel_address"));
 				parcel.setParcelWeight(rs.getDouble("parcel_weight"));
 				parcel.setParcelStatus(rs.getString("parcel_status"));
-				parcel.setStaffID(rs.getInt("staffId"));
+				parcel.setStaffId(rs.getInt("staffId"));
 				parcels.add(parcel);
 
 			} 
@@ -96,12 +96,12 @@ public class ParcelDAO {
 			rs = ps.executeQuery();
 
 			if (rs.next()) {	            
-				parcel.setParcelID(rs.getInt("parcelId"));	  
+				parcel.setParcelId(rs.getInt("parcelId"));	  
 				parcel.setParcelName(rs.getString("parcel_name"));
 				parcel.setParcelAddress(rs.getString("parcel_address"));
 				parcel.setParcelWeight(rs.getDouble("parcel_weight"));
 				parcel.setParcelStatus(rs.getString("parcel_status"));
-				parcel.setStaffID(rs.getInt("staffId"));
+				parcel.setStaffId(rs.getInt("staffId"));
 			}
 
 			//5. close connection
@@ -149,7 +149,7 @@ public class ParcelDAO {
 			ps.setString(2,parcel.getParcelAddress());
 			ps.setDouble(3,parcel.getParcelWeight());
 			ps.setString(5,parcel.getParcelStatus());
-			ps.setInt(6,parcel.getStaffID());
+			ps.setInt(6,parcel.getStaffId());
 
 			//4. execute query
 			ps.executeUpdate();

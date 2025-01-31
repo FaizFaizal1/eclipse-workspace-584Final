@@ -17,7 +17,7 @@ import courier.model.Staff;
  */
 @WebServlet("/UpdateStaffController")
 public class UpdateStaffController extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUId = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
@@ -54,7 +54,7 @@ public class UpdateStaffController extends HttpServlet {
 
 		String staffId = request.getParameter("staffId");
 
-		staff.setStaffID(Integer.parseInt(staffId));
+		staff.setStaffId(Integer.parseInt(staffId));
 		try {
 			StaffDAO.updateStaff(staff);
 		} catch (NoSuchAlgorithmException e) {

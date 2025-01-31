@@ -34,7 +34,7 @@ public class DispatcherDAO {
 
 			while (rs.next()) { 
 				Dispatcher dispatcher = new Dispatcher();
-				dispatcher.setStaffID(rs.getInt("staffId"));	  
+				dispatcher.setStaffId(rs.getInt("staffId"));	  
 				dispatcher.setDispatcherStatus(rs.getString("dispatcher_status"));
 				dispatcher.setDispatcherEmploymentType(rs.getString("dispatcher_employment_type"));
 				dispatcher.setStaff(StaffDAO.getStaffById(rs.getInt("staffId")));
@@ -65,7 +65,7 @@ public class DispatcherDAO {
 			rs = ps.executeQuery();
 
 			if (rs.next()) {	            
-				dispatcher.setStaffID(rs.getInt("staffId"));	  
+				dispatcher.setStaffId(rs.getInt("staffId"));	  
 				dispatcher.setDispatcherStatus(rs.getString("dispatcher_status"));
 				dispatcher.setDispatcherEmploymentType(rs.getString("dispatcher_employment_type"));
 			}
@@ -113,7 +113,7 @@ public class DispatcherDAO {
 			ps=con.prepareStatement(sql);
 			ps.setString(1,dispatcher.getDispatcherStatus());
 			ps.setString(2,dispatcher.getDispatcherEmploymentType());
-			ps.setInt(3,dispatcher.getStaffID());
+			ps.setInt(3,dispatcher.getStaffId());
 
 			//4. execute query
 			ps.executeUpdate();

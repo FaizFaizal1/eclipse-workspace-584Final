@@ -12,11 +12,11 @@ import courier.dao.StaffDAO;
 import courier.model.Staff;
 
 /**
- * Servlet implementation class SendStaffIDController
+ * Servlet implementation class SendStaffIdController
  */
-@WebServlet("/SendStaffIDController")
+@WebServlet("/SendStaffIdController")
 public class SendStaffIDController extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUId = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()

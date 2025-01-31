@@ -14,7 +14,7 @@ import courier.dao.DispatcherDAO;
  * Servlet implementation class ListDispatcherController
  */
 public class ListDispatcherController extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUId = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()

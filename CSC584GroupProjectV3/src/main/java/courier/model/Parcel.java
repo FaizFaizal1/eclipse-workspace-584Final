@@ -3,7 +3,7 @@ package courier.model;
 import java.io.Serializable;
 
 public class Parcel implements Serializable {
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUId = 1L;
 	private int parcelId;
 	private String parcelName;
 	private String parcelAddress;
@@ -11,11 +11,11 @@ public class Parcel implements Serializable {
 	private String parcelStatus;
 	private int staffId;
 
-	public int getParcelID() {
+	public int getParcelId() {
 		return parcelId;
 	}
 
-	public void setParcelID(int parcelId) {
+	public void setParcelId(int parcelId) {
 		this.parcelId = parcelId;
 	}
 
@@ -51,16 +51,16 @@ public class Parcel implements Serializable {
 		this.parcelStatus = parcelStatus;
 	}
 
-	public int getStaffID() {
+	public int getStaffId() {
 		return staffId;
 	}
 
-	public void setStaffID(int staffId) {
+	public void setStaffId(int staffId) {
 		this.staffId = staffId;
 	}
 
 	public static long getSerialversionuid() {
-		return serialVersionUID;
+		return serialVersionUId;
 	}
 
 }

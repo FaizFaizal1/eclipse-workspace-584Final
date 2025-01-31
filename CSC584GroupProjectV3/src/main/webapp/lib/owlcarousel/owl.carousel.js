@@ -2141,7 +2141,7 @@
 	};
 
 	/**
-	 * Gets the video ID and the type (YouTube/Vimeo/vzaar only).
+	 * Gets the video Id and the type (YouTube/Vimeo/vzaar only).
 	 * @protected
 	 * @param {jQuery} target - The target containing the video data.
 	 * @param {jQuery} item - The item containing the video.

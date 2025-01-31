@@ -3,17 +3,17 @@ package courier.model;
 import java.io.Serializable;
 
 public class Dispatcher implements Serializable {
-	private static final long serialVersionUID = 1L;
-	private int staffId; // use dispatcherID? example given by miss uses different ID name.
+	private static final long serialVersionUId = 1L;
+	private int staffId; // use dispatcherId? example given by miss uses different Id name.
 	private String dispatcherStatus;
 	private String dispatcherEmploymentType;
 	private Staff staff;
 
-	public int getStaffID() {
+	public int getStaffId() {
 		return staffId;
 	}
 
-	public void setStaffID(int staffId) {
+	public void setStaffId(int staffId) {
 		this.staffId = staffId;
 	}
 
@@ -42,6 +42,6 @@ public class Dispatcher implements Serializable {
 	}
 
 	public static long getSerialversionuid() {
-		return serialVersionUID;
+		return serialVersionUId;
 	}
 }

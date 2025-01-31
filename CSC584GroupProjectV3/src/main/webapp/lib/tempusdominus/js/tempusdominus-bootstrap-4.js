@@ -60,7 +60,7 @@ var DateTimePicker = function ($, moment) {
         //emitted
         UPDATE: 'update' + EVENT_KEY,
         ERROR: 'error' + EVENT_KEY,
-        HIDE: 'hide' + EVENT_KEY,
+        HIdE: 'hide' + EVENT_KEY,
         SHOW: 'show' + EVENT_KEY
     },
         DatePickerModes = [{
@@ -2497,7 +2497,7 @@ var TempusDominusBootstrap4 = function ($) {
             this.widget = false;
 
             this._notifyEvent({
-                type: DateTimePicker.Event.HIDE,
+                type: DateTimePicker.Event.HIdE,
                 date: this._getLastPickedDate().clone()
             });
 

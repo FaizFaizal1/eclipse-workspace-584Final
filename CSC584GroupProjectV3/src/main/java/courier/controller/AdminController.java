@@ -21,7 +21,7 @@ import courier.model.Staff;
  */
 
 public class AdminController extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUId = 1L;
 	private RequestDispatcher view;
 	private int staffId;
 	private String action="", forward="";
@@ -75,8 +75,8 @@ public class AdminController extends HttpServlet {
 		
 		String staffId = request.getParameter("staffId");
 		
-		staff.setStaffID(Integer.parseInt(staffId));
-		admin.setStaffID(Integer.parseInt(staffId));
+		staff.setStaffId(Integer.parseInt(staffId));
+		admin.setStaffId(Integer.parseInt(staffId));
 		admin.setStaff(staff);
 
 		//update admin

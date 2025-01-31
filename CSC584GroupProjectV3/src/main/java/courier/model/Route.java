@@ -3,17 +3,17 @@ package courier.model;
 import java.io.Serializable;
 
 public class Route implements Serializable {
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUId = 1L;
 	private int routeId;
 	private String routeSource;
 	private String routeDestination;
 	private double routeEstimatedDistance;
 
-	public int getRouteID() {
+	public int getRouteId() {
 		return routeId;
 	}
 
-	public void setRouteID(int routeId) {
+	public void setRouteId(int routeId) {
 		this.routeId = routeId;
 	}
 
@@ -42,7 +42,7 @@ public class Route implements Serializable {
 	}
 
 	public static long getSerialversionuid() {
-		return serialVersionUID;
+		return serialVersionUId;
 	}
 
 }

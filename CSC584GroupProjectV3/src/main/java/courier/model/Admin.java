@@ -3,16 +3,16 @@ package courier.model;
 import java.io.Serializable;
 
 public class Admin implements Serializable {
-	private static final long serialVersionUID = 1L;
-	private int staffId; // use adminID? example given by miss uses different ID name.
+	private static final long serialVersionUId = 1L;
+	private int staffId; // use adminId? example given by miss uses different Id name.
 	private String adminRole;
 	private Staff staff;
 
-	public int getstaffId() {
+	public int getStaffId() {
 		return staffId;
 	}
 
-	public void setstaffId(int staffId) {
+	public void setStaffId(int staffId) {
 		this.staffId = staffId;
 	}
 
@@ -33,6 +33,6 @@ public class Admin implements Serializable {
 	}
 
 	public static long getSerialversionuid() {
-		return serialVersionUID;
+		return serialVersionUId;
 	}
 }

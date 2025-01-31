@@ -13,7 +13,7 @@ import courier.dao.StaffDAO;
  * Servlet implementation class DeleteDispatcher
  */
 public class DeleteDispatcherController extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUId = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()

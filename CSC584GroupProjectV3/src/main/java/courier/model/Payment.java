@@ -3,18 +3,18 @@ package courier.model;
 import java.io.Serializable;
 
 public class Payment implements Serializable {
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUId = 1L;
 	private int paymentId;
 	private double paymentAmount;
 	private String paymentDate;
 	private String paymentStatus;
 	private int parcelId;
 
-	public int getPaymentID() {
+	public int getPaymentId() {
 		return paymentId;
 	}
 
-	public void setPaymentID(int paymentId) {
+	public void setPaymentId(int paymentId) {
 		this.paymentId = paymentId;
 	}
 
@@ -42,15 +42,15 @@ public class Payment implements Serializable {
 		this.paymentStatus = paymentStatus;
 	}
 
-	public int getParcelID() {
+	public int getParcelId() {
 		return parcelId;
 	}
 
-	public void setParcelID(int parcelId) {
+	public void setParcelId(int parcelId) {
 		this.parcelId = parcelId;
 	}
 
 	public static long getSerialversionuid() {
-		return serialVersionUID;
+		return serialVersionUId;
 	}
 }

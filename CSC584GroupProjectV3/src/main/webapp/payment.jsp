@@ -162,11 +162,11 @@
 						<table class="table table-bordered table-striped table-hover mb-0">
 							<thead class="bg-primary text-white">
 								<tr>
-									<th>Payment ID</th>
+									<th>Payment Id</th>
 									<th>Payment Amount (RM)</th>
 									<th>Payment Date</th>
 									<th>Payment Status</th>
-									<th>Parcel ID</th>
+									<th>Parcel Id</th>
 								</tr>
 							</thead>
 							<tbody>

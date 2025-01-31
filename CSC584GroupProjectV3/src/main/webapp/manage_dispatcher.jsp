@@ -47,7 +47,7 @@ if (session == null || session.getAttribute("sessionEmail") == null) {
 <br><br>
 <table id="list" class="table table-striped" style="width:100%">
   <tr>
-    <th>Staff ID</th>
+    <th>Staff Id</th>
     <th>Dispatcher First Name</th>
     <th>Dispatcher Last Name</th>
     <th>Dispatcher Phone Number</th>

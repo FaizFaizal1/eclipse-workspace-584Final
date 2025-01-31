@@ -14,7 +14,7 @@ import courier.dao.ParcelDAO;
  * Servlet implementation class ParcelController
  */
 public class ParcelController extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUId = 1L;
 	private RequestDispatcher view;
 	private int parcelId;
 	private String action="", forward="";

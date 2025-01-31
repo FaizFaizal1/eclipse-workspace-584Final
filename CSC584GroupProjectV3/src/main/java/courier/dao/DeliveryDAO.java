@@ -28,10 +28,10 @@ public class DeliveryDAO {
 			ps=con.prepareStatement(sql);
 			ps.setString(1,delivery.getDeliveryDate());
 			ps.setString(2,delivery.getDeliveryStatus());
-			ps.setInt(3,delivery.getStaffID());
-			ps.setInt(4,delivery.getParcelID());
-			ps.setInt(5,delivery.getVehicleID());
-			ps.setInt(6,delivery.getRouteID());
+			ps.setInt(3,delivery.getStaffId());
+			ps.setInt(4,delivery.getParcelId());
+			ps.setInt(5,delivery.getVehicleId());
+			ps.setInt(6,delivery.getRouteId());
 
 			//4. execute query
 			ps.executeUpdate();
@@ -53,7 +53,7 @@ public class DeliveryDAO {
 			con = ConnectionManager.getConnection();
 
 			//3. create statement
-			sql = "SELECT * FROM delivery ORDER BY deliveryID";
+			sql = "SELECT * FROM delivery ORDER BY deliveryId";
 			ps = con.prepareStatement(sql);
 
 			//4. execute query
@@ -61,13 +61,13 @@ public class DeliveryDAO {
 
 			while (rs.next()) { 
 				Delivery delivery = new Delivery();
-				delivery.setDeliveryID(rs.getInt("deliveryID"));	  
+				delivery.setDeliveryId(rs.getInt("deliveryId"));	  
 				delivery.setDeliveryDate(rs.getString("delivery_date"));
 				delivery.setDeliveryStatus(rs.getString("delivery_status"));
-				delivery.setStaffID(rs.getInt("staffId"));
-				delivery.setParcelID(rs.getInt("parcelId"));
-				delivery.setVehicleID(rs.getInt("vehicleId"));
-				delivery.setRouteID(rs.getInt("routeId"));
+				delivery.setStaffId(rs.getInt("staffId"));
+				delivery.setParcelId(rs.getInt("parcelId"));
+				delivery.setVehicleId(rs.getInt("vehicleId"));
+				delivery.setRouteId(rs.getInt("routeId"));
 				deliveries.add(delivery);
 			} 
 			//5. close connection
@@ -80,28 +80,28 @@ public class DeliveryDAO {
 	}
 
 	//get delivery by Id
-	public static Delivery getDeliveryById(int deliveryID) {
+	public static Delivery getDeliveryById(int deliveryId) {
 		Delivery delivery = new Delivery();
 		try {
 			//call getConnection() method
 			con = ConnectionManager.getConnection();
 
 			//3. create statement 
-			sql = "SELECT * FROM delivery WHERE deliveryID = ?";
+			sql = "SELECT * FROM delivery WHERE deliveryId = ?";
 			ps = con.prepareStatement(sql);
-			ps.setInt(1, deliveryID);
+			ps.setInt(1, deliveryId);
 
 			//4. execute query
 			rs = ps.executeQuery();
 
 			if (rs.next()) {	            
-				delivery.setDeliveryID(rs.getInt("deliveryID"));	  
+				delivery.setDeliveryId(rs.getInt("deliveryId"));	  
 				delivery.setDeliveryDate(rs.getString("delivery_date"));
 				delivery.setDeliveryStatus(rs.getString("delivery_status"));
-				delivery.setStaffID(rs.getInt("staffId"));
-				delivery.setParcelID(rs.getInt("parcelId"));
-				delivery.setVehicleID(rs.getInt("vehicleId"));
-				delivery.setRouteID(rs.getInt("routeId"));
+				delivery.setStaffId(rs.getInt("staffId"));
+				delivery.setParcelId(rs.getInt("parcelId"));
+				delivery.setVehicleId(rs.getInt("vehicleId"));
+				delivery.setRouteId(rs.getInt("routeId"));
 			}
 
 			//5. close connection
@@ -115,15 +115,15 @@ public class DeliveryDAO {
 	}
 
 	//delete delivery
-	public static void deleteDelivery(int deliveryID) {
+	public static void deleteDelivery(int deliveryId) {
 		try {
 			//call getConnection() method 
 			con = ConnectionManager.getConnection();
 
 			//3. create statement 
-			sql = "DELETE FROM delivery WHERE deliveryID = ?";
+			sql = "DELETE FROM delivery WHERE deliveryId = ?";
 			ps=con.prepareStatement(sql);
-			ps.setInt(1, deliveryID);
+			ps.setInt(1, deliveryId);
 
 			//4. execute query
 			ps.executeUpdate();
@@ -143,14 +143,14 @@ public class DeliveryDAO {
 			con = ConnectionManager.getConnection();
 
 			//3. create statement 
-			sql = "UPDATE delivery SET delivery_date=?, delivery_status=?, staffId=?, parcelId=?, vehicleId=?, routeId=? WHERE deliveryID=?";
+			sql = "UPDATE delivery SET delivery_date=?, delivery_status=?, staffId=?, parcelId=?, vehicleId=?, routeId=? WHERE deliveryId=?";
 			ps=con.prepareStatement(sql);
 			ps.setString(1,delivery.getDeliveryDate());
 			ps.setString(2,delivery.getDeliveryStatus());
-			ps.setInt(3,delivery.getStaffID());
-			ps.setInt(4,delivery.getParcelID());
-			ps.setInt(5,delivery.getVehicleID());
-			ps.setInt(6,delivery.getRouteID());
+			ps.setInt(3,delivery.getStaffId());
+			ps.setInt(4,delivery.getParcelId());
+			ps.setInt(5,delivery.getVehicleId());
+			ps.setInt(6,delivery.getRouteId());
 
 			//4. execute query
 			ps.executeUpdate();

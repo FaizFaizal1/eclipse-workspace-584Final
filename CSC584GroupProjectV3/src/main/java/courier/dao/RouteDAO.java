@@ -58,7 +58,7 @@ public class RouteDAO {
 
 			while (rs.next()) {
 				Route route = new Route();
-				route.setRouteID(rs.getInt("routeId"));
+				route.setRouteId(rs.getInt("routeId"));
 				route.setRouteSource(rs.getString("route_source"));
 				route.setRouteDestination(rs.getString("route_destination"));
 				route.setRouteEstimatedDistance(rs.getDouble("route_estimated_distance"));
@@ -89,7 +89,7 @@ public class RouteDAO {
 			rs = ps.executeQuery();
 
 			if (rs.next()) {
-				route.setRouteID(rs.getInt("routeId"));
+				route.setRouteId(rs.getInt("routeId"));
 				route.setRouteSource(rs.getString("route_source"));
 				route.setRouteDestination(rs.getString("route_destination"));
 				route.setRouteEstimatedDistance(rs.getDouble("route_estimated_distance"));

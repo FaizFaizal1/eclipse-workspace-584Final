@@ -15,7 +15,7 @@ import courier.dao.PaymentDAO;
  * Servlet implementation class PaymentController
  */
 public class PaymentController extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUId = 1L;
 	private RequestDispatcher view;
 	private int paymentId;
 	private String action="", forward="";

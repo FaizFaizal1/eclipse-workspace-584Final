@@ -3,7 +3,7 @@ package courier.model;
 import java.io.Serializable;
 
 public class Delivery implements Serializable {
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUId = 1L;
 	private int deliveryId;
 	private String deliveryDate;
 	private String deliveryStatus;
@@ -12,11 +12,11 @@ public class Delivery implements Serializable {
 	private int vehicleId;
 	private int routeId;
 
-	public int getdeliveryId() {
+	public int getDeliveryId() {
 		return deliveryId;
 	}
 
-	public void setdeliveryId(int deliveryId) {
+	public void setDeliveryId(int deliveryId) {
 		this.deliveryId = deliveryId;
 	}
 
@@ -36,35 +36,35 @@ public class Delivery implements Serializable {
 		this.deliveryStatus = deliveryStatus;
 	}
 
-	public int getStaffID() {
+	public int getStaffId() {
 		return staffId;
 	}
 
-	public void setStaffID(int staffId) {
+	public void setStaffId(int staffId) {
 		this.staffId = staffId;
 	}
 
-	public int getParcelID() {
+	public int getParcelId() {
 		return parcelId;
 	}
 
-	public void setParcelID(int parcelId) {
+	public void setParcelId(int parcelId) {
 		this.parcelId = parcelId;
 	}
 
-	public int getVehicleID() {
+	public int getVehicleId() {
 		return vehicleId;
 	}
 
-	public void setVehicleID(int vehicleId) {
+	public void setVehicleId(int vehicleId) {
 		this.vehicleId = vehicleId;
 	}
 
-	public int getRouteID() {
+	public int getRouteId() {
 		return routeId;
 	}
 
-	public void setRouteID(int routeId) {
+	public void setRouteId(int routeId) {
 		this.routeId = routeId;
 	}
 }

@@ -34,7 +34,7 @@ public class AdminDAO {
 
 			while (rs.next()) {
 				Admin admin = new Admin();
-				admin.setStaffID(rs.getInt("staffId"));
+				admin.setStaffId(rs.getInt("staffId"));
 				admin.setAdminRole(rs.getString("admin_role"));
 				admins.add(admin);
 			}
@@ -63,7 +63,7 @@ public class AdminDAO {
 			rs = ps.executeQuery();
 
 			if (rs.next()) {
-				admin.setStaffID(rs.getInt("staffId"));
+				admin.setStaffId(rs.getInt("staffId"));
 				admin.setAdminRole(rs.getString("admin_role"));
 			}
 			
@@ -89,7 +89,7 @@ public class AdminDAO {
 			sql = "UPDATE admin SET admin_role=? WHERE staffId=?";
 			ps = con.prepareStatement(sql);
 			ps.setString(1, admin.getAdminRole());
-			ps.setInt(2, admin.getStaffID());
+			ps.setInt(2, admin.getStaffId());
 
 			// 4. execute query
 			ps.executeUpdate();

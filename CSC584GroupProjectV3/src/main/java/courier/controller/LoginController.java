@@ -18,7 +18,7 @@ import java.io.IOException;
  * Servlet implementation class LoginController
  */
 public class LoginController extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUId = 1L;
 	private HttpSession session;
 	private RequestDispatcher view;
 
@@ -48,7 +48,7 @@ public class LoginController extends HttpServlet {
 			Staff staff = new Staff();
 
 			//retrieve and set email and password
-			staff.setStaffID(Integer.parseInt(request.getParameter("staffId")));
+			staff.setStaffId(Integer.parseInt(request.getParameter("staffId")));
 			staff.setStaffPassword(request.getParameter("staff_password"));
 			staff.setStaffEmail(request.getParameter("staff_email"));
 
@@ -59,7 +59,7 @@ public class LoginController extends HttpServlet {
 			if (staff.isLoggedIn()) {
 				System.out.println("staff");
 	            HttpSession session = request.getSession(true);
-	            session.setAttribute("sessionId", staff.getStaffID());
+	            session.setAttribute("sessionId", staff.getStaffId());
 	            session.setAttribute("sessionEmail", staff.getStaffEmail());//set current session based on email
 
 	            // Redirect to avoid resubmission

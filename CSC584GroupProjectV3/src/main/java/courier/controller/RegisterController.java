@@ -20,7 +20,7 @@ import java.io.IOException;
  * Servlet implementation class RegisterController
  */
 public class RegisterController extends HttpServlet {
-	private static final long serialVersionUID = 1L; 
+	private static final long serialVersionUId = 1L; 
 	private RequestDispatcher view;
 
 	/**
