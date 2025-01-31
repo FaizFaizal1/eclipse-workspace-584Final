@@ -16,7 +16,7 @@ import courier.dao.ParcelDAO;
 public class ParcelController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private RequestDispatcher view;
-	private int parcelID;
+	private int parcelId;
 	private String action="", forward="";
 	private static String LIST = "scansort.jsp";
        

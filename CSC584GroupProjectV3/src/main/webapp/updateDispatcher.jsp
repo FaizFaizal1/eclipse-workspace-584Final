@@ -45,7 +45,7 @@
     <input type="password" class="form-control" id="dispatcher_password" name="dispatcher_password" placeholder="dispatcher_password.." required>   
   </div>
   <div class="mb-3">
-    <label for="dispatcher_status" class="form-label">dispatcher_status_${staff.staffID}</label> <br>   
+    <label for="dispatcher_status" class="form-label">dispatcher_status_${staff.staffId}</label> <br>   
     <input type="radio" id="dispatcher_status" name="dispatcher_status" value="Active">Active
     <input type="radio" id="dispatcher_status" name="dispatcher_status" value="Inactive">Inactive
   </div>
@@ -55,7 +55,7 @@
     <input type="radio" id="dispatcher_employment_type" name="dispatcher_employment_type" value="Part-time">Part-time
   </div>
   <div class="mb-3">
-    <input type="hidden" id="staffID" name="staffID" value="${staff.staffID}">
+    <input type="hidden" id="staffId" name="staffId" value="${staff.staffId}">
   </div>
   <div class="mb-3">
     <input type="hidden" id="staff_role" name="staff_role" value="${staff.staffRole}">   	

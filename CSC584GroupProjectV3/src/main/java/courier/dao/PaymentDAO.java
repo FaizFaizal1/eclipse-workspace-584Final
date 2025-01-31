@@ -24,7 +24,7 @@ public class PaymentDAO {
 			con = ConnectionManager.getConnection();
 
 			// 3. create statement
-			sql = "INSERT INTO payment(payment_amount,payment_date,payment_status,staffID)VALUES(?,?,?,?)";
+			sql = "INSERT INTO payment(payment_amount,payment_date,payment_status,staffId)VALUES(?,?,?,?)";
 			ps = con.prepareStatement(sql);
 			ps.setDouble(1, payment.getPaymentAmount());
 			ps.setString(2, payment.getPaymentDate());
@@ -51,7 +51,7 @@ public class PaymentDAO {
 			con = ConnectionManager.getConnection();
 
 			// 3. create statement
-			sql = "SELECT * FROM payment ORDER BY paymentID";
+			sql = "SELECT * FROM payment ORDER BY paymentId";
 			ps = con.prepareStatement(sql);
 
 			// 4. execute query
@@ -59,11 +59,11 @@ public class PaymentDAO {
 
 			while (rs.next()) {
 				Payment payment = new Payment();
-				payment.setPaymentID(rs.getInt("paymentID"));
+				payment.setPaymentID(rs.getInt("paymentId"));
 				payment.setPaymentAmount(rs.getDouble("payment_amount"));
 				payment.setPaymentDate(rs.getString("payment_date"));
 				payment.setPaymentStatus(rs.getString("payment_status"));
-				payment.setParcelID(rs.getInt("parcelID"));
+				payment.setParcelID(rs.getInt("parcelId"));
 				payments.add(payment);
 			}
 			// 5. close connection
@@ -76,26 +76,26 @@ public class PaymentDAO {
 	}
 
 	// get payment by Id
-	public static Payment getPaymentById(int paymentID) {
+	public static Payment getPaymentById(int paymentId) {
 		Payment payment = new Payment();
 		try {
 			// call getConnection() method
 			con = ConnectionManager.getConnection();
 
 			// 3. create statement
-			sql = "SELECT * FROM payment WHERE paymentID = ?";
+			sql = "SELECT * FROM payment WHERE paymentId = ?";
 			ps = con.prepareStatement(sql);
-			ps.setInt(1, paymentID);
+			ps.setInt(1, paymentId);
 
 			// 4. execute query
 			rs = ps.executeQuery();
 
 			if (rs.next()) {
-				payment.setPaymentID(rs.getInt("paymentID"));
+				payment.setPaymentID(rs.getInt("paymentId"));
 				payment.setPaymentAmount(rs.getDouble("payment_amount"));
 				payment.setPaymentDate(rs.getString("payment_date"));
 				payment.setPaymentStatus(rs.getString("payment_status"));
-				payment.setParcelID(rs.getInt("parcelID"));
+				payment.setParcelID(rs.getInt("parcelId"));
 			}
 
 			// 5. close connection
@@ -109,15 +109,15 @@ public class PaymentDAO {
 	}
 
 	// delete payment
-	public static void deletePayment(int paymentID) {
+	public static void deletePayment(int paymentId) {
 		try {
 			// call getConnection() method
 			con = ConnectionManager.getConnection();
 
 			// 3. create statement
-			sql = "DELETE FROM payment WHERE paymentID = ?";
+			sql = "DELETE FROM payment WHERE paymentId = ?";
 			ps = con.prepareStatement(sql);
-			ps.setInt(1, paymentID);
+			ps.setInt(1, paymentId);
 
 			// 4. execute query
 			ps.executeUpdate();
@@ -137,7 +137,7 @@ public class PaymentDAO {
 			con = ConnectionManager.getConnection();
 
 			// 3. create statement
-			sql = "UPDATE payment SET payment_amount=?, payment_date=?, payment_status=?, parcelID=? WHERE paymentID=?";
+			sql = "UPDATE payment SET payment_amount=?, payment_date=?, payment_status=?, parcelId=? WHERE paymentId=?";
 			ps = con.prepareStatement(sql);
 			ps.setDouble(1, payment.getPaymentAmount());
 			ps.setString(2, payment.getPaymentDate());

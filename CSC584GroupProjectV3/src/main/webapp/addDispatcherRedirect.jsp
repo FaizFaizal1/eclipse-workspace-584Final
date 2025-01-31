@@ -11,7 +11,7 @@
 <html>
 <head>
 	<meta http-equiv = "refresh" content = "1"; url = "http://localhost:8080/CSC584GroupProject/UpdateDispatcherTempController?dispatcher_employment_type=
-	${staff.dispatcher.employmentType}&staffID=${staff.staffID}&dispatcher_status=Inactive" />
+	${staff.dispatcher.employmentType}&staffId=${staff.staffId}&dispatcher_status=Inactive" />
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 	<title>Redirect</title>
 </head>

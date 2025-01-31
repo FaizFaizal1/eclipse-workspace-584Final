@@ -24,7 +24,7 @@ public class ParcelDAO {
 			con = ConnectionManager.getConnection();
 
 			//3. create statement
-			sql = "INSERT INTO parcel(parcel_name,parcel_address,parcel_weight,parcel_status,staffID)VALUES(?,?,?,?,?,?)";
+			sql = "INSERT INTO parcel(parcel_name,parcel_address,parcel_weight,parcel_status,staffId)VALUES(?,?,?,?,?,?)";
 			ps=con.prepareStatement(sql);
 			ps.setString(1,parcel.getParcelName());
 			ps.setString(2,parcel.getParcelAddress());
@@ -53,7 +53,7 @@ public class ParcelDAO {
 			System.out.println("getAllParcels");
 
 			//3. create statement
-			sql = "SELECT * FROM parcel ORDER BY parcelID";
+			sql = "SELECT * FROM parcel ORDER BY parcelId";
 			ps = con.prepareStatement(sql);
 
 			//4. execute query
@@ -61,12 +61,12 @@ public class ParcelDAO {
 
 			while (rs.next()) { 
 				Parcel parcel = new Parcel();
-				parcel.setParcelID(rs.getInt("parcelID"));	  
+				parcel.setParcelID(rs.getInt("parcelId"));	  
 				parcel.setParcelName(rs.getString("parcel_name"));
 				parcel.setParcelAddress(rs.getString("parcel_address"));
 				parcel.setParcelWeight(rs.getDouble("parcel_weight"));
 				parcel.setParcelStatus(rs.getString("parcel_status"));
-				parcel.setStaffID(rs.getInt("staffID"));
+				parcel.setStaffID(rs.getInt("staffId"));
 				parcels.add(parcel);
 
 			} 
@@ -81,27 +81,27 @@ public class ParcelDAO {
 	}
 
 	//get parcel by Id
-	public static Parcel getParcelById(int parcelID) {
+	public static Parcel getParcelById(int parcelId) {
 		Parcel parcel = new Parcel();
 		try {
 			//call getConnection() method
 			con = ConnectionManager.getConnection();
 
 			//3. create statement 
-			sql = "SELECT * FROM parcel WHERE parcelID = ?";
+			sql = "SELECT * FROM parcel WHERE parcelId = ?";
 			ps = con.prepareStatement(sql);
-			ps.setInt(1, parcelID);
+			ps.setInt(1, parcelId);
 
 			//4. execute query
 			rs = ps.executeQuery();
 
 			if (rs.next()) {	            
-				parcel.setParcelID(rs.getInt("parcelID"));	  
+				parcel.setParcelID(rs.getInt("parcelId"));	  
 				parcel.setParcelName(rs.getString("parcel_name"));
 				parcel.setParcelAddress(rs.getString("parcel_address"));
 				parcel.setParcelWeight(rs.getDouble("parcel_weight"));
 				parcel.setParcelStatus(rs.getString("parcel_status"));
-				parcel.setStaffID(rs.getInt("staffID"));
+				parcel.setStaffID(rs.getInt("staffId"));
 			}
 
 			//5. close connection
@@ -115,15 +115,15 @@ public class ParcelDAO {
 	}
 
 	//delete parcel
-	public static void deleteParcel(int parcelID) {
+	public static void deleteParcel(int parcelId) {
 		try {
 			//call getConnection() method 
 			con = ConnectionManager.getConnection();
 
 			//3. create statement 
-			sql = "DELETE FROM parcel WHERE parcelID = ?";
+			sql = "DELETE FROM parcel WHERE parcelId = ?";
 			ps=con.prepareStatement(sql);
-			ps.setInt(1, parcelID);
+			ps.setInt(1, parcelId);
 
 			//4. execute query
 			ps.executeUpdate();
@@ -143,7 +143,7 @@ public class ParcelDAO {
 			con = ConnectionManager.getConnection();
 
 			//3. create statement 
-			sql = "UPDATE parcel SET parcel_name=?, parcel_address=?, parcel_weight=?, parcel_status=?, staffID=? WHERE parcelID=?";
+			sql = "UPDATE parcel SET parcel_name=?, parcel_address=?, parcel_weight=?, parcel_status=?, staffId=? WHERE parcelId=?";
 			ps=con.prepareStatement(sql);
 			ps.setString(1,parcel.getParcelName());
 			ps.setString(2,parcel.getParcelAddress());

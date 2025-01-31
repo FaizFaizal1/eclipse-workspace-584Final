@@ -31,9 +31,9 @@ public class SendStaffIDController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		int staffID = Integer.parseInt(request.getParameter("staffID"));
+		int staffId = Integer.parseInt(request.getParameter("staffId"));
 
-		request.setAttribute("staff", StaffDAO.getStaffById(staffID));
+		request.setAttribute("staff", StaffDAO.getStaffById(staffId));
 		RequestDispatcher view = request.getRequestDispatcher("updateDispatcher.jsp"); //updateStaff.jsp old
         view.forward(request, response);
 	}

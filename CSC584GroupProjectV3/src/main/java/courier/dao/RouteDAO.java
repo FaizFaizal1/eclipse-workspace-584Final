@@ -50,7 +50,7 @@ public class RouteDAO {
 			con = ConnectionManager.getConnection();
 
 			// 3. create statement
-			sql = "SELECT * FROM route ORDER BY routeID";
+			sql = "SELECT * FROM route ORDER BY routeId";
 			ps = con.prepareStatement(sql);
 
 			// 4. execute query
@@ -58,7 +58,7 @@ public class RouteDAO {
 
 			while (rs.next()) {
 				Route route = new Route();
-				route.setRouteID(rs.getInt("routeID"));
+				route.setRouteID(rs.getInt("routeId"));
 				route.setRouteSource(rs.getString("route_source"));
 				route.setRouteDestination(rs.getString("route_destination"));
 				route.setRouteEstimatedDistance(rs.getDouble("route_estimated_distance"));
@@ -74,22 +74,22 @@ public class RouteDAO {
 	}
 
 	// get route by Id
-	public static Route getRouteById(int routeID) {
+	public static Route getRouteById(int routeId) {
 		Route route = new Route();
 		try {
 			// call getConnection() method
 			con = ConnectionManager.getConnection();
 
 			// 3. create statement
-			sql = "SELECT * FROM route WHERE routeID = ?";
+			sql = "SELECT * FROM route WHERE routeId = ?";
 			ps = con.prepareStatement(sql);
-			ps.setInt(1, routeID);
+			ps.setInt(1, routeId);
 
 			// 4. execute query
 			rs = ps.executeQuery();
 
 			if (rs.next()) {
-				route.setRouteID(rs.getInt("routeID"));
+				route.setRouteID(rs.getInt("routeId"));
 				route.setRouteSource(rs.getString("route_source"));
 				route.setRouteDestination(rs.getString("route_destination"));
 				route.setRouteEstimatedDistance(rs.getDouble("route_estimated_distance"));
@@ -106,15 +106,15 @@ public class RouteDAO {
 	}
 
 	// delete route
-	public static void deleteRoute(int routeID) {
+	public static void deleteRoute(int routeId) {
 		try {
 			// call getConnection() method
 			con = ConnectionManager.getConnection();
 
 			// 3. create statement
-			sql = "DELETE FROM route WHERE routeID = ?";
+			sql = "DELETE FROM route WHERE routeId = ?";
 			ps = con.prepareStatement(sql);
-			ps.setInt(1, routeID);
+			ps.setInt(1, routeId);
 
 			// 4. execute query
 			ps.executeUpdate();
@@ -134,7 +134,7 @@ public class RouteDAO {
 			con = ConnectionManager.getConnection();
 
 			// 3. create statement
-			sql = "UPDATE route SET route_source=?, route_destination=?, route_estimated_distance=? WHERE routeID=?";
+			sql = "UPDATE route SET route_source=?, route_destination=?, route_estimated_distance=? WHERE routeId=?";
 			ps = con.prepareStatement(sql);
 			ps.setString(1, route.getRouteSource());
 			ps.setString(2, route.getRouteDestination());

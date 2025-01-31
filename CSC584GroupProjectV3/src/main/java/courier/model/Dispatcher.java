@@ -4,17 +4,17 @@ import java.io.Serializable;
 
 public class Dispatcher implements Serializable {
 	private static final long serialVersionUID = 1L;
-	private int staffID; // use dispatcherID? example given by miss uses different ID name.
+	private int staffId; // use dispatcherID? example given by miss uses different ID name.
 	private String dispatcherStatus;
 	private String dispatcherEmploymentType;
 	private Staff staff;
 
 	public int getStaffID() {
-		return staffID;
+		return staffId;
 	}
 
-	public void setStaffID(int staffID) {
-		this.staffID = staffID;
+	public void setStaffID(int staffId) {
+		this.staffId = staffId;
 	}
 
 	public String getDispatcherStatus() {

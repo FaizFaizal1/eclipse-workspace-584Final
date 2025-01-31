@@ -26,7 +26,7 @@ public class AdminDAO {
 			con = ConnectionManager.getConnection();
 
 			// 3. create statement
-			sql = "SELECT * FROM admin ORDER BY staffID";
+			sql = "SELECT * FROM admin ORDER BY staffId";
 			ps = con.prepareStatement(sql);
 
 			// 4. execute query
@@ -34,7 +34,7 @@ public class AdminDAO {
 
 			while (rs.next()) {
 				Admin admin = new Admin();
-				admin.setStaffID(rs.getInt("staffID"));
+				admin.setStaffID(rs.getInt("staffId"));
 				admin.setAdminRole(rs.getString("admin_role"));
 				admins.add(admin);
 			}
@@ -47,23 +47,23 @@ public class AdminDAO {
 		return admins;
 	}
 
-	// get admin by staffID
-	public static Admin getAdminById(int staffID) {
+	// get admin by staffId
+	public static Admin getAdminById(int staffId) {
 		Admin admin = new Admin();
 		try {
 			// call getConnection() method
 			con = ConnectionManager.getConnection();
 
 			// 3. create statement
-			sql = "SELECT * FROM admin WHERE staffID = ?";
+			sql = "SELECT * FROM admin WHERE staffId = ?";
 			ps = con.prepareStatement(sql);
-			ps.setInt(1, staffID);
+			ps.setInt(1, staffId);
 
 			// 4. execute query
 			rs = ps.executeQuery();
 
 			if (rs.next()) {
-				admin.setStaffID(rs.getInt("staffID"));
+				admin.setStaffID(rs.getInt("staffId"));
 				admin.setAdminRole(rs.getString("admin_role"));
 			}
 			
@@ -86,7 +86,7 @@ public class AdminDAO {
 			con = ConnectionManager.getConnection();
 
 			// 3. create statement
-			sql = "UPDATE admin SET admin_role=? WHERE staffID=?";
+			sql = "UPDATE admin SET admin_role=? WHERE staffId=?";
 			ps = con.prepareStatement(sql);
 			ps.setString(1, admin.getAdminRole());
 			ps.setInt(2, admin.getStaffID());

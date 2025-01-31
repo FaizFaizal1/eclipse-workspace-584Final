@@ -4,19 +4,19 @@ import java.io.Serializable;
 
 public class Parcel implements Serializable {
 	private static final long serialVersionUID = 1L;
-	private int parcelID;
+	private int parcelId;
 	private String parcelName;
 	private String parcelAddress;
 	private double parcelWeight;
 	private String parcelStatus;
-	private int staffID;
+	private int staffId;
 
 	public int getParcelID() {
-		return parcelID;
+		return parcelId;
 	}
 
-	public void setParcelID(int parcelID) {
-		this.parcelID = parcelID;
+	public void setParcelID(int parcelId) {
+		this.parcelId = parcelId;
 	}
 
 	public String getParcelName() {
@@ -52,11 +52,11 @@ public class Parcel implements Serializable {
 	}
 
 	public int getStaffID() {
-		return staffID;
+		return staffId;
 	}
 
-	public void setStaffID(int staffID) {
-		this.staffID = staffID;
+	public void setStaffID(int staffId) {
+		this.staffId = staffId;
 	}
 
 	public static long getSerialversionuid() {

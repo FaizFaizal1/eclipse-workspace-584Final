@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 public class Staff implements Serializable {
 	private static final long serialVersionUID = 1L;
-	private int staffID;
+	private int staffId;
 	private String staffFirstName;
 	private String staffLastName;
 	private String staffPhoneNumber;
@@ -24,11 +24,11 @@ public class Staff implements Serializable {
 	}
 
 	public int getStaffID() {
-		return staffID;
+		return staffId;
 	}
 
-	public void setStaffID(int staffID) {
-		this.staffID = staffID;
+	public void setStaffID(int staffId) {
+		this.staffId = staffId;
 	}
 
 	public String getStaffFirstName() {

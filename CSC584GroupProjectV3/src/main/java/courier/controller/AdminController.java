@@ -23,7 +23,7 @@ import courier.model.Staff;
 public class AdminController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private RequestDispatcher view;
-	private int staffID;
+	private int staffId;
 	private String action="", forward="";
 //	private static String LIST = "scansort.jsp";
 	private static String UPDATE = "updateAdmin.jsp";
@@ -48,9 +48,9 @@ public class AdminController extends HttpServlet {
 		if(action.equalsIgnoreCase("updateProfile")) {
 			System.out.println("UPDATE");
 			forward = UPDATE;
-			staffID = Integer.parseInt(request.getParameter("staffID"));
-			System.out.println(staffID);
-			request.setAttribute("staff", StaffDAO.getStaffById(staffID));
+			staffId = Integer.parseInt(request.getParameter("staffId"));
+			System.out.println(staffId);
+			request.setAttribute("staff", StaffDAO.getStaffById(staffId));
 		}		
 
 		view = request.getRequestDispatcher(forward);
@@ -73,10 +73,10 @@ public class AdminController extends HttpServlet {
 		
 		admin.setAdminRole(request.getParameter("admin_role"));
 		
-		String staffID = request.getParameter("staffID");
+		String staffId = request.getParameter("staffId");
 		
-		staff.setStaffID(Integer.parseInt(staffID));
-		admin.setStaffID(Integer.parseInt(staffID));
+		staff.setStaffID(Integer.parseInt(staffId));
+		admin.setStaffID(Integer.parseInt(staffId));
 		admin.setStaff(staff);
 
 		//update admin

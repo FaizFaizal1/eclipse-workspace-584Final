@@ -24,7 +24,7 @@ public class VehicleDAO {
 			con = ConnectionManager.getConnection();
 
 			// 3. create statement
-			sql = "INSERT INTO vehicle(vehicle_registration_number,vehicle_type,vehicle_capacity,vehicle_status,staffID)VALUES(?,?,?,?,?)";
+			sql = "INSERT INTO vehicle(vehicle_registration_number,vehicle_type,vehicle_capacity,vehicle_status,staffId)VALUES(?,?,?,?,?)";
 			ps = con.prepareStatement(sql);
 			ps.setString(1, vehicle.getVehicleRegistrationNumber());
 			ps.setString(2, vehicle.getVehicleType());
@@ -52,7 +52,7 @@ public class VehicleDAO {
 			con = ConnectionManager.getConnection();
 
 			// 3. create statement
-			sql = "SELECT * FROM vehicle ORDER BY vehicleID";
+			sql = "SELECT * FROM vehicle ORDER BY vehicleId";
 			ps = con.prepareStatement(sql);
 
 			// 4. execute query
@@ -60,12 +60,12 @@ public class VehicleDAO {
 
 			while (rs.next()) {
 				Vehicle vehicle = new Vehicle();
-				vehicle.setVehicleID(rs.getInt("vehicleID"));
+				vehicle.setVehicleID(rs.getInt("vehicleId"));
 				vehicle.setVehicleRegistrationNumber(rs.getString("vehicle_registration_number"));
 				vehicle.setVehicleType(rs.getString("vehicle_type"));
 				vehicle.setVehicleCapacity(rs.getInt("vehicle_capacity"));
 				vehicle.setVehicleStatus(rs.getString("vehicle_status"));
-				vehicle.setStaffID(rs.getInt("staffID"));
+				vehicle.setStaffID(rs.getInt("staffId"));
 				vehicles.add(vehicle);
 			}
 			// 5. close connection
@@ -78,27 +78,27 @@ public class VehicleDAO {
 	}
 
 	// get vehicle by Id
-	public static Vehicle getVehicleById(int vehicleID) {
+	public static Vehicle getVehicleById(int vehicleId) {
 		Vehicle vehicle = new Vehicle();
 		try {
 			// call getConnection() method
 			con = ConnectionManager.getConnection();
 
 			// 3. create statement
-			sql = "SELECT * FROM vehicle WHERE vehicleID = ?";
+			sql = "SELECT * FROM vehicle WHERE vehicleId = ?";
 			ps = con.prepareStatement(sql);
-			ps.setInt(1, vehicleID);
+			ps.setInt(1, vehicleId);
 
 			// 4. execute query
 			rs = ps.executeQuery();
 
 			if (rs.next()) {
-				vehicle.setVehicleID(rs.getInt("vehicleID"));
+				vehicle.setVehicleID(rs.getInt("vehicleId"));
 				vehicle.setVehicleRegistrationNumber(rs.getString("vehicle_registration_number"));
 				vehicle.setVehicleType(rs.getString("vehicle_type"));
 				vehicle.setVehicleCapacity(rs.getInt("vehicle_capacity"));
 				vehicle.setVehicleStatus(rs.getString("vehicle_status"));
-				vehicle.setStaffID(rs.getInt("staffID"));
+				vehicle.setStaffID(rs.getInt("staffId"));
 			}
 
 			// 5. close connection
@@ -112,15 +112,15 @@ public class VehicleDAO {
 	}
 
 	// delete vehicle
-	public static void deleteVehicle(int vehicleID) {
+	public static void deleteVehicle(int vehicleId) {
 		try {
 			// call getConnection() method
 			con = ConnectionManager.getConnection();
 
 			// 3. create statement
-			sql = "DELETE FROM vehicle WHERE vehicleID = ?";
+			sql = "DELETE FROM vehicle WHERE vehicleId = ?";
 			ps = con.prepareStatement(sql);
-			ps.setInt(1, vehicleID);
+			ps.setInt(1, vehicleId);
 
 			// 4. execute query
 			ps.executeUpdate();
@@ -140,7 +140,7 @@ public class VehicleDAO {
 			con = ConnectionManager.getConnection();
 
 			// 3. create statement
-			sql = "UPDATE vehicle SET vehicle_registration_number=?, vehicle_type=?, vehicle_capacity=?, vehicle_status=?, staffID=? WHERE vehicleID=?";
+			sql = "UPDATE vehicle SET vehicle_registration_number=?, vehicle_type=?, vehicle_capacity=?, vehicle_status=?, staffId=? WHERE vehicleId=?";
 			ps = con.prepareStatement(sql);
 			ps.setString(1, vehicle.getVehicleRegistrationNumber());
 			ps.setString(2, vehicle.getVehicleType());

@@ -60,7 +60,7 @@ if (session == null || session.getAttribute("sessionEmail") == null) {
   </tr>
  <c:forEach items="${dispatchers}" var="dispatcher">
   	<tr>
-    <td><c:out value="${dispatcher.staffID}" /></td>
+    <td><c:out value="${dispatcher.staffId}" /></td>
     <td><c:out value="${dispatcher.staff.staffFirstName}" /></td>
     <td><c:out value="${dispatcher.staff.staffLastName}" /></td>
     <td><c:out value="${dispatcher.staff.staffPhoneNumber}" /></td>  

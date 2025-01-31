@@ -172,11 +172,11 @@
 							<tbody>
 								<c:forEach items="${payments}" var="payment">
 									<tr>
-										<td><c:out value="${payment.paymentID}" /></td>
+										<td><c:out value="${payment.paymentId}" /></td>
 										<td><c:out value="${payment.paymentAmount}" /></td>
 										<td><c:out value="${payment.paymentDate}" /></td>
 										<td><c:out value="${payment.paymentStatus}" /></td>
-										<td><c:out value="${payment.parcelID}" /></td>
+										<td><c:out value="${payment.parcelId}" /></td>
 									</tr>
 								</c:forEach>
 							</tbody>

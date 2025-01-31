@@ -33,7 +33,7 @@ public class UpdateDispatcherTempController extends HttpServlet {
 		
 		dispatcher.setDispatcherEmploymentType(request.getParameter("dispatcher_employment_type"));
 		dispatcher.setDispatcherStatus(request.getParameter("dispatcher_status"));
-		dispatcher.setStaffID(Integer.parseInt(request.getParameter("staffID")));
+		dispatcher.setStaffID(Integer.parseInt(request.getParameter("staffId")));
 		
 		DispatcherDAO.updateDispatcher(dispatcher);
 	}

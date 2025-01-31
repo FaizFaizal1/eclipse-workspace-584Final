@@ -55,8 +55,8 @@ public class AddDispatcherController extends HttpServlet {
 		
 		try {
 			StaffDAO.addStaff(dispatcher.getStaff());
-			int staffID = StaffDAO.getStaffByEmail(dispatcher.getStaff().getStaffEmail()).getStaffID();
-			dispatcher.setStaffID(staffID);
+			int staffId = StaffDAO.getStaffByEmail(dispatcher.getStaff().getStaffEmail()).getStaffID();
+			dispatcher.setStaffID(staffId);
 			DispatcherDAO.updateDispatcher(dispatcher);
 		} catch (NoSuchAlgorithmException e) {
 			e.printStackTrace();

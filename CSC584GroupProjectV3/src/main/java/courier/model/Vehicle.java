@@ -4,19 +4,19 @@ import java.io.Serializable;
 
 public class Vehicle implements Serializable {
 	private static final long serialVersionUID = 1L;
-	private int vehicleID;
+	private int vehicleId;
 	private String vehicleRegistrationNumber;
 	private String vehicleType;
 	private int vehicleCapacity;
 	private String vehicleStatus;
-	private int staffID;
+	private int staffId;
 
 	public int getVehicleID() {
-		return vehicleID;
+		return vehicleId;
 	}
 
-	public void setVehicleID(int vehicleID) {
-		this.vehicleID = vehicleID;
+	public void setVehicleID(int vehicleId) {
+		this.vehicleId = vehicleId;
 	}
 
 	public String getVehicleRegistrationNumber() {
@@ -52,11 +52,11 @@ public class Vehicle implements Serializable {
 	}
 
 	public int getStaffID() {
-		return staffID;
+		return staffId;
 	}
 
-	public void setStaffID(int staffID) {
-		this.staffID = staffID;
+	public void setStaffID(int staffId) {
+		this.staffId = staffId;
 	}
 
 	public static long getSerialversionuid() {

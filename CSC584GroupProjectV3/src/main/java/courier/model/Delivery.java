@@ -4,20 +4,20 @@ import java.io.Serializable;
 
 public class Delivery implements Serializable {
 	private static final long serialVersionUID = 1L;
-	private int deliveryID;
+	private int deliveryId;
 	private String deliveryDate;
 	private String deliveryStatus;
-	private int staffID;
-	private int parcelID;
-	private int vehicleID;
-	private int routeID;
+	private int staffId;
+	private int parcelId;
+	private int vehicleId;
+	private int routeId;
 
-	public int getDeliveryID() {
-		return deliveryID;
+	public int getdeliveryId() {
+		return deliveryId;
 	}
 
-	public void setDeliveryID(int deliveryID) {
-		this.deliveryID = deliveryID;
+	public void setdeliveryId(int deliveryId) {
+		this.deliveryId = deliveryId;
 	}
 
 	public String getDeliveryDate() {
@@ -37,34 +37,34 @@ public class Delivery implements Serializable {
 	}
 
 	public int getStaffID() {
-		return staffID;
+		return staffId;
 	}
 
-	public void setStaffID(int staffID) {
-		this.staffID = staffID;
+	public void setStaffID(int staffId) {
+		this.staffId = staffId;
 	}
 
 	public int getParcelID() {
-		return parcelID;
+		return parcelId;
 	}
 
-	public void setParcelID(int parcelID) {
-		this.parcelID = parcelID;
+	public void setParcelID(int parcelId) {
+		this.parcelId = parcelId;
 	}
 
 	public int getVehicleID() {
-		return vehicleID;
+		return vehicleId;
 	}
 
-	public void setVehicleID(int vehicleID) {
-		this.vehicleID = vehicleID;
+	public void setVehicleID(int vehicleId) {
+		this.vehicleId = vehicleId;
 	}
 
 	public int getRouteID() {
-		return routeID;
+		return routeId;
 	}
 
-	public void setRouteID(int routeID) {
-		this.routeID = routeID;
+	public void setRouteID(int routeId) {
+		this.routeId = routeId;
 	}
 }

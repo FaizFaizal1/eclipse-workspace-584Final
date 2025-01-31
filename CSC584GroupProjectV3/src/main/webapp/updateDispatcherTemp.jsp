@@ -31,7 +31,7 @@
     <input type="radio" id="dispatcher_employment_type" name="dispatcher_employment_type" value="Part-time">Inactive
   </div>
   <div class="mb-3">
-    <input type="hidden" id="staffID" name="staffID" value="${staff.staffID}">   	
+    <input type="hidden" id="staffId" name="staffId" value="${staff.staffId}">   	
   </div>
   <div class="mb-3">
     <input type="submit" class="btn btn-primary" value="Submit"> 

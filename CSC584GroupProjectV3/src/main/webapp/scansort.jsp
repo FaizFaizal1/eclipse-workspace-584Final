@@ -171,12 +171,12 @@
 							<tbody>
 								<c:forEach items="${parcels}" var="parcel">
 									<tr>
-										<td><c:out value="${parcel.parcelID}" /></td>
+										<td><c:out value="${parcel.parcelId}" /></td>
 										<td><c:out value="${parcel.parcelName}" /></td>
 										<td><c:out value="${parcel.parcelAddress}" /></td>
 										<td><c:out value="${parcel.parcelWeight}" /></td>
 										<td><c:out value="${parcel.parcelStatus}" /></td>
-										<td><c:out value="${parcel.staffID}" /></td>
+										<td><c:out value="${parcel.staffId}" /></td>
 									</tr>
 								</c:forEach>
 							</tbody>

@@ -24,7 +24,7 @@ public class DeliveryDAO {
 			con = ConnectionManager.getConnection();
 
 			//3. create statement
-			sql = "INSERT INTO delivery(delivery_date,delivery_status,staffID,parcelID,vehicleID,routeID)VALUES(?,?,?,?,?,?)";
+			sql = "INSERT INTO delivery(delivery_date,delivery_status,staffId,parcelId,vehicleId,routeId)VALUES(?,?,?,?,?,?)";
 			ps=con.prepareStatement(sql);
 			ps.setString(1,delivery.getDeliveryDate());
 			ps.setString(2,delivery.getDeliveryStatus());
@@ -64,10 +64,10 @@ public class DeliveryDAO {
 				delivery.setDeliveryID(rs.getInt("deliveryID"));	  
 				delivery.setDeliveryDate(rs.getString("delivery_date"));
 				delivery.setDeliveryStatus(rs.getString("delivery_status"));
-				delivery.setStaffID(rs.getInt("staffID"));
-				delivery.setParcelID(rs.getInt("parcelID"));
-				delivery.setVehicleID(rs.getInt("vehicleID"));
-				delivery.setRouteID(rs.getInt("routeID"));
+				delivery.setStaffID(rs.getInt("staffId"));
+				delivery.setParcelID(rs.getInt("parcelId"));
+				delivery.setVehicleID(rs.getInt("vehicleId"));
+				delivery.setRouteID(rs.getInt("routeId"));
 				deliveries.add(delivery);
 			} 
 			//5. close connection
@@ -98,10 +98,10 @@ public class DeliveryDAO {
 				delivery.setDeliveryID(rs.getInt("deliveryID"));	  
 				delivery.setDeliveryDate(rs.getString("delivery_date"));
 				delivery.setDeliveryStatus(rs.getString("delivery_status"));
-				delivery.setStaffID(rs.getInt("staffID"));
-				delivery.setParcelID(rs.getInt("parcelID"));
-				delivery.setVehicleID(rs.getInt("vehicleID"));
-				delivery.setRouteID(rs.getInt("routeID"));
+				delivery.setStaffID(rs.getInt("staffId"));
+				delivery.setParcelID(rs.getInt("parcelId"));
+				delivery.setVehicleID(rs.getInt("vehicleId"));
+				delivery.setRouteID(rs.getInt("routeId"));
 			}
 
 			//5. close connection
@@ -143,7 +143,7 @@ public class DeliveryDAO {
 			con = ConnectionManager.getConnection();
 
 			//3. create statement 
-			sql = "UPDATE delivery SET delivery_date=?, delivery_status=?, staffID=?, parcelID=?, vehicleID=?, routeID=? WHERE deliveryID=?";
+			sql = "UPDATE delivery SET delivery_date=?, delivery_status=?, staffId=?, parcelId=?, vehicleId=?, routeId=? WHERE deliveryID=?";
 			ps=con.prepareStatement(sql);
 			ps.setString(1,delivery.getDeliveryDate());
 			ps.setString(2,delivery.getDeliveryStatus());

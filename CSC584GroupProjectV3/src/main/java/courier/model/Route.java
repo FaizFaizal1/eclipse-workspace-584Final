@@ -4,17 +4,17 @@ import java.io.Serializable;
 
 public class Route implements Serializable {
 	private static final long serialVersionUID = 1L;
-	private int routeID;
+	private int routeId;
 	private String routeSource;
 	private String routeDestination;
 	private double routeEstimatedDistance;
 
 	public int getRouteID() {
-		return routeID;
+		return routeId;
 	}
 
-	public void setRouteID(int routeID) {
-		this.routeID = routeID;
+	public void setRouteID(int routeId) {
+		this.routeId = routeId;
 	}
 
 	public String getRouteSource() {

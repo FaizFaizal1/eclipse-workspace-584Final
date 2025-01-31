@@ -50,7 +50,7 @@
     <input type="radio" id="admin_role" name="admin_role" value="Member">Member
   </div>
   <div class="mb-3">
-    <input type="hidden" id="staffID" name="staffID" value="${staff.staffID}">
+    <input type="hidden" id="staffId" name="staffId" value="${staff.staffId}">
   </div>
   <div class="mb-3">
     <input type="hidden" id="staff_role" name="staff_role" value="${staff.staffRole}">   	

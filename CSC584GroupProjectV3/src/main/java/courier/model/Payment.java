@@ -4,18 +4,18 @@ import java.io.Serializable;
 
 public class Payment implements Serializable {
 	private static final long serialVersionUID = 1L;
-	private int paymentID;
+	private int paymentId;
 	private double paymentAmount;
 	private String paymentDate;
 	private String paymentStatus;
-	private int parcelID;
+	private int parcelId;
 
 	public int getPaymentID() {
-		return paymentID;
+		return paymentId;
 	}
 
-	public void setPaymentID(int paymentID) {
-		this.paymentID = paymentID;
+	public void setPaymentID(int paymentId) {
+		this.paymentId = paymentId;
 	}
 
 	public double getPaymentAmount() {
@@ -43,11 +43,11 @@ public class Payment implements Serializable {
 	}
 
 	public int getParcelID() {
-		return parcelID;
+		return parcelId;
 	}
 
-	public void setParcelID(int parcelID) {
-		this.parcelID = parcelID;
+	public void setParcelID(int parcelId) {
+		this.parcelId = parcelId;
 	}
 
 	public static long getSerialversionuid() {

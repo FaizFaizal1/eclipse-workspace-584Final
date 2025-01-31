@@ -51,10 +51,10 @@ public class UpdateDispatcherController extends HttpServlet {
 		dispatcher.setDispatcherStatus(request.getParameter("dispatcher_status"));
 		dispatcher.setDispatcherEmploymentType(request.getParameter("dispatcher_employment_type"));
 
-		String staffID = request.getParameter("staffID");
+		String staffId = request.getParameter("staffId");
 
-		staff.setStaffID(Integer.parseInt(staffID));
-		dispatcher.setStaffID(Integer.parseInt(staffID));
+		staff.setStaffID(Integer.parseInt(staffId));
+		dispatcher.setStaffID(Integer.parseInt(staffId));
 		dispatcher.setStaff(staff);
 		
 		try {

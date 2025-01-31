@@ -48,7 +48,7 @@ public class LoginController extends HttpServlet {
 			Staff staff = new Staff();
 
 			//retrieve and set email and password
-			staff.setStaffID(Integer.parseInt(request.getParameter("staffID")));
+			staff.setStaffID(Integer.parseInt(request.getParameter("staffId")));
 			staff.setStaffPassword(request.getParameter("staff_password"));
 			staff.setStaffEmail(request.getParameter("staff_email"));
 
@@ -63,7 +63,7 @@ public class LoginController extends HttpServlet {
 	            session.setAttribute("sessionEmail", staff.getStaffEmail());//set current session based on email
 
 	            // Redirect to avoid resubmission
-	            request.setAttribute("staffID", request.getParameter("staffID"));
+	            request.setAttribute("staffId", request.getParameter("staffId"));
 	            request.getRequestDispatcher("index.jsp").forward(request, response);
 	        } else {
 	        	System.out.println("staff else");

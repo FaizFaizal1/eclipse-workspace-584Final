@@ -52,16 +52,16 @@ public class UpdateStaffController extends HttpServlet {
 		staff.setStaffPassword(request.getParameter("staff_password"));
 		staff.setStaffRole(request.getParameter("staff_role"));
 
-		String staffID = request.getParameter("staffID");
+		String staffId = request.getParameter("staffId");
 
-		staff.setStaffID(Integer.parseInt(staffID));
+		staff.setStaffID(Integer.parseInt(staffId));
 		try {
 			StaffDAO.updateStaff(staff);
 		} catch (NoSuchAlgorithmException e) {
 			e.printStackTrace();
 		}
 		
-		request.setAttribute("staffID", request.getParameter("staffID"));
+		request.setAttribute("staffId", request.getParameter("staffId"));
 		RequestDispatcher view = request.getRequestDispatcher("index.jsp");
         view.forward(request, response);
 	}

@@ -26,7 +26,7 @@ public class DispatcherDAO {
 			con = ConnectionManager.getConnection();
 
 			//3. create statement
-			sql = "SELECT * FROM dispatcher d INNER JOIN staff s ON d.staffID = s.staffID";
+			sql = "SELECT * FROM dispatcher d INNER JOIN staff s ON d.staffId = s.staffId";
 			ps = con.prepareStatement(sql);
 
 			//4. execute query
@@ -34,10 +34,10 @@ public class DispatcherDAO {
 
 			while (rs.next()) { 
 				Dispatcher dispatcher = new Dispatcher();
-				dispatcher.setStaffID(rs.getInt("staffID"));	  
+				dispatcher.setStaffID(rs.getInt("staffId"));	  
 				dispatcher.setDispatcherStatus(rs.getString("dispatcher_status"));
 				dispatcher.setDispatcherEmploymentType(rs.getString("dispatcher_employment_type"));
-				dispatcher.setStaff(StaffDAO.getStaffById(rs.getInt("staffID")));
+				dispatcher.setStaff(StaffDAO.getStaffById(rs.getInt("staffId")));
 				dispatchers.add(dispatcher);
 			} 
 			//5. close connection
@@ -50,22 +50,22 @@ public class DispatcherDAO {
 	}
 
 	//get dispatcher by Id
-	public static Dispatcher getDispatcherById(int staffID) {
+	public static Dispatcher getDispatcherById(int staffId) {
 		Dispatcher dispatcher = new Dispatcher();
 		try {
 			//call getConnection() method
 			con = ConnectionManager.getConnection();
 
 			//3. create statement 
-			sql = "SELECT * FROM dispatcher WHERE staffID = ?";
+			sql = "SELECT * FROM dispatcher WHERE staffId = ?";
 			ps = con.prepareStatement(sql);
-			ps.setInt(1, staffID);
+			ps.setInt(1, staffId);
 
 			//4. execute query
 			rs = ps.executeQuery();
 
 			if (rs.next()) {	            
-				dispatcher.setStaffID(rs.getInt("staffID"));	  
+				dispatcher.setStaffID(rs.getInt("staffId"));	  
 				dispatcher.setDispatcherStatus(rs.getString("dispatcher_status"));
 				dispatcher.setDispatcherEmploymentType(rs.getString("dispatcher_employment_type"));
 			}
@@ -81,15 +81,15 @@ public class DispatcherDAO {
 	}
 
 	//delete dispatcher
-	public static void deleteDispatcher(int staffID) {
+	public static void deleteDispatcher(int staffId) {
 		try {
 			//call getConnection() method 
 			con = ConnectionManager.getConnection();
 
 			//3. create statement 
-			sql = "DELETE FROM dispatcher WHERE staffID = ?";
+			sql = "DELETE FROM dispatcher WHERE staffId = ?";
 			ps=con.prepareStatement(sql);
-			ps.setInt(1, staffID);
+			ps.setInt(1, staffId);
 
 			//4. execute query
 			ps.executeUpdate();
@@ -109,7 +109,7 @@ public class DispatcherDAO {
 			con = ConnectionManager.getConnection();
 
 			//3. create statement 
-			sql = "UPDATE dispatcher SET dispatcher_status=?, dispatcher_employment_type=? WHERE staffID=?";
+			sql = "UPDATE dispatcher SET dispatcher_status=?, dispatcher_employment_type=? WHERE staffId=?";
 			ps=con.prepareStatement(sql);
 			ps.setString(1,dispatcher.getDispatcherStatus());
 			ps.setString(2,dispatcher.getDispatcherEmploymentType());

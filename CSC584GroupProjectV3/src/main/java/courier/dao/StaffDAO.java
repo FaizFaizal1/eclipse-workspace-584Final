@@ -38,7 +38,7 @@ public class StaffDAO {
 			con = ConnectionManager.getConnection();
 			
 			//3. create statement
-			sql = "SELECT * FROM staff WHERE staffID = ? AND staff_password = ?";
+			sql = "SELECT * FROM staff WHERE staffId = ? AND staff_password = ?";
 			ps = con.prepareStatement(sql);
 			ps.setInt(1, staff.getStaffID());
 			ps.setString(2, sb.toString());
@@ -48,7 +48,7 @@ public class StaffDAO {
 
 			// if staff exists set the isValid variable to true
 			if (rs.next()) {
-				staff.setStaffID(rs.getInt("staffID"));
+				staff.setStaffID(rs.getInt("staffId"));
 				staff.setStaffFirstName(rs.getString("staff_first_name"));
 				staff.setStaffLastName(rs.getString("staff_last_name"));
 				staff.setStaffPhoneNumber(rs.getString("staff_phone_number"));
@@ -129,7 +129,7 @@ public class StaffDAO {
 				sb.append(Integer.toString((byteData[i] & 0xff) + 0x100, 16).substring(1));
 			}
 			
-			sql = "UPDATE staff SET staff_first_name=?, staff_last_name=?, staff_phone_number=?, staff_email=?, staff_address=?, staff_password=?, staff_role=? WHERE staffID=?";
+			sql = "UPDATE staff SET staff_first_name=?, staff_last_name=?, staff_phone_number=?, staff_email=?, staff_address=?, staff_password=?, staff_role=? WHERE staffId=?";
 			ps=con.prepareStatement(sql);
 			ps.setString(1,staff.getStaffFirstName());
 			ps.setString(2,staff.getStaffLastName());
@@ -168,7 +168,7 @@ public class StaffDAO {
 
 			// if staff exists set the isValid variable to true
 			if (rs.next()) {
-				staff.setStaffID(rs.getInt("staffID"));
+				staff.setStaffID(rs.getInt("staffId"));
 				staff.setStaffFirstName(rs.getString("staff_first_name"));
 				staff.setStaffLastName(rs.getString("staff_last_name"));
 				staff.setStaffPhoneNumber(rs.getString("staff_phone_number"));
@@ -201,7 +201,7 @@ public class StaffDAO {
 			con = ConnectionManager.getConnection();
 			
 			//3. create statement  
-			sql = "SELECT * FROM staff WHERE staffID=?";
+			sql = "SELECT * FROM staff WHERE staffId=?";
 			ps=con.prepareStatement(sql);
 			ps.setInt(1, id);
 			
@@ -209,7 +209,7 @@ public class StaffDAO {
 			rs = ps.executeQuery();
 
 			if (rs.next()) {	            
-				staff.setStaffID(rs.getInt("staffID"));
+				staff.setStaffID(rs.getInt("staffId"));
 				staff.setStaffFirstName(rs.getString("staff_first_name"));
 				staff.setStaffLastName(rs.getString("staff_last_name"));
 				staff.setStaffPhoneNumber(rs.getString("staff_phone_number"));
@@ -245,7 +245,7 @@ public class StaffDAO {
 			rs = ps.executeQuery();
 
 			if (rs.next()) {	            
-				staff.setStaffID(rs.getInt("staffID"));
+				staff.setStaffID(rs.getInt("staffId"));
 				staff.setStaffFirstName(rs.getString("staff_first_name"));
 				staff.setStaffLastName(rs.getString("staff_last_name"));
 				staff.setStaffPhoneNumber(rs.getString("staff_phone_number"));
@@ -274,7 +274,7 @@ public class StaffDAO {
 			con = ConnectionManager.getConnection();
 			
 			//3. create statement  
-			sql = "SELECT * FROM staff s INNER JOIN dispatcher d ON s.staffID = d.staffID";
+			sql = "SELECT * FROM staff s INNER JOIN dispatcher d ON s.staffId = d.staffId";
 			ps=con.prepareStatement(sql);
 						
 			//4. execute query
@@ -282,7 +282,7 @@ public class StaffDAO {
 
 			while (rs.next()) {
 				Staff staff = new Staff();
-				staff.setStaffID(rs.getInt("staffID"));
+				staff.setStaffID(rs.getInt("staffId"));
 				staff.setStaffFirstName(rs.getString("staff_first_name"));
 				staff.setStaffLastName(rs.getString("staff_last_name"));
 				staff.setStaffPhoneNumber(rs.getString("staff_phone_number"));
@@ -290,7 +290,7 @@ public class StaffDAO {
 				staff.setStaffAddress(rs.getString("staff_address"));
 				staff.setStaffDateOfHire(rs.getString("staff_date_of_hire"));
 				staff.setStaffPassword(rs.getString("staff_password"));
-				staff.setDispatcher(DispatcherDAO.getDispatcherById(rs.getInt("staffID")));
+				staff.setDispatcher(DispatcherDAO.getDispatcherById(rs.getInt("staffId")));
 				staffs.add(staff);
 			}
 			//5. close connection
@@ -311,7 +311,7 @@ public class StaffDAO {
 				con = ConnectionManager.getConnection();
 				
 				//3. create statement  
-				sql = "SELECT * FROM staff s INNER JOIN admin a ON s.staffID = a.staffID";
+				sql = "SELECT * FROM staff s INNER JOIN admin a ON s.staffId = a.staffId";
 				ps=con.prepareStatement(sql);
 							
 				//4. execute query
@@ -319,7 +319,7 @@ public class StaffDAO {
 
 				while (rs.next()) {
 					Staff staff = new Staff();
-					staff.setStaffID(rs.getInt("staffID"));
+					staff.setStaffID(rs.getInt("staffId"));
 					staff.setStaffFirstName(rs.getString("staff_first_name"));
 					staff.setStaffLastName(rs.getString("staff_last_name"));
 					staff.setStaffPhoneNumber(rs.getString("staff_phone_number"));
@@ -327,7 +327,7 @@ public class StaffDAO {
 					staff.setStaffAddress(rs.getString("staff_address"));
 					staff.setStaffDateOfHire(rs.getString("staff_date_of_hire"));
 					staff.setStaffPassword(rs.getString("staff_password"));
-					staff.setAdmin(AdminDAO.getAdminById(rs.getInt("staffID")));
+					staff.setAdmin(AdminDAO.getAdminById(rs.getInt("staffId")));
 					staffs.add(staff);
 				}
 				//5. close connection

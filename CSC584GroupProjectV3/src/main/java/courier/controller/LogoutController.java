@@ -33,7 +33,7 @@ public class LogoutController extends HttpServlet {
 			//get the current session
 			session = request.getSession(true);
 			//set current session to null.
-            session.setAttribute("staffID", null);
+            session.setAttribute("staffId", null);
             session.setAttribute("staff_password", null);//
 			//destroy session
 			session.invalidate();			
