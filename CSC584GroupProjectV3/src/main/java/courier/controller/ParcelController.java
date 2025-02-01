@@ -61,6 +61,11 @@ public class ParcelController extends HttpServlet {
 			ParcelDAO.deleteParcel(parcelId);
 			request.setAttribute("parcels", ParcelDAO.getAllParcels());        
 		}
+		else if(action.equalsIgnoreCase("searchParcel")) {
+			forward = VIEW;
+			parcelId = Integer.parseInt(request.getParameter("parcelSearch"));
+			request.setAttribute("parcel", ParcelDAO.getParcelById(parcelId));
+		}
 
 		view = request.getRequestDispatcher(forward);
 		view.forward(request, response);

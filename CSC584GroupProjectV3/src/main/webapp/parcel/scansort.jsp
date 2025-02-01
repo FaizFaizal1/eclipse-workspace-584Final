@@ -126,9 +126,10 @@
 				</a> <a href="#" class="sidebar-toggler flex-shrink-0"> <i
 					class="fa fa-bars"></i>
 				</a>
-				<form class="d-none d-md-flex ms-4">
-					<input class="form-control bg-dark border-0" type="search"
-						placeholder="Search">
+				<form action="ParcelController">
+					<input type="hidden" id="action" name="action" value="searchParcel"/>
+					<input class="form-control bg-dark border-0" type="search" id="parcelSearch" name="parcelSearch" placeholder="Enter parcel ID">
+					<input type="submit" class="btn btn-primary" value="Search parcel">
 				</form>
 				<div class="navbar-nav align-items-center ms-auto">
 					<div class="nav-item dropdown">
