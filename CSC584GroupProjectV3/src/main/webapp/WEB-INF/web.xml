@@ -106,7 +106,7 @@
     <servlet-class>courier.controller.AddDispatcherController</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>AddDispatcherController</servlet-name>
+    <servlet-name>AddDispatcherController</servlet-name>D
     <url-pattern>/AddDispatcherController</url-pattern>
   </servlet-mapping>
   <servlet>
@@ -147,5 +147,14 @@
   <servlet-mapping>
     <servlet-name>AdminController</servlet-name>
     <url-pattern>/AdminController</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <display-name>DispatcherController</display-name>
+    <servlet-name>DispatcherController</servlet-name>
+    <servlet-class>courier.controller.DispatcherController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DispatcherController</servlet-name>
+    <url-pattern>/DispatcherController</url-pattern>
   </servlet-mapping>
 </web-app>

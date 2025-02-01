@@ -173,7 +173,7 @@
 								</tr>
 							</thead>
 							<tbody>
-								<c:forEach items="${parcels}" var="parcel">
+								<c:forEach items="${dispatchers}" var="dispatcher">
 									<tr>
 									    <td><c:out value="${dispatcher.staffId}" /></td>
 									    <td><c:out value="${dispatcher.staff.staffFirstName}" /></td>
@@ -184,9 +184,9 @@
 									    <td><c:out value="${dispatcher.staff.staffDateOfHire}" /></td>
 									    <td><c:out value="${dispatcher.dispatcherStatus}" /></td>
 									    <td><c:out value="${dispatcher.dispatcherEmploymentType}" /></td>
-									<td><a href="ParcelController?action=viewParcel&parcelId=<c:out value="${parcel.parcelId}"/>" class="btn btn-primary">View</a> |
-									<a href="ParcelController?action=updateParcel&parcelId=<c:out value="${parcel.parcelId}"/>" class="btn btn-primary">Update</a> |
-									<a href="ParcelController?action=deleteParcel&parcelId=<c:out value="${parcel.parcelId}"/>" class="btn btn-primary">Delete</a> </td>
+									<td><a href="DispatcherController?action=viewDispatcher&staffId=<c:out value="${dispatcher.staffId}"/>" class="btn btn-primary">View</a> |
+									<a href="DispatcherController?action=updateDispatcher&staffId=<c:out value="${dispatcher.staffId}"/>" class="btn btn-primary">Update</a> |
+									<a href="DispatcherController?action=deleteDispatcher&staffId=<c:out value="${dispatcher.staffId}"/>" class="btn btn-primary">Delete</a> </td>
 									</tr>
 								</c:forEach>
 							</tbody>

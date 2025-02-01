@@ -82,7 +82,7 @@ public class ParcelController extends HttpServlet {
 		String parcelId = request.getParameter("parcelId");
 
 		if(parcelId != null) {
-			parcel.setParcelId(Integer.parseInt(request.getParameter("parcelId")));
+			parcel.setParcelId(Integer.parseInt(parcelId));
 			ParcelDAO.updateParcel(parcel);
 		} else {
 			ParcelDAO.addParcel(parcel);

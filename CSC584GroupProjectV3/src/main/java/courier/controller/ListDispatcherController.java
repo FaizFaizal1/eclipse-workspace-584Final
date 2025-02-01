@@ -30,7 +30,7 @@ public class ListDispatcherController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		request.setAttribute("dispatchers", DispatcherDAO.getAllDispatchers());
-		RequestDispatcher view = request.getRequestDispatcher("manage_dispatcher.jsp");
+		RequestDispatcher view = request.getRequestDispatcher("manageDispatcher.jsp");
 		view.forward(request,response);
 	}
 

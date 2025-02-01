@@ -70,7 +70,7 @@ public class UpdateDispatcherController extends HttpServlet {
 		}
 		
 		request.setAttribute("dispatchers", DispatcherDAO.getAllDispatchers());
-		view = request.getRequestDispatcher("manage_dispatcher.jsp");
+		view = request.getRequestDispatcher("manageDispatcher.jsp");
         view.forward(request, response);
 	}
 
