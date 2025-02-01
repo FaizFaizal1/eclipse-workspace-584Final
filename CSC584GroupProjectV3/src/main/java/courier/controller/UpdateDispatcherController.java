@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
 
 import courier.dao.DispatcherDAO;
+import courier.dao.ParcelDAO;
 import courier.dao.StaffDAO;
 import courier.model.Dispatcher;
 import courier.model.Staff;
@@ -19,6 +20,7 @@ import courier.model.Staff;
  */
 public class UpdateDispatcherController extends HttpServlet {
 	private static final long serialVersionUId = 1L;
+	private RequestDispatcher view;
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -67,7 +69,8 @@ public class UpdateDispatcherController extends HttpServlet {
 			e.printStackTrace();
 		}
 		
-		RequestDispatcher view = request.getRequestDispatcher("index.jsp");
+		request.setAttribute("dispatchers", DispatcherDAO.getAllDispatchers());
+		view = request.getRequestDispatcher("manage_dispatcher.jsp");
         view.forward(request, response);
 	}
 
