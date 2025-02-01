@@ -75,28 +75,17 @@ if (session == null || session.getAttribute("sessionEmail") == null) {
                         <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
                     </div>
                     <div class="ms-3">
-                        <h6 class="mb-0">Anwar Hadif</h6>
-                        <span>Admin</span>
+                        <h6 class="mb-0"><c:out value="${staff.staffFirstName} ${staff.staffLastName}"/></h6>
+                        <span><c:out value="${staff.staffRole}"/></span>
                     </div>
                 </div>
                 <div class="navbar-nav w-100">
                     <a href="index.html" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a> <!-- index.html -->
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Manage Dispatcher</a>
-                        <div class="dropdown-menu bg-transparent border-0">
-                            <a href="ListDispatcherController" class="dropdown-item">Manage Dispatcher</a> <!-- button.html -->
-                            <a href="addDispatcher.jsp" class="dropdown-item">Add Dispatcher</a> <!-- typography.html -->
-                            <a href="SendStaffIdController?staffId=${staff.staffId}" class="dropdown-item">Update Staff</a> <!-- element.html -->
-                            <a href="SendStaffIdController?staffId=${staff.staffId}" class="dropdown-item">Update Dispatcher</a> <!-- element.html -->
-                            <a href="AdminController?action=updateProfile&staffId=${staff.staffId}" class="dropdown-item">Update Admin</a> <!-- element.html -->
-                            <a href="del_dispatcher.html" class="dropdown-item">Delete Dispatcher</a> <!-- element.html -->
-                        </div>
-                    </div>
-                    <a href="upd_profile.html" class="nav-item nav-link"><i class="fa fa-address-card me-2"></i>Update Profile</a> <!-- widget.html -->
+                    <a href="upd_profile.html" class="nav-item nav-link"><i class="fa fa-address-card me-2"></i>Update Profile//todo</a> <!-- widget.html -->
                     <a href="ParcelController?action=listParcels" class="nav-item nav-link"><i class="fa fa-boxes me-2"></i>Scan & Sort</a> <!-- form.html -->
                     <a href="PaymentController?action=listPayments" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Payment</a> <!-- chart.html -->
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-bars me-2"></i>Settings</a>
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-bars me-2"></i>Settings//todo</a>
                         <div class="dropdown-menu bg-transparent border-0">
                             <a href="signin.html" class="dropdown-item">Sign In</a> <!-- signin.html -->
                             <a href="register.html" class="dropdown-item">Sign Up</a> <!-- signup.html -->
@@ -147,8 +136,8 @@ if (session == null || session.getAttribute("sessionEmail") == null) {
                         <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
                             <i class="fa fa-chart-line fa-3x text-primary"></i>
                             <div class="ms-3">
-                                <p class="mb-2">Today Sale</p>
-                                <h6 class="mb-0">$1234</h6>
+                                <p class="mb-2">Total Parcels</p>
+                                <h6 class="mb-0">${totalParcels}</h6>
                             </div>
                         </div>
                     </div>
@@ -156,8 +145,8 @@ if (session == null || session.getAttribute("sessionEmail") == null) {
                         <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
                             <i class="fa fa-chart-bar fa-3x text-primary"></i>
                             <div class="ms-3">
-                                <p class="mb-2">Total Sale</p>
-                                <h6 class="mb-0">$1234</h6>
+                                <p class="mb-2">Total Unreceived</p>
+                                <h6 class="mb-0">${totalUnreceivedParcels}</h6>
                             </div>
                         </div>
                     </div>
@@ -165,8 +154,8 @@ if (session == null || session.getAttribute("sessionEmail") == null) {
                         <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
                             <i class="fa fa-chart-area fa-3x text-primary"></i>
                             <div class="ms-3">
-                                <p class="mb-2">Today Revenue</p>
-                                <h6 class="mb-0">$1234</h6>
+                                <p class="mb-2">Today Received</p>
+                                <h6 class="mb-0">${totalReceivedParcels}</h6>
                             </div>
                         </div>
                     </div>

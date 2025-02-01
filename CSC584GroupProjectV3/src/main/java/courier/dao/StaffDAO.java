@@ -255,6 +255,7 @@ public class StaffDAO {
 				staff.setStaffAddress(rs.getString("staffAddress"));
 				staff.setStaffDateOfHire(rs.getString("staffDateOfHire"));
 				staff.setStaffPassword(rs.getString("staffPassword"));
+				staff.setStaffRole(rs.getString("staffRole"));
 			}
 			
 			System.out.println("Staff with email " + email + " found");

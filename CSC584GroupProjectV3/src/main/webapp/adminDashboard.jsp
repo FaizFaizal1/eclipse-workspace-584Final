@@ -76,6 +76,7 @@ if (session == null || session.getAttribute("sessionEmail") == null) {
                     </div>
                     <div class="ms-3">
                         <h6 class="mb-0"><c:out value="${staff.staffFirstName} ${staff.staffLastName}"/></h6>
+                        <span><c:out value="${staff.staffRole}"/></span>
                     </div>
                 </div>
                 <div class="navbar-nav w-100">

@@ -77,7 +77,10 @@ public class LoginController extends HttpServlet {
 		            request.getRequestDispatcher("adminDashboard.jsp").forward(request, response);
 				}
 				else {
-					request.setAttribute("dispatcher", DispatcherDAO.getDispatcherById(staff.getStaffId()));		
+					request.setAttribute("dispatcher", DispatcherDAO.getDispatcherById(staff.getStaffId()));	
+					request.setAttribute("totalParcels", DashboardDAO.countTotalDispatchers());
+					request.setAttribute("totalUnreceivedParcels", DashboardDAO.countTotalDispatchersByType("Unreceived"));
+					request.setAttribute("totalReceivedParcels", DashboardDAO.countTotalDispatchersByType("Received"));
 
 					//TO DO create dispatcher dashboard
 		            request.getRequestDispatcher("dispatcherDashboard.jsp").forward(request, response);
