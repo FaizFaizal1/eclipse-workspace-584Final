@@ -41,4 +41,58 @@ public class DashboardDAO {
 		
 		return count;
 	}
+	
+	public static int countTotalParcels() {
+		try {
+
+			con = ConnectionManager.getConnection();
+
+			sql = "SELECT * FROM parcel";
+			stmt = con.createStatement();
+
+			rs = stmt.executeQuery(sql);
+			while(rs.next()) {
+				count++;
+			}
+
+			con.close();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return count;
+	}
+	
+	public static int countTotalParcelsByType(String type) {
+		try {
+
+			con = ConnectionManager.getConnection();
+			
+			sql = "SELECT * FROM parcel WHERE parcelStatus=?";
+			ps = con.prepareStatement(sql);
+
+			if ("Unreceived".equalsIgnoreCase(type)) {
+				ps.setString(1, "Unreceived");
+			} else {
+				ps.setString(1, "Received");	
+			}
+
+			rs = ps.executeQuery();
+			while(rs.next()) {
+				count++;
+			}
+
+			con.close();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return count;
+	}
+	
+	public static void main(String[] args) {
+		System.out.println(DashboardDAO.countTotalParcelsByType("Unreceived"));
+	}
 }
