@@ -80,9 +80,9 @@ if (session == null || session.getAttribute("sessionEmail") == null) {
                     </div>
                 </div>
                 <div class="navbar-nav w-100">
-                    <a href="index.html" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a> <!-- index.html -->
+                    <a href="adminDashboard.jsp" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a> <!-- index.html -->
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Manage Dispatcher</a>
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Manage Staff</a>
                         <div class="dropdown-menu bg-transparent border-0">
                             <a href="DispatcherController?action=listDispatchers" class="dropdown-item">Manage Dispatcher</a> <!-- element.html -->
                             <a href="AdminController?action=listAdmins" class="dropdown-item">Manage Admin</a> <!-- element.html -->
@@ -91,15 +91,6 @@ if (session == null || session.getAttribute("sessionEmail") == null) {
                     <a href="AdminController?action=updateAdminProfile&staffId=${staff.staffId}" class="nav-item nav-link"><i class="fa fa-address-card me-2"></i>Update Profile</a> <!-- widget.html -->
                     <a href="ParcelController?action=listParcels" class="nav-item nav-link"><i class="fa fa-boxes me-2"></i>Scan & Sort</a> <!-- form.html -->
                     <a href="PaymentController?action=listPayments" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Payment</a> <!-- chart.html -->
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-bars me-2"></i>Settings</a>
-                        <div class="dropdown-menu bg-transparent border-0">
-                            <a href="signin.html" class="dropdown-item">Sign In</a> <!-- signin.html -->
-                            <a href="register.html" class="dropdown-item">Sign Up</a> <!-- signup.html -->
-                            <a href="404.html" class="dropdown-item">404 Error</a> <!-- 404.html -->
-                            <a href="blank.html" class="dropdown-item">Blank Page</a> <!-- blank.html -->
-                        </div>
-                    </div>
                 </div>
             </nav>
         </div>
