@@ -6,6 +6,8 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+
 import java.io.IOException;
 
 import courier.dao.ParcelDAO;
@@ -36,10 +38,7 @@ public class ParcelController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		action = request.getParameter("action");
-		
-		request.setAttribute("staff", StaffDAO.getStaffById(Integer.parseInt(request.getParameter("staffId"))));
 
 		if(action.equalsIgnoreCase("listParcels")) {
 			forward = LIST;

@@ -61,12 +61,12 @@
                         <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
                     </div>
                     <div class="ms-3">
-                        <h6 class="mb-0"><c:out value="${staff.staffFirstName} ${staff.staffLastName}"/></h6>
-                        <span><c:out value="${staff.staffRole}"/></span>
+                        <h6 class="mb-0"><c:out value="${sessionFirstName}"/></h6>
+                        <span><c:out value="${sessionRole}"/></span>
                     </div>
                 </div>
                 <div class="navbar-nav w-100">
-                    <a href="adminDashboard.jsp" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+                    <a href="DashboardController" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Manage Staff</a>
                         <div class="dropdown-menu bg-transparent border-0">
@@ -74,7 +74,7 @@
                             <a href="AdminController?action=listAdmins" class="dropdown-item">Manage Admin</a>
                         </div>
                     </div>
-                    <a href="AdminController?action=updateAdminProfile&staffId=${staff.staffId}" class="nav-item nav-link"><i class="fa fa-address-card me-2"></i>Update Profile</a>
+                    <a href="AdminController?action=updateAdminProfile" class="nav-item nav-link active"><i class="fa fa-address-card me-2"></i>Update Profile</a>
                     <a href="ParcelController?action=listParcels" class="nav-item nav-link"><i class="fa fa-boxes me-2"></i>Scan & Sort</a>
                     <a href="PaymentController?action=listPayments" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Payment</a>
                 </div>
@@ -154,19 +154,19 @@
                                 <div class="row mb-3">
                                     <label for="adminPassword" class="col-sm-2 col-form-label">Password</label>
                                     <div class="col-sm-10">
-                                        <input type="password" class="form-control" id="adminPassword" name="adminPassword" placeholder="Password" value="<c:out value="${staff.staffPassword}"/>" required>
+                                        <input type="password" class="form-control" id="adminPassword" name="adminPassword" placeholder="Password" required>
                                     </div>
                                 </div>
                                 <div class="row mb-3">
                                     <label class="col-sm-2 col-form-label">Role</label>
                                     <div class="col-sm-10">
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" id="adminRoleLead" name="adminRole" value="Lead" <c:if test="${staff.staffRole == 'Lead'}">checked</c:if>>
-                                            <label class="form-check-label" for="adminRoleLead">Lead</label>
+                                            <input class="form-check-input" type="radio" id="adminRole" name="adminRole" value="Lead" <c:if test="${admin.adminRole == 'Lead'}">checked</c:if>>
+                                            <label class="form-check-label" for="adminRole">Lead</label>
                                         </div>
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" id="adminRoleMember" name="adminRole" value="Member" <c:if test="${staff.staffRole == 'Member'}">checked</c:if>>
-                                            <label class="form-check-label" for="adminRoleMember">Member</label>
+                                            <input class="form-check-input" type="radio" id="adminRole" name="adminRole" value="Member" <c:if test="${admin.adminRole == 'Member'}">checked</c:if>>
+                                            <label class="form-check-label" for="adminRole">Member</label>
                                         </div>
                                     </div>
                                 </div>

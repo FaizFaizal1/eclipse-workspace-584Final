@@ -6,6 +6,8 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+
 import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
 
@@ -23,7 +25,8 @@ import courier.model.Staff;
 public class DispatcherController extends HttpServlet {
 	private static final long serialVersionUId = 1L;
 	private RequestDispatcher view;
-	private int staffId;
+	private int staffId, sessionStaffId;
+	HttpSession session;
 	private String action="", forward="";
 	private static String LIST = "/courier.dispatcher/manageDispatcher.jsp";
 	private static String UPDATE = "/courier.dispatcher/updateDispatcher.jsp";
@@ -43,13 +46,12 @@ public class DispatcherController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		session = request.getSession(true);
+		sessionStaffId = (int) session.getAttribute("sessionId");
 		action = request.getParameter("action");
 
 		if(action.equalsIgnoreCase("listDispatchers")) {
 			forward = LIST;
-			staffId = Integer.parseInt(request.getParameter("staffId"));
-			request.setAttribute("staff", StaffDAO.getStaffById(staffId));
 			request.setAttribute("dispatchers", DispatcherDAO.getAllDispatchers());        
 		}
 		else if(action.equalsIgnoreCase("addDispatcher")) {
@@ -69,9 +71,8 @@ public class DispatcherController extends HttpServlet {
 		}
 		else if(action.equalsIgnoreCase("updateDispatcherProfile")) {
 			forward = UPDATE_PROFILE;
-			staffId = Integer.parseInt(request.getParameter("staffId"));
-			request.setAttribute("staff", StaffDAO.getStaffById(staffId));
-			request.setAttribute("dispatcher", DispatcherDAO.getDispatcherById(staffId));
+			request.setAttribute("staff", StaffDAO.getStaffById(sessionStaffId));
+			request.setAttribute("dispatcher", DispatcherDAO.getDispatcherById(sessionStaffId));
 		}
 		else if(action.equalsIgnoreCase("deleteDispatcher")) {
 			forward = LIST;
@@ -121,7 +122,7 @@ public class DispatcherController extends HttpServlet {
 			try {
 				dispatcher.setStaff(staff);
 				StaffDAO.addStaff(dispatcher.getStaff());
-				dispatcher.setStaffId(StaffDAO.getStaffByEmail(request.getParameter("dispatcherEmail")).getStaffId());
+				dispatcher.setStaffId(StaffDAO.getStaffByEmail(request.getParameter("dispatcherEmail")).getStaffId()); //get staffid of newly created staff to update dispatcher table 
 				DispatcherDAO.updateDispatcher(dispatcher);
 			} catch (NoSuchAlgorithmException e) {
 				e.printStackTrace();

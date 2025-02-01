@@ -63,6 +63,7 @@ public class LoginController extends HttpServlet {
 	            session.setAttribute("sessionId", staff.getStaffId());
 	            session.setAttribute("sessionEmail", staff.getStaffEmail());
 	            session.setAttribute("sessionRole", staff.getStaffRole());
+	            session.setAttribute("sessionFirstName", staff.getStaffFirstName());
 	            
 				request.setAttribute("staff", StaffDAO.getStaffByEmail(staff.getStaffEmail()));
 	            

@@ -61,8 +61,8 @@
                         <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
                     </div>
                     <div class="ms-3">
-                        <h6 class="mb-0"><c:out value="${staff.staffFirstName} ${staff.staffLastName}"/></h6>
-                        <span><c:out value="${staff.staffRole}"/></span>
+                        <h6 class="mb-0"><c:out value="${sessionFirstName}"/></h6>
+                        <span><c:out value="${sessionRole}"/></span>
                     </div>
                 </div>
                 <div class="navbar-nav w-100">
@@ -154,19 +154,19 @@
                                 <div class="row mb-3">
                                     <label for="dispatcherPassword" class="col-sm-2 col-form-label">Password</label>
                                     <div class="col-sm-10">
-                                        <input type="password" class="form-control" id="dispatcherPassword" name="dispatcherPassword" placeholder="Password" value="<c:out value="${staff.staffPassword}"/>" required>
+                                        <input type="password" class="form-control" id="dispatcherPassword" name="dispatcherPassword" placeholder="Password" required>
                                     </div>
                                 </div>
                                 <div class="row mb-3">
                                     <label class="col-sm-2 col-form-label">Status</label>
                                     <div class="col-sm-10">
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" id="dispatcherStatusActive" name="dispatcherStatus" value="Active" <c:if test="${dispatcher.dispatcherStatus == 'Active'}">checked</c:if>>
-                                            <label class="form-check-label" for="dispatcherStatusActive">Active</label>
+                                            <input class="form-check-input" type="radio" id="dispatcherStatus" name="dispatcherStatus" value="Active" <c:if test="${dispatcher.dispatcherStatus == 'Active'}">checked</c:if>>
+                                            <label class="form-check-label" for="dispatcherStatus">Active</label>
                                         </div>
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" id="dispatcherStatusInactive" name="dispatcherStatus" value="Inactive" <c:if test="${dispatcher.dispatcherStatus == 'Inactive'}">checked</c:if>>
-                                            <label class="form-check-label" for="dispatcherStatusInactive">Inactive</label>
+                                            <input class="form-check-input" type="radio" id="dispatcherStatus" name="dispatcherStatus" value="Inactive" <c:if test="${dispatcher.dispatcherStatus == 'Inactive'}">checked</c:if>>
+                                            <label class="form-check-label" for="dispatcherStatus">Inactive</label>
                                         </div>
                                     </div>
                                 </div>
@@ -174,12 +174,12 @@
                                     <label class="col-sm-2 col-form-label">Employment Type</label>
                                     <div class="col-sm-10">
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" id="dispatcherEmploymentTypeFullTime" name="dispatcherEmploymentType" value="Full-time" <c:if test="${dispatcher.dispatcherEmploymentType == 'Full-time'}">checked</c:if>>
-                                            <label class="form-check-label" for="dispatcherEmploymentTypeFullTime">Full-time</label>
+                                            <input class="form-check-input" type="radio" id="dispatcherEmploymentType" name="dispatcherEmploymentType" value="Full-time" <c:if test="${dispatcher.dispatcherEmploymentType == 'Full-time'}">checked</c:if>>
+                                            <label class="form-check-label" for="dispatcherEmploymentType">Full-time</label>
                                         </div>
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" id="dispatcherEmploymentTypePartTime" name="dispatcherEmploymentType" value="Part-time" <c:if test="${dispatcher.dispatcherEmploymentType == 'Part-time'}">checked</c:if>>
-                                            <label class="form-check-label" for="dispatcherEmploymentTypePartTime">Part-time</label>
+                                            <input class="form-check-input" type="radio" id="dispatcherEmploymentType" name="dispatcherEmploymentType" value="Part-time" <c:if test="${dispatcher.dispatcherEmploymentType == 'Part-time'}">checked</c:if>>
+                                            <label class="form-check-label" for="dispatcherEmploymentType">Part-time</label>
                                         </div>
                                     </div>
                                 </div>

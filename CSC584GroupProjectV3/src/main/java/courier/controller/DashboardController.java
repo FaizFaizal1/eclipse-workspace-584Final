@@ -23,10 +23,7 @@ public class DashboardController extends HttpServlet {
 	private static final long serialVersionUId = 1L;
 	private HttpSession session;
 	private RequestDispatcher view;
-	private int staffId;
-	private String forward="";
-	private static String ADMIN_DASHBOARD = "DashboardController?staffId=${staff.staffId}";
-	private static String DISPATCHER_DASHBOARD = "dispatcherDashboard.jsp";
+	private String forward="", sessionStaffRole=null;
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -40,21 +37,15 @@ public class DashboardController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		session = request.getSession(true);
-		staffId = (int) session.getAttribute("sessionId");
-		Staff staff = StaffDAO.getStaffById(staffId);
+		sessionStaffRole = (String) session.getAttribute("sessionRole");
 		
-		request.setAttribute("staff", staff);
-		
-		if (staff.getStaffRole().equalsIgnoreCase("Admin")) {
-			request.setAttribute("admin", AdminDAO.getAdminById(staff.getStaffId()));			
+		if (sessionStaffRole.equalsIgnoreCase("Admin")) {
 			request.setAttribute("totalDispatchers", DashboardDAO.countTotalDispatchers());
 			request.setAttribute("totalActiveDispatchers", DashboardDAO.countTotalDispatchersByType("Active"));
 			request.setAttribute("totalInactiveDispatchers", DashboardDAO.countTotalDispatchersByType("Inactive"));
-			//TO DO create admin dashboard♣
             request.getRequestDispatcher("/courier.admin/adminDashboard.jsp").forward(request, response);
 		} 
 		else {
-			request.setAttribute("dispatcher", DispatcherDAO.getDispatcherById(staff.getStaffId()));	
 			request.setAttribute("totalParcels", DashboardDAO.countTotalDispatchers());
 			request.setAttribute("totalUnreceivedParcels", DashboardDAO.countTotalDispatchersByType("Unreceived"));
 			request.setAttribute("totalReceivedParcels", DashboardDAO.countTotalDispatchersByType("Received"));

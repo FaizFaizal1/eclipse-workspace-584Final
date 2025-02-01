@@ -66,8 +66,8 @@
 						<div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
 					</div>
 					<div class="ms-3">
-						<h6 class="mb-0"><c:out value="${staff.staffFirstName} ${staff.staffLastName}"/></h6>
-						<span><c:out value="${staff.staffRole}"/></span>
+						<h6 class="mb-0"><c:out value="${sessionFirstName}"/></h6>
+						<span><c:out value="${sessionRole}"/></span>
 					</div>
 				</div>
 				<div class="navbar-nav w-100">
