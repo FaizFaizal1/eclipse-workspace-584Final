@@ -13,42 +13,42 @@
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">	
-	<title>Login</title>
+	<title>Register</title>
 </head>
 <body>
 <div class="container">
 <br><br>
-<h3>Login</h3>
+<h3>Register</h3>
 <br><br>
 <form action="RegisterController" method="POST">
  <div class="mb-3">
-    <label for="staffFirstName" class="form-label">Staff First Name</label>    
+    <label for="staffFirstName" class="form-label">First Name</label>    
     <input type="text" class="form-control" id="staffFirstName" name="staffFirstName" placeholder="staffFirstName.." required>   
   </div>
  <div class="mb-3">
-    <label for="staffLastName" class="form-label">Staff Last Name</label>    
+    <label for="staffLastName" class="form-label">Last Name</label>    
     <input type="text" class="form-control" id="staffLastName" name="staffLastName" placeholder="staffLastName.." required>   
   </div>
  <div class="mb-3">
-    <label for="staffPhoneNumber" class="form-label">Staff Phone Number</label>    
+    <label for="staffPhoneNumber" class="form-label">Phone Number</label>    
     <input type="text" class="form-control" id="staffPhoneNumber" name="staffPhoneNumber" placeholder="staffPhoneNumber.." required>   
   </div>
  <div class="mb-3">
-    <label for="staffEmail" class="form-label">Staff Email</label>    
+    <label for="staffEmail" class="form-label">Email</label>    
     <input type="email" class="form-control" id="staffEmail" name="staffEmail" placeholder="staffEmail.." required>   
   </div>
  <div class="mb-3">
-    <label for="staffAddress" class="form-label">Staff Address</label>    
+    <label for="staffAddress" class="form-label">Address</label>    
     <input type="text" class="form-control" id="staffAddress" name="staffAddress" placeholder="staffAddress.." required>   
   </div>
   <div class="mb-3">
-    <label for="staffPassword" class="form-label">Staff Password</label>    
+    <label for="staffPassword" class="form-label">Password</label>    
     <input type="password" class="form-control" id="staffPassword" name="staffPassword" placeholder="staffPassword.." required>   
   </div>
   <div class="mb-3">
-    <label for="staffRole" class="form-label">Staff Role</label> <br>   
+    <label for="staffRole" class="form-label">Role</label> <br>   
     <input type="radio" id="staffRole" name="staffRole" value="Dispatcher">Dispatcher
-    <input type="radio" id="staffRole" name="staffRole" value="Admin">Admin   
+    <input type="radio" id="staffRole" name="staffRole" value="Admin">Admin
   </div>
   <div class="mb-3">
     <input type="submit" class="btn btn-primary" value="Submit"> 

@@ -114,6 +114,7 @@ public class StaffDAO {
 		}
 	}
 	
+	//update staff
 	public static void updateStaff(Staff staff) throws NoSuchAlgorithmException{
 		try {
 			con = ConnectionManager.getConnection();

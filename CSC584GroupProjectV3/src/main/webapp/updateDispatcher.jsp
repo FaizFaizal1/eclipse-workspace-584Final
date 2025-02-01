@@ -21,6 +21,10 @@
 <br><br>
 <form action="UpdateDispatcherController" method="POST">
  <div class="mb-3">
+    <label for="dispatcherId" class="form-label">Staff ID</label>    
+    <input type="text" class="form-control" id="staffId" name="staffId" placeholder="staffId" required>   
+  </div>
+ <div class="mb-3">
     <label for="dispatcherFirstName" class="form-label">Dispatcher First Name</label>    
     <input type="text" class="form-control" id="dispatcherFirstName" name="dispatcherFirstName" placeholder="dispatcherFirstName.." required>   
   </div>
@@ -54,12 +58,14 @@
     <input type="radio" id="dispatcherEmploymentType" name="dispatcherEmploymentType" value="Full-time">Full-time
     <input type="radio" id="dispatcherEmploymentType" name="dispatcherEmploymentType" value="Part-time">Part-time
   </div>
-  <div class="mb-3">
-    <input type="hidden" id="staffId" name="staffId" value="${staff.staffId}">
+    <input type="hidden" id="staffRole" name="staffRole" value="Dispatcher">
   </div>
-  <div class="mb-3">
-    <input type="hidden" id="staffRole" name="staffRole" value="${staff.staffRole}">   	
-  </div>
+<!--   <div class="mb-3"> -->
+<%--     <input type="hidden" id="staffId" name="staffId" value="${staff.staffId}"> --%>
+<!--   </div> -->
+<!--   <div class="mb-3"> -->
+<%--     <input type="hidden" id="staffRole" name="staffRole" value="${staff.staffRole}">   	 --%>
+<!--   </div> -->
   <div class="mb-3">
     <input type="submit" class="btn btn-primary" value="Submit"> 
     <input type="reset" class="btn btn-primary" value="Reset">  

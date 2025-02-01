@@ -41,6 +41,11 @@ public class UpdateDispatcherController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Dispatcher dispatcher = new Dispatcher();
 		Staff staff = new Staff();
+		
+		String staffId = request.getParameter("staffId");
+		
+		// staff properties
+		staff.setStaffId(Integer.parseInt(staffId));
 		staff.setStaffFirstName(request.getParameter("dispatcherFirstName"));
 		staff.setStaffLastName((request.getParameter("dispatcherLastName")));
 		staff.setStaffPhoneNumber((request.getParameter("dispatcherPhoneNumber")));
@@ -48,18 +53,16 @@ public class UpdateDispatcherController extends HttpServlet {
 		staff.setStaffAddress((request.getParameter("dispatcherAddress")));
 		staff.setStaffPassword(request.getParameter("dispatcherPassword"));
 		staff.setStaffRole(request.getParameter("staffRole"));
+		
+		//get staffId from request
+		dispatcher.setStaffId(Integer.parseInt(staffId));
 		dispatcher.setDispatcherStatus(request.getParameter("dispatcherStatus"));
 		dispatcher.setDispatcherEmploymentType(request.getParameter("dispatcherEmploymentType"));
-
-		String staffId = request.getParameter("staffId");
-
-		staff.setStaffId(Integer.parseInt(staffId));
-		dispatcher.setStaffId(Integer.parseInt(staffId));
 		dispatcher.setStaff(staff);
 		
 		try {
-			StaffDAO.updateStaff(dispatcher.getStaff());
 			DispatcherDAO.updateDispatcher(dispatcher);
+			StaffDAO.updateStaff(staff);
 		} catch (NoSuchAlgorithmException e) {
 			e.printStackTrace();
 		}
