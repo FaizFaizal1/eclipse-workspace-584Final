@@ -23,24 +23,16 @@ public class DashboardDAO {
 	public static int countDispatchers() {
 		try {
 
-			// call getConnection() method
 			con = ConnectionManager.getConnection();
 
-			// 3. create statement
 			sql = "SELECT * FROM dispatcher";
 			stmt = con.createStatement();
 
-			// 4. execute query
 			rs = stmt.executeQuery(sql);
 			while(rs.next()) {
 				count++;
 			}
-			
-//			while (rs.next()) {
-//				count++;
-//			}
 
-			// 5. close connection
 			con.close();
 
 		} catch (Exception e) {
