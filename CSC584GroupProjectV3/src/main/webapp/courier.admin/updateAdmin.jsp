@@ -102,9 +102,7 @@
                             <span class="d-none d-lg-inline-flex">${sessionFirstName}</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
-                            <a href="#" class="dropdown-item">My Profile</a>
-                            <a href="#" class="dropdown-item">Settings</a>
-                            <a href="#" class="dropdown-item">Log Out</a>
+						<a href="LogoutController" class="dropdown-item">Log Out</a>
                         </div>
                     </div>
                 </div>
@@ -164,12 +162,12 @@
                                     <label class="col-sm-2 col-form-label">Role</label>
                                     <div class="col-sm-10">
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" id="adminRoleLead" name="adminRole" value="Lead" <c:if test="${staff.staffRole == 'Lead'}">checked</c:if>>
-                                            <label class="form-check-label" for="adminRoleLead">Lead</label>
+                                            <input class="form-check-input" type="radio" id="adminRole" name="adminRole" value="Lead" <c:if test="${admin.adminRole == 'Lead'}">checked</c:if>>
+                                            <label class="form-check-label" for="adminRole">Lead</label>
                                         </div>
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" id="adminRoleMember" name="adminRole" value="Member" <c:if test="${staff.staffRole == 'Member'}">checked</c:if>>
-                                            <label class="form-check-label" for="adminRoleMember">Member</label>
+                                            <input class="form-check-input" type="radio" id="adminRole" name="adminRole" value="Member" <c:if test="${admin.adminRole == 'Member'}">checked</c:if>>
+                                            <label class="form-check-label" for="adminRole">Member</label>
                                         </div>
                                     </div>
                                 </div>

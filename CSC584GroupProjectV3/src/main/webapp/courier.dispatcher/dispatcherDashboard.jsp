@@ -110,7 +110,6 @@ if (session == null || session.getAttribute("sessionEmail") == null) {
                             <span class="d-none d-lg-inline-flex"><c:out value="${sessionFirstName}"/></span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
-                            <a href="#" class="dropdown-item">My Profile</a>
                             <a href="LogoutController" class="dropdown-item">Log Out</a>
                         </div>
                     </div>
@@ -144,7 +143,7 @@ if (session == null || session.getAttribute("sessionEmail") == null) {
                         <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
                             <i class="fa fa-chart-area fa-3x text-primary"></i>
                             <div class="ms-3">
-                                <p class="mb-2">Today Received</p>
+                                <p class="mb-2">Total Received</p>
                                 <h6 class="mb-0">${totalReceivedParcels}</h6>
                             </div>
                         </div>
