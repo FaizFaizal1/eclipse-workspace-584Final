@@ -73,7 +73,7 @@ public class LoginController extends HttpServlet {
 					request.setAttribute("totalDispatchers", DashboardDAO.countTotalDispatchers());
 					request.setAttribute("totalActiveDispatchers", DashboardDAO.countTotalDispatchersByType("Active"));
 					request.setAttribute("totalInactiveDispatchers", DashboardDAO.countTotalDispatchersByType("Inactive"));
-					//TO DO create admin dashboard♣
+					//TO DO create admin dashboard
 		            request.getRequestDispatcher("/courier.admin/adminDashboard.jsp").forward(request, response);
 				}
 				else {

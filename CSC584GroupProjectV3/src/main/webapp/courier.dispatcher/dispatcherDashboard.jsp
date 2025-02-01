@@ -80,7 +80,7 @@ if (session == null || session.getAttribute("sessionEmail") == null) {
                     </div>
                 </div>
                 <div class="navbar-nav w-100">
-                    <a href="dispatcherDashboard.jsp" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a> <!-- index.html -->
+                    <a href="DashboardController?staffId=${staff.staffId}" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a> <!-- index.html -->
                     <a href="DispatcherController?action=updateDispatcherProfile&staffId=${staff.staffId}" class="nav-item nav-link"><i class="fa fa-address-card me-2"></i>Update Profile</a> <!-- widget.html -->
                     <a href="ParcelController?action=listParcels&staffId=${staff.staffId}" class="nav-item nav-link"><i class="fa fa-boxes me-2"></i>Scan & Sort</a> <!-- form.html -->
                     <a href="PaymentController?action=listPayments&staffId=${staff.staffId}" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Payment</a> <!-- chart.html -->
@@ -107,11 +107,10 @@ if (session == null || session.getAttribute("sessionEmail") == null) {
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                             <img class="rounded-circle me-lg-2" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
-                            <span class="d-none d-lg-inline-flex">Anwar Hadif</span>
+                            <span class="d-none d-lg-inline-flex"><c:out value="${staff.staffFirstName} ${staff.staffLastName}"/></span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
                             <a href="#" class="dropdown-item">My Profile</a>
-                            <a href="#" class="dropdown-item">Settings</a>
                             <a href="LogoutController" class="dropdown-item">Log Out</a>
                         </div>
                     </div>

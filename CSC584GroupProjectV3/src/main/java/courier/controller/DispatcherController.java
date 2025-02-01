@@ -25,11 +25,11 @@ public class DispatcherController extends HttpServlet {
 	private RequestDispatcher view;
 	private int staffId;
 	private String action="", forward="";
-	private static String LIST = "manageDispatcher.jsp";
-	private static String UPDATE = "updateDispatcher.jsp";
-	private static String UPDATE_PROFILE = "updateDispatcherProfile.jsp";
-	private static String VIEW = "viewDispatcher.jsp";
-	private static String ADD = "addDispatcher.jsp";
+	private static String LIST = "/courier.dispatcher/manageDispatcher.jsp";
+	private static String UPDATE = "/courier.dispatcher/updateDispatcher.jsp";
+	private static String UPDATE_PROFILE = "/courier.dispatcher/updateDispatcherProfile.jsp";
+	private static String VIEW = "/courier.dispatcher/viewDispatcher.jsp";
+	private static String ADD = "/courier.dispatcher/addDispatcher.jsp";
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -48,6 +48,8 @@ public class DispatcherController extends HttpServlet {
 
 		if(action.equalsIgnoreCase("listDispatchers")) {
 			forward = LIST;
+			staffId = Integer.parseInt(request.getParameter("staffId"));
+			request.setAttribute("staff", StaffDAO.getStaffById(staffId));
 			request.setAttribute("dispatchers", DispatcherDAO.getAllDispatchers());        
 		}
 		else if(action.equalsIgnoreCase("addDispatcher")) {

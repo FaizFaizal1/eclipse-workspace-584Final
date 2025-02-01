@@ -73,43 +73,25 @@
 							class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
 					</div>
 					<div class="ms-3">
-						<h6 class="mb-0">Jhon Doe</h6>
-						<span>Admin</span>
+						<h6 class="mb-0"><c:out value="${staff.staffFirstName} ${staff.staffLastName}"/></h6>
+						<span><c:out value="${staff.staffRole}"/></span>
 					</div>
 				</div>
 				<div class="navbar-nav w-100">
-					<a href="index.html" class="nav-item nav-link"><i
-						class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
-					<div class="nav-item dropdown">
-						<a href="#" class="nav-link dropdown-toggle"
-							data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Manage
-							Dispatcher</a>
-						<div class="dropdown-menu bg-transparent border-0">
-							<a href="mng_dispatcher.html" class="dropdown-item">Manage
-								Dispatcher</a> <a href="add_dispatcher.html" class="dropdown-item">Add
-								Dispatcher</a> <a href="upd_dispatcher.html" class="dropdown-item">Update
-								Dispatcher</a> <a href="del_dispatcher.html" class="dropdown-item">Delete
-								Dispatcher</a>
+					<a href="DashboardController?staffId=${staff.staffId}" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+					<c:if test="${staff.staffRole} == 'Admin'}">
+						<div class="nav-item dropdown">
+							<a href="#" class="nav-link dropdown-toggle"
+								data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Manage Staff</a>
+							<div class="dropdown-menu bg-transparent border-0">
+								<a href="manageAdmin.jsp" class="dropdown-item">Admin</a>
+								<a href="manageDispatcher.jsp" class="dropdown-item">Dispatcher</a> 
+							</div>
 						</div>
-					</div>
-					<a href="upd_profile.html" class="nav-item nav-link"><i
-						class="fa fa-address-card me-2"></i>Update Profile</a> <a
-						href="scansort.html" class="nav-item nav-link"><i
-						class="fa fa-boxes me-2"></i>Scan & Sort</a> <a
-						href="trackdelivery.html" class="nav-item nav-link"><i
-						class="fa fa-truck-moving me-2"></i>Track Delivery</a> <a
-						href="payment.html" class="nav-item nav-link active"><i
-						class="fa fa-chart-bar me-2"></i>Payment</a>
-					<div class="nav-item dropdown">
-						<a href="#" class="nav-link dropdown-toggle"
-							data-bs-toggle="dropdown"><i class="fa fa-bars me-2"></i>Settings</a>
-						<div class="dropdown-menu bg-transparent border-0">
-							<a href="signin.html" class="dropdown-item">Sign In</a> <a
-								href="register.html" class="dropdown-item">Sign Up</a> <a
-								href="404.html" class="dropdown-item">404 Error</a> <a
-								href="blank.html" class="dropdown-item">Blank Page</a>
-						</div>
-					</div>
+					</c:if>
+					<a href=<c:out value="update${staff.staffRole}Profile.jsp"/> class="nav-item nav-link"><i class="fa fa-address-card me-2"></i>Update Profile</a>  
+					<a href="scansort.jsp" class="nav-item nav-link"><i class="fa fa-boxes me-2"></i>Scan & Sort</a> 
+					<a href="payment.jsp" class="nav-item nav-link active"><i class="fa fa-chart-bar me-2"></i>Payment</a>
 				</div>
 			</nav>
 		</div>
@@ -138,13 +120,12 @@
 							data-bs-toggle="dropdown"> <img
 							class="rounded-circle me-lg-2" src="img/user.jpg" alt=""
 							style="width: 40px; height: 40px;"> <span
-							class="d-none d-lg-inline-flex">John Doe</span>
+							class="d-none d-lg-inline-flex"><c:out value="${staff.staffFirstName} ${staff.staffLastName}"/></span>
 						</a>
 						<div
 							class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
-							<a href="#" class="dropdown-item">My Profile</a> <a href="#"
-								class="dropdown-item">Settings</a> <a href="#"
-								class="dropdown-item">Log Out</a>
+							<a href="#" class="dropdown-item">My Profile</a>
+							<a href="LogoutController" class="dropdown-item">Log Out</a>
 						</div>
 					</div>
 				</div>

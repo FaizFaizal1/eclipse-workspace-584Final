@@ -75,16 +75,16 @@ if (session == null || session.getAttribute("sessionEmail") == null) {
                         <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
                     </div>
                     <div class="ms-3">
-                        <h6 class="mb-0">Anwar Hadif</h6>
+                        <h6 class="mb-0"><c:out value="${staff.staffFirstName} ${staff.staffLastName}"/></h6>
                         <span>Admin</span>
                     </div>
                 </div>
                 <div class="navbar-nav w-100">
                     <a href="index.html" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a> <!-- index.html -->
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Manage Dispatcher</a>
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Manage Staff</a>
                         <div class="dropdown-menu bg-transparent border-0">
-                            <a href="ListDispatcherController" class="dropdown-item">Manage Dispatcher</a> <!-- button.html -->
+                            <a href="ListDispatcherController" class="dropdown-item">Manage Staff</a> <!-- button.html -->
                             <a href="addDispatcher.jsp" class="dropdown-item">Add Dispatcher</a> <!-- typography.html -->
                             <a href="SendStaffIdController?staffId=${staff.staffId}" class="dropdown-item">Update Staff</a> <!-- element.html -->
                             <a href="SendStaffIdController?staffId=${staff.staffId}" class="dropdown-item">Update Dispatcher</a> <!-- element.html -->
@@ -127,7 +127,7 @@ if (session == null || session.getAttribute("sessionEmail") == null) {
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                             <img class="rounded-circle me-lg-2" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
-                            <span class="d-none d-lg-inline-flex">Anwar Hadif</span>
+                            <span class="d-none d-lg-inline-flex"><c:out value="${staff.staffFirstName} ${staff.staffLastName}"/></span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
                             <a href="#" class="dropdown-item">My Profile</a>

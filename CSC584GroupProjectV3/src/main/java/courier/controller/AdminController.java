@@ -26,11 +26,11 @@ public class AdminController extends HttpServlet {
 	private RequestDispatcher view;
 	private int staffId;
 	private String action="", forward="";
-	private static String LIST = "manageAdmin.jsp";
-	private static String UPDATE = "updateAdmin.jsp";
-	private static String UPDATE_PROFILE = "updateAdminProfile.jsp";
-	private static String VIEW = "viewAdmin.jsp";
-	private static String ADD = "addAdmin.jsp";
+	private static String LIST = "/courier.admin/manageAdmin.jsp";
+	private static String UPDATE = "/courier.admin/updateAdmin.jsp";
+	private static String UPDATE_PROFILE = "/courier.admin/updateAdminProfile.jsp";
+	private static String VIEW = "/courier.admin/viewAdmin.jsp";
+	private static String ADD = "/courier.admin/addAdmin.jsp";
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -45,7 +45,9 @@ public class AdminController extends HttpServlet {
 	 */
     
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		action = request.getParameter("action");		
+		action = request.getParameter("action");	
+		request.setAttribute("staff", StaffDAO.getStaffById(Integer.parseInt(request.getParameter("staffId")))); //for display names and dashboard redirects
+		
 		if(action.equalsIgnoreCase("listAdmins")) {
 			forward = LIST;
 			request.setAttribute("admins", AdminDAO.getAllAdmin());        
