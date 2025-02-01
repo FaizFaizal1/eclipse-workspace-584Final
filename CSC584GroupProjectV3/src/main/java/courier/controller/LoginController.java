@@ -8,6 +8,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import courier.dao.AdminDAO;
+import courier.dao.DashboardDAO;
 import courier.dao.DispatcherDAO;
 import courier.dao.StaffDAO;
 import courier.model.Admin;
@@ -67,8 +68,10 @@ public class LoginController extends HttpServlet {
 	            
 				if(staff.getStaffRole().equalsIgnoreCase("admin")) {
 					request.setAttribute("admin", AdminDAO.getAdminById(staff.getStaffId()));
-					System.out.print(staff.getStaffEmail()+" Login successfully");
-
+					System.out.print(staff.getStaffEmail()+" Admin login successful");
+					
+					request.setAttribute("totalDispatchers", 0);
+					request.setAttribute("totalDispatchers", DashboardDAO.countTotalDispatchers());
 					//TO DO create admin dashboard
 		            request.getRequestDispatcher("adminDashboard.jsp").forward(request, response);
 				}

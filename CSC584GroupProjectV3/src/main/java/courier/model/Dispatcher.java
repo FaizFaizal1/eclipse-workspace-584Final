@@ -2,7 +2,7 @@ package courier.model;
 
 import java.io.Serializable;
 
-public class Dispatcher implements Serializable {
+public class Dispatcher extends Staff implements Serializable {
 	private static final long serialVersionUId = 1L;
 	private int staffId; // use dispatcherId? example given by miss uses different Id name.
 	private String dispatcherStatus;

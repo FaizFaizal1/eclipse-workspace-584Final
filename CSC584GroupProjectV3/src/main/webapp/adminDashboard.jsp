@@ -75,8 +75,7 @@ if (session == null || session.getAttribute("sessionEmail") == null) {
                         <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
                     </div>
                     <div class="ms-3">
-                        <h6 class="mb-0">Anwar Hadif</h6>
-                        <span>Admin</span>
+                        <h6 class="mb-0"><c:out value="${staff.staffFirstName} ${staff.staffLastName}"/></h6>
                     </div>
                 </div>
                 <div class="navbar-nav w-100">
@@ -127,7 +126,7 @@ if (session == null || session.getAttribute("sessionEmail") == null) {
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                             <img class="rounded-circle me-lg-2" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
-                            <span class="d-none d-lg-inline-flex">Anwar Hadif</span>
+                            <span class="d-none d-lg-inline-flex"><c:out value="${staff.staffFirstName} ${staff.staffLastName}"/></span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
                             <a href="#" class="dropdown-item">My Profile</a>
@@ -147,8 +146,8 @@ if (session == null || session.getAttribute("sessionEmail") == null) {
                         <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
                             <i class="fa fa-chart-line fa-3x text-primary"></i>
                             <div class="ms-3">
-                                <p class="mb-2">Today Sale</p>
-                                <h6 class="mb-0">$1234</h6>
+                                <p class="mb-2">Total Dispatchers</p>
+                                <h6 class="mb-0">${totalDispatchers}</h6>
                             </div>
                         </div>
                     </div>
@@ -156,7 +155,7 @@ if (session == null || session.getAttribute("sessionEmail") == null) {
                         <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
                             <i class="fa fa-chart-bar fa-3x text-primary"></i>
                             <div class="ms-3">
-                                <p class="mb-2">Total Sale</p>
+                                <p class="mb-2">Total Active Dispatchers</p>
                                 <h6 class="mb-0">$1234</h6>
                             </div>
                         </div>
@@ -165,7 +164,7 @@ if (session == null || session.getAttribute("sessionEmail") == null) {
                         <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
                             <i class="fa fa-chart-area fa-3x text-primary"></i>
                             <div class="ms-3">
-                                <p class="mb-2">Today Revenue</p>
+                                <p class="mb-2">Today Inactive Dispatchers</p>
                                 <h6 class="mb-0">$1234</h6>
                             </div>
                         </div>
