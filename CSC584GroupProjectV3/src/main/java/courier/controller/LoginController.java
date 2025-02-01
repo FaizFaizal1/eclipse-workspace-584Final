@@ -70,8 +70,9 @@ public class LoginController extends HttpServlet {
 					request.setAttribute("admin", AdminDAO.getAdminById(staff.getStaffId()));
 					System.out.print(staff.getStaffEmail()+" Admin login successful");
 					
-					request.setAttribute("totalDispatchers", 0);
 					request.setAttribute("totalDispatchers", DashboardDAO.countTotalDispatchers());
+					request.setAttribute("totalActiveDispatchers", DashboardDAO.countTotalDispatchersByType("Active"));
+					request.setAttribute("totalInactiveDispatchers", DashboardDAO.countTotalDispatchersByType("Inactive"));
 					//TO DO create admin dashboard♣
 		            request.getRequestDispatcher("adminDashboard.jsp").forward(request, response);
 				}

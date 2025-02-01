@@ -156,7 +156,7 @@ if (session == null || session.getAttribute("sessionEmail") == null) {
                             <i class="fa fa-chart-bar fa-3x text-primary"></i>
                             <div class="ms-3">
                                 <p class="mb-2">Total Active Dispatchers</p>
-                                <h6 class="mb-0">$</h6>
+                                <h6 class="mb-0">${totalActiveDispatchers}</h6>
                             </div>
                         </div>
                     </div>
@@ -165,7 +165,7 @@ if (session == null || session.getAttribute("sessionEmail") == null) {
                             <i class="fa fa-chart-area fa-3x text-primary"></i>
                             <div class="ms-3">
                                 <p class="mb-2">Today Inactive Dispatchers</p>
-                                <h6 class="mb-0">$1234</h6>
+                                <h6 class="mb-0">${totalInactiveDispatchers}</h6>
                             </div>
                         </div>
                     </div>
@@ -216,70 +216,33 @@ if (session == null || session.getAttribute("sessionEmail") == null) {
                         <h6 class="mb-0">Recent Salse</h6>
                         <a href="">Show All</a>
                     </div>
-                    <div class="table-responsive">
-                        <table class="table text-start align-middle table-bordered table-hover mb-0">
-                            <thead>
-                                <tr class="text-white">
-                                    <th scope="col"><input class="form-check-input" type="checkbox"></th>
-                                    <th scope="col">Date</th>
-                                    <th scope="col">Invoice</th>
-                                    <th scope="col">Customer</th>
-                                    <th scope="col">Amount</th>
-                                    <th scope="col">Status</th>
-                                    <th scope="col">Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><input class="form-check-input" type="checkbox"></td>
-                                    <td>01 Jan 2045</td>
-                                    <td>INV-0123</td>
-                                    <td>Anwar</td>
-                                    <td>$123</td>
-                                    <td>Paid</td>
-                                    <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-                                </tr>
-                                <tr>
-                                    <td><input class="form-check-input" type="checkbox"></td>
-                                    <td>01 Jan 2045</td>
-                                    <td>INV-0123</td>
-                                    <td>Anwar</td>
-                                    <td>$123</td>
-                                    <td>Paid</td>
-                                    <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-                                </tr>
-                                <tr>
-                                    <td><input class="form-check-input" type="checkbox"></td>
-                                    <td>01 Jan 2045</td>
-                                    <td>INV-0123</td>
-                                    <td>Anwar</td>
-                                    <td>$123</td>
-                                    <td>Paid</td>
-                                    <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-                                </tr>
-                                <tr>
-                                    <td><input class="form-check-input" type="checkbox"></td>
-                                    <td>01 Jan 2045</td>
-                                    <td>INV-0123</td>
-                                    <td>Anwar</td>
-                                    <td>$123</td>
-                                    <td>Paid</td>
-                                    <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-                                </tr>
-                                <tr>
-                                    <td><input class="form-check-input" type="checkbox"></td>
-                                    <td>01 Jan 2045</td>
-                                    <td>INV-0123</td>
-                                    <td>Anwar</td>
-                                    <td>$123</td>
-                                    <td>Paid</td>
-                                    <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
+ 					<!-- Table -->
+					<div class="table-responsive">
+						<table class="table table-bordered table-striped table-hover mb-0">
+							<thead class="bg-primary text-white">
+								<tr>
+									<th>Payment Id</th>
+									<th>Payment Amount (RM)</th>
+									<th>Payment Date</th>
+									<th>Payment Status</th>
+									<th>Parcel Id</th>
+								</tr>
+							</thead>
+							<tbody>
+								<c:forEach items="${payments}" var="payment">
+									<tr>
+										<td><c:out value="${payment.paymentId}" /></td>
+										<td><c:out value="${payment.paymentAmount}" /></td>
+										<td><c:out value="${payment.paymentDate}" /></td>
+										<td><c:out value="${payment.paymentStatus}" /></td>
+										<td><c:out value="${payment.parcelId}" /></td>
+									</tr>
+								</c:forEach>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
             <!-- Recent Sales End -->
 
 

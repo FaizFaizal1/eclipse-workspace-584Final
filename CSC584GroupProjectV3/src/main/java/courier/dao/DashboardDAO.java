@@ -49,17 +49,16 @@ public class DashboardDAO {
 
 			con = ConnectionManager.getConnection();
 
-			sql = "SELECT * FROM dispatcher";
-			stmt = con.createStatement();
-
-			rs = stmt.executeQuery(sql);
-			
+			sql = "SELECT * FROM dispatcher WHERE dispatcherStatus=?";
+			ps = con.prepareStatement(sql);
 			
 			if ("Active".equalsIgnoreCase(type)) {
 				ps.setString(1, "Active");
 			} else {
 				ps.setString(1, "Inactive");
 			}
+			
+			rs = ps.executeQuery();
 			
 			count = 0;
 			while(rs.next()) {
