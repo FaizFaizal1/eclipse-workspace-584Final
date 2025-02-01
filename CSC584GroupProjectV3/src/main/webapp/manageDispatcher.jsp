@@ -86,15 +86,12 @@
 							Dispatcher</a>
 						<div class="dropdown-menu bg-transparent border-0">
 							<a href="mng_dispatcher.html" class="dropdown-item">Manage
-								Dispatcher</a> <a href="add_dispatcher.html" class="dropdown-item">Add
-								Dispatcher</a> <a href="upd_dispatcher.html" class="dropdown-item">Update
-								Dispatcher</a> <a href="del_dispatcher.html" class="dropdown-item">Delete
 								Dispatcher</a>
 						</div>
 					</div>
 					<a href="upd_profile.html" class="nav-item nav-link"><i
 						class="fa fa-address-card me-2"></i>Update Profile</a> <a
-						href="scansort.jsp" class="nav-item nav-link active"><i
+						href="scansort.jsp" class="nav-item nav-link"><i
 						class="fa fa-boxes me-2"></i>Scan & Sort</a> <a
 						href="payment.html" class="nav-item nav-link"><i
 						class="fa fa-chart-bar me-2"></i>Payment</a>
@@ -153,7 +150,7 @@
 			<!-- Form Start -->
 			<div class="container-fluid pt-4 px-4">
 				<div class="bg-secondary rounded p-4">
-					<h5 class="mb-4">Parcel Tracking</h5> <a href="ParcelController?action=addParcel" class="btn btn-primary">Add Parcel</a>
+					<h5 class="mb-4">Manage Dispatchers</h5> <a href="DispatcherController?action=addDispatcher" class="btn btn-primary">Add Dispatcher</a>
 
 					<!-- Table -->
 					<div class="table-responsive">

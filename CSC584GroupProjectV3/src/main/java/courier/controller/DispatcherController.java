@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
 
 import courier.dao.DispatcherDAO;
+import courier.dao.ParcelDAO;
 import courier.dao.StaffDAO;
 import courier.dao.DispatcherDAO;
 import courier.model.Dispatcher;
@@ -106,13 +107,19 @@ public class DispatcherController extends HttpServlet {
 				e.printStackTrace();
 			}
 		} else {//TODO
-//			StaffDAO.a
-//			DispatcherDAO.addDispatcher(staff);
+			try {
+				StaffDAO.addStaff(staff);
+			} catch (NoSuchAlgorithmException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			DispatcherDAO.updateDispatcher(dispatcher);
 		}
 
 		forward = LIST;
 		request.setAttribute("dispatchers", DispatcherDAO.getAllDispatchers()); 
 		view = request.getRequestDispatcher(forward);
-		view.forward(request, response);	}
+		view.forward(request, response);	
+	}
 
 }
