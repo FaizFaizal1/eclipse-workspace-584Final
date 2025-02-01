@@ -89,9 +89,9 @@
 							</div>
 						</div>
 					</c:if>
-					<a href=<c:out value="update${staff.staffRole}Profile.jsp"/> class="nav-item nav-link"><i class="fa fa-address-card me-2"></i>Update Profile</a>  
-					<a href="scansort.jsp" class="nav-item nav-link active"><i class="fa fa-boxes me-2"></i>Scan & Sort</a> 
-					<a href="payment.jsp" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Payment</a>
+					<a href="${staff.staffRole}Controller?action=update${staff.staffRole}Profile&staffId=${staff.staffId}" class="nav-item nav-link"><i class="fa fa-address-card me-2"></i>Update Profile</a>  
+                    <a href="ParcelController?action=listParcels&staffId=${staff.staffId}" class="nav-item nav-link active"><i class="fa fa-boxes me-2"></i>Scan & Sort</a> <!-- form.html -->
+                    <a href="PaymentController?action=listPayments&staffId=${staff.staffId}" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Payment</a> <!-- chart.html -->
 				</div>
 			</nav>
 		</div>
