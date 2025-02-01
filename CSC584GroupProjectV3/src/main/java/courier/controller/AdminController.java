@@ -46,10 +46,11 @@ public class AdminController extends HttpServlet {
     
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		action = request.getParameter("action");	
-		request.setAttribute("staff", StaffDAO.getStaffById(Integer.parseInt(request.getParameter("staffId")))); //for display names and dashboard redirects
 		
 		if(action.equalsIgnoreCase("listAdmins")) {
 			forward = LIST;
+			staffId = Integer.parseInt(request.getParameter("staffId"));
+			request.setAttribute("staff", StaffDAO.getStaffById(staffId)); //for display names and dashboard redirects
 			request.setAttribute("admins", AdminDAO.getAllAdmin());        
 		}
 		else if(action.equalsIgnoreCase("addAdmin")) {

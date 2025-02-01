@@ -6,6 +6,8 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+
 import java.io.IOException;
 
 import courier.dao.AdminDAO;
@@ -19,6 +21,7 @@ import courier.model.Staff;
  */
 public class DashboardController extends HttpServlet {
 	private static final long serialVersionUId = 1L;
+	private HttpSession session;
 	private RequestDispatcher view;
 	private int staffId;
 	private String forward="";
@@ -36,7 +39,7 @@ public class DashboardController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		staffId = Integer.parseInt(request.getParameter("staffId"));
+		staffId = (int) session.getAttribute("sessionId");
 		Staff staff = StaffDAO.getStaffById(staffId);
 		
 		request.setAttribute("staff", staff);
