@@ -155,7 +155,7 @@
 			<!-- Payment Section Start -->
 			<div class="container-fluid pt-4 px-4">
 				<div class="bg-secondary rounded p-4">
-					<h6 class="mb-4">Payment Details</h6> <a href="PaymentController?action=addPayment">Add Payment</a>
+					<h5 class="mb-4">Payment Details</h5> <a href="PaymentController?action=addPayment">Add Payment</a>
 
 					<!-- Table -->
 					<div class="table-responsive">
