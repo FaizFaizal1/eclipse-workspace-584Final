@@ -19,10 +19,10 @@ public class ParcelController extends HttpServlet {
 	private RequestDispatcher view;
 	private int parcelId;
 	private String action="", forward="";
-	private static String LIST = "/parcel/scansort.jsp";
-	private static String UPDATE = "/parcel/updateParcel.jsp";
-	private static String VIEW = "/parcel/viewParcel.jsp";
-	private static String ADD = "/parcel/addParcel.jsp";	
+	private static String LIST = "/courier.parcel/scansort.jsp";
+	private static String UPDATE = "/courier.parcel/updateParcel.jsp";
+	private static String VIEW = "/courier.parcel/viewParcel.jsp";
+	private static String ADD = "/courier.parcel/addParcel.jsp";	
        
     /**
      * @see HttpServlet#HttpServlet()

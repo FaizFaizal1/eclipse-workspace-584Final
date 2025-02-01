@@ -74,7 +74,7 @@ public class LoginController extends HttpServlet {
 					request.setAttribute("totalActiveDispatchers", DashboardDAO.countTotalDispatchersByType("Active"));
 					request.setAttribute("totalInactiveDispatchers", DashboardDAO.countTotalDispatchersByType("Inactive"));
 					//TO DO create admin dashboard♣
-		            request.getRequestDispatcher("adminDashboard.jsp").forward(request, response);
+		            request.getRequestDispatcher("/courier.admin/adminDashboard.jsp").forward(request, response);
 				}
 				else {
 					request.setAttribute("dispatcher", DispatcherDAO.getDispatcherById(staff.getStaffId()));	
@@ -83,7 +83,7 @@ public class LoginController extends HttpServlet {
 					request.setAttribute("totalReceivedParcels", DashboardDAO.countTotalDispatchersByType("Received"));
 
 					//TO DO create dispatcher dashboard
-		            request.getRequestDispatcher("dispatcherDashboard.jsp").forward(request, response);
+		            request.getRequestDispatcher("/courier.dispatcher/dispatcherDashboard.jsp").forward(request, response);
 				}		
 	        } else {
 	        	System.out.println("Invalid login credentials");

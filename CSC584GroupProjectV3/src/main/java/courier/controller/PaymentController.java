@@ -21,10 +21,10 @@ public class PaymentController extends HttpServlet {
 	private RequestDispatcher view;
 	private int paymentId;
 	private String action="", forward="";
-	private static String LIST = "/payment/paymentList.jsp";
-	private static String UPDATE = "/payment/updatePayment.jsp";
-	private static String VIEW = "/payment/viewPayment.jsp";
-	private static String ADD = "/payment/addPayment.jsp";	
+	private static String LIST = "/courier.payment/paymentList.jsp";
+	private static String UPDATE = "/courier.payment/updatePayment.jsp";
+	private static String VIEW = "/courier.payment/viewPayment.jsp";
+	private static String ADD = "/courier.payment/addPayment.jsp";	
        
     /**
      * @see HttpServlet#HttpServlet()
