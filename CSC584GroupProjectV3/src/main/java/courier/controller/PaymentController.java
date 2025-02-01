@@ -9,6 +9,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 import courier.dao.PaymentDAO;
+import courier.dao.StaffDAO;
 import courier.dao.PaymentDAO;
 import courier.model.Payment;
 import courier.dao.PaymentDAO;
@@ -39,6 +40,8 @@ public class PaymentController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		action = request.getParameter("action");
+		
+		request.setAttribute("staff", StaffDAO.getStaffById(Integer.parseInt(request.getParameter("staffId"))));
 
 		//view all payments
 		if(action.equalsIgnoreCase("listPayments")) {
