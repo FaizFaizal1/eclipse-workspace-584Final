@@ -21,7 +21,7 @@
 <br><br>
 <form action="DispatcherController" method="POST">
  <div class="mb-3">
-    <label for="dispatcherId" class="form-label">Staff ID</label>    
+    <label for="dispatcherId" class="form-label">Staff ID</label>
     <input type="text" class="form-control" id="staffId" name="staffId" placeholder="staffId.." value="<c:out value="${staff.staffId}"/>" required>   
   </div>
  <div class="mb-3">

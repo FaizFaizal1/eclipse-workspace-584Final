@@ -36,6 +36,7 @@ public class AdminDAO {
 				Admin admin = new Admin();
 				admin.setStaffId(rs.getInt("staffId"));
 				admin.setAdminRole(rs.getString("adminRole"));
+				admin.setStaff(StaffDAO.getStaffById(rs.getInt("staffId")));
 				admins.add(admin);
 			}
 			// 5. close connection
@@ -101,7 +102,27 @@ public class AdminDAO {
 
 		} catch (Exception e) {
 			e.printStackTrace();
+		}
+	}
+	
+	public static void deleteAdmin(int staffId) {
+		try {
+			//call getConnection() method 
+			con = ConnectionManager.getConnection();
 
+			//3. create statement 
+			sql = "DELETE FROM admin WHERE staffId = ?";
+			ps=con.prepareStatement(sql);
+			ps.setInt(1, staffId);
+
+			//4. execute query
+			ps.executeUpdate();
+
+			//5. close connection
+			con.close();
+
+		}catch(Exception e) {
+			e.printStackTrace();
 		}
 	}
 

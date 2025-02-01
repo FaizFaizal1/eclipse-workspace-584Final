@@ -85,6 +85,7 @@ if (session == null || session.getAttribute("sessionEmail") == null) {
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Manage Dispatcher</a>
                         <div class="dropdown-menu bg-transparent border-0">
                             <a href="DispatcherController?action=listDispatchers" class="dropdown-item">Manage Dispatcher</a> <!-- element.html -->
+                            <a href="AdminController?action=listAdmins" class="dropdown-item">Manage Admin</a> <!-- element.html -->
                             <a href="addDispatcher.jsp" class="dropdown-item">Add Dispatcher</a> <!-- typography.html -->
                             <a href="SendStaffIdController?staffId=${staff.staffId}" class="dropdown-item">Update Staff</a> <!-- element.html -->
                             <a href="DispatcherController?action=updateDispatcher&staffId=${staff.staffId}" class="dropdown-item">Update Dispatcher</a> <!-- element.html -->

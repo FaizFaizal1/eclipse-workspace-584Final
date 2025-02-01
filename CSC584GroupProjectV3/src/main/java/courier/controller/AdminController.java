@@ -11,9 +11,10 @@ import java.security.NoSuchAlgorithmException;
 
 import courier.dao.AdminDAO;
 import courier.dao.DispatcherDAO;
+import courier.dao.AdminDAO;
 import courier.dao.StaffDAO;
 import courier.model.Admin;
-import courier.model.Dispatcher;
+import courier.model.Admin;
 import courier.model.Staff;	
 
 /**
@@ -25,10 +26,10 @@ public class AdminController extends HttpServlet {
 	private RequestDispatcher view;
 	private int staffId;
 	private String action="", forward="";
-//	private static String LIST = "scansort.jsp";
+	private static String LIST = "manageAdmin.jsp";
 	private static String UPDATE = "updateAdmin.jsp";
-//	private static String VIEW = "/staff/viewSupplier.jsp";	
-//	private static String VIEW_PROFILE = "/supplier/viewProfile.jsp";
+	private static String VIEW = "viewAdmin.jsp";
+	private static String ADD = "addAdmin.jsp";
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -41,6 +42,7 @@ public class AdminController extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
+    
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		action = request.getParameter("action");
 
@@ -51,10 +53,36 @@ public class AdminController extends HttpServlet {
 			staffId = Integer.parseInt(request.getParameter("staffId"));
 			System.out.println(staffId);
 			request.setAttribute("staff", StaffDAO.getStaffById(staffId));
-		}		
+		}
+		
+		if(action.equalsIgnoreCase("listAdmins")) {
+			forward = LIST;
+			request.setAttribute("admins", AdminDAO.getAllAdmin());        
+		}
+		else if(action.equalsIgnoreCase("addAdmin")) {
+			forward = ADD;
+		}
+		else if(action.equalsIgnoreCase("viewAdmin")) {
+			forward = VIEW;
+			staffId = Integer.parseInt(request.getParameter("staffId"));
+			request.setAttribute("staff", StaffDAO.getStaffById(staffId));
+			request.setAttribute("admin", AdminDAO.getAdminById(staffId));
+		}	
+		else if(action.equalsIgnoreCase("updateAdmin")) { 
+			forward = UPDATE;
+			staffId = Integer.parseInt(request.getParameter("staffId"));
+			request.setAttribute("staff", StaffDAO.getStaffById(staffId));
+			request.setAttribute("admin", AdminDAO.getAdminById(staffId));	        
+		}
+		else if(action.equalsIgnoreCase("deleteAdmin")) {
+			forward = LIST;
+			staffId = Integer.parseInt(request.getParameter("staffId"));
+			AdminDAO.deleteAdmin(staffId);
+			request.setAttribute("admins", AdminDAO.getAllAdmin());        
+		}
 
 		view = request.getRequestDispatcher(forward);
-		view.forward(request, response);
+		view.forward(request, response);	
 	}
 
 	/**
@@ -74,20 +102,32 @@ public class AdminController extends HttpServlet {
 		admin.setAdminRole(request.getParameter("adminRole"));
 		
 		String staffId = request.getParameter("staffId");
-		
-		staff.setStaffId(Integer.parseInt(staffId));
-		admin.setStaffId(Integer.parseInt(staffId));
-		admin.setStaff(staff);
 
-		//update admin
-		try {
-			StaffDAO.updateStaff(admin.getStaff());
+		if(staffId != null) {
+			try {
+			staff.setStaffId(Integer.parseInt(staffId));
+			admin.setStaffId(Integer.parseInt(staffId));
+			admin.setStaff(staff);
 			AdminDAO.updateAdmin(admin);
-		} catch (NoSuchAlgorithmException e) {
-			e.printStackTrace();
+			StaffDAO.updateStaff(admin.getStaff());
+			} catch (NoSuchAlgorithmException e) {
+				e.printStackTrace();
+			}
+		} else {//TODO
+			try {
+				admin.setStaff(staff);
+				StaffDAO.addStaff(admin.getStaff());
+				admin.setStaffId(StaffDAO.getStaffByEmail(request.getParameter("adminEmail")).getStaffId());
+				AdminDAO.updateAdmin(admin);
+			} catch (NoSuchAlgorithmException e) {
+				e.printStackTrace();
+			}
 		}
 
-		response.sendRedirect(request.getContextPath() + "/index.jsp");
+		forward = LIST;
+		request.setAttribute("admins", AdminDAO.getAllAdmin()); 
+		view = request.getRequestDispatcher(forward);
+		view.forward(request, response);	
 	}
 
 }

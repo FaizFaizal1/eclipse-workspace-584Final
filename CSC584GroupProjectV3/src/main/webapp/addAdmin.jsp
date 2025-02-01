@@ -12,37 +12,33 @@
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">	
-	<title>Login</title>
+	<title>Add Admin</title>
 </head>
 <body>
 <div class="container">
 <br><br>
-<h3>Update Admin</h3>
+<h3>Add Admin</h3>
 <br><br>
-<form action="AdminController?action=updateProfile" method="POST">
- <div class="mb-3">
-    <label for="adminId" class="form-label">Staff ID</label>    
-    <input type="text" class="form-control" id="staffId" name="staffId" placeholder="staffId.." value="<c:out value="${staff.staffId}"/>" required>   
- </div>
+<form action=AdminController method="POST">
  <div class="mb-3">
     <label for="adminFirstName" class="form-label">Admin First Name</label>    
     <input type="text" class="form-control" id="adminFirstName" name="adminFirstName" placeholder="adminFirstName.." required>   
   </div>
  <div class="mb-3">
-    <label for="adminLastName" class="form-label">Admin Last Name</label>    
-    <input type="text" class="form-control" id="adminLastName" name="adminLastName" placeholder="adminLastName.." required>   
+    <label for=adminLastName class="form-label">Admin Last Name</label>    
+    <input type="text" class="form-control" id=adminLastName name=adminLastName placeholder="admin_last_name.." required>   
   </div>
  <div class="mb-3">
     <label for="adminPhoneNumber" class="form-label">Admin Phone Number</label>    
     <input type="text" class="form-control" id="adminPhoneNumber" name="adminPhoneNumber" placeholder="adminPhoneNumber.." required>   
   </div>
  <div class="mb-3">
-    <label for="adminAddress" class="form-label">Admin Address</label>    
-    <input type="text" class="form-control" id="adminAddress" name="adminAddress" placeholder="adminAddress.." required>   
-  </div>
- <div class="mb-3">
     <label for="adminEmail" class="form-label">Admin Email</label>    
     <input type="email" class="form-control" id="adminEmail" name="adminEmail" placeholder="adminEmail.." required>   
+  </div>
+ <div class="mb-3">
+    <label for="adminAddress" class="form-label">Admin Address</label>    
+    <input type="text" class="form-control" id="adminAddress" name="adminAddress" placeholder="adminAddress.." required>   
   </div>
   <div class="mb-3">
     <label for="adminPassword" class="form-label">Admin Password</label>    
@@ -54,11 +50,8 @@
     <input type="radio" id="adminRole" name="adminRole" value="Member">Member
   </div>
   <div class="mb-3">
-    <input type="hidden" id="staffId" name="staffId" value="${staff.staffId}">
-  </div>
-  <div class="mb-3">
-    <input type="hidden" id="staffRole" name="staffRole" value="${staff.staffRole}">   	
-  </div>
+    <input type="hidden" id="staffRole" name="staffRole" value="Admin">   	
+  </div>  
   <div class="mb-3">
     <input type="submit" class="btn btn-primary" value="Submit"> 
     <input type="reset" class="btn btn-primary" value="Reset">  

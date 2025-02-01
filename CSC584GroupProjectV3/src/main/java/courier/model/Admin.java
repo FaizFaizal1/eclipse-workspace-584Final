@@ -2,7 +2,7 @@ package courier.model;
 
 import java.io.Serializable;
 
-public class Admin implements Serializable {
+public class Admin extends Staff implements Serializable {
 	private static final long serialVersionUId = 1L;
 	private int staffId; // use adminId? example given by miss uses different Id name.
 	private String adminRole;

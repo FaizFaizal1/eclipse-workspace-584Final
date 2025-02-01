@@ -27,7 +27,7 @@ public class DispatcherController extends HttpServlet {
 	private static String LIST = "manageDispatcher.jsp";
 	private static String UPDATE = "updateDispatcher.jsp";
 	private static String VIEW = "viewDispatcher.jsp";
-	private static String ADD = "addDispatcher.jsp";	
+	private static String ADD = "addDispatcher.jsp";
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -71,7 +71,8 @@ public class DispatcherController extends HttpServlet {
 		}
 
 		view = request.getRequestDispatcher(forward);
-		view.forward(request, response);	}
+		view.forward(request, response);	
+	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
@@ -108,12 +109,13 @@ public class DispatcherController extends HttpServlet {
 			}
 		} else {//TODO
 			try {
-				StaffDAO.addStaff(staff);
+				dispatcher.setStaff(staff);
+				StaffDAO.addStaff(dispatcher.getStaff());
+				dispatcher.setStaffId(StaffDAO.getStaffByEmail(request.getParameter("dispatcherEmail")).getStaffId());
+				DispatcherDAO.updateDispatcher(dispatcher);
 			} catch (NoSuchAlgorithmException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			DispatcherDAO.updateDispatcher(dispatcher);
 		}
 
 		forward = LIST;
