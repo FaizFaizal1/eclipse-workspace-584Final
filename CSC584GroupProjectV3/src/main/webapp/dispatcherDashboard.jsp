@@ -81,7 +81,7 @@ if (session == null || session.getAttribute("sessionEmail") == null) {
                 </div>
                 <div class="navbar-nav w-100">
                     <a href="index.html" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a> <!-- index.html -->
-                    <a href="upd_profile.html" class="nav-item nav-link"><i class="fa fa-address-card me-2"></i>Update Profile//todo</a> <!-- widget.html -->
+                    <a href="DispatcherController?action=updateDispatcherProfile&staffId=${staff.staffId}" class="nav-item nav-link"><i class="fa fa-address-card me-2"></i>Update Profile</a> <!-- widget.html -->
                     <a href="ParcelController?action=listParcels" class="nav-item nav-link"><i class="fa fa-boxes me-2"></i>Scan & Sort</a> <!-- form.html -->
                     <a href="PaymentController?action=listPayments" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Payment</a> <!-- chart.html -->
                     <div class="nav-item dropdown">

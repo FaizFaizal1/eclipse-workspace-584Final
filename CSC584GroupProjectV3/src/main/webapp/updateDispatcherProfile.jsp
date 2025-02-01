@@ -20,12 +20,8 @@
 <h3>Update Dispatcher</h3>
 <br><br>
 <form action="DispatcherController" method="POST">
- <div class="mb-3">
-    <label for="dispatcherId" class="form-label">Staff ID</label>
-    <input type="text" class="form-control" id="staffId" name="staffId" placeholder="staffId.." value="<c:out value="${staff.staffId}"/>" required>   
   </div>
-  </div>
-    <input type="hidden" id="staffRole" name="staffRole" value="Dispatcher">
+    <input type="hidden" id="staffId" name="staffId" value="${staff.staffId}">
   </div>
  <div class="mb-3">
     <label for="dispatcherFirstName" class="form-label">Dispatcher First Name</label>    
