@@ -153,13 +153,13 @@
 				<div class="row g-4">
 					<div class="col-sm-12 col-xl-6">
                         <div class="bg-secondary rounded h-100 p-4">
-                            <h6 class="mb-4">Dispatcher <c:out value="${dispatcher.staff.staffId}"/> </h6>
-                            Dispatcher First Name: <c:out value="${dispatcher.staff.staffFirstName}"/><br>
-                            Dispatcher Last Name: <c:out value="${dispatcher.staff.staffLastName}"/><br>
-                            Dispatcher Phone Number: <c:out value="${dispatcher.staff.staffPhoneNumber}"/><br>
-                            Dispatcher Email: <c:out value="${dispatcher.staff.staffEmail}"/><br>
-                            Dispatcher Address: <c:out value="${dispatcher.staff.staffAddress}"/><br>
-                            Dispatcher Password: <c:out value="${dispatcher.staff.staffPassword}"/><br>
+                            <h6 class="mb-4">Dispatcher <c:out value="${staff.staffId}"/> </h6>
+                            Dispatcher First Name: <c:out value="${staff.staffFirstName}"/><br>
+                            Dispatcher Last Name: <c:out value="${staff.staffLastName}"/><br>
+                            Dispatcher Phone Number: <c:out value="${staff.staffPhoneNumber}"/><br>
+                            Dispatcher Email: <c:out value="${staff.staffEmail}"/><br>
+                            Dispatcher Address: <c:out value="${staff.staffAddress}"/><br>
+                            Dispatcher Password: <c:out value="${staff.staffPassword}"/><br>
                             Dispatcher Status: <c:out value="${dispatcher.dispatcherStatus}"/><br>
                             Dispatcher Employment Type: <c:out value="${dispatcher.dispatcherEmploymentType}"/><br>
                     	</div>

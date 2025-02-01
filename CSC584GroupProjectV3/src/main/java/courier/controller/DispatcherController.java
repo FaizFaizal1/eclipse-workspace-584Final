@@ -53,6 +53,7 @@ public class DispatcherController extends HttpServlet {
 		else if(action.equalsIgnoreCase("viewDispatcher")) {
 			forward = VIEW;
 			staffId = Integer.parseInt(request.getParameter("staffId"));
+			request.setAttribute("staff", StaffDAO.getStaffById(staffId));
 			request.setAttribute("dispatcher", DispatcherDAO.getDispatcherById(staffId));
 		}	
 		else if(action.equalsIgnoreCase("updateDispatcher")) { 
