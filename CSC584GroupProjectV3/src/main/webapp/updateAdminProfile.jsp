@@ -20,10 +20,9 @@
 <h3>Update Admin</h3>
 <br><br>
 <form action="AdminController" method="POST">
- <div class="mb-3">
-    <label for="adminId" class="form-label">Staff ID</label>    
-    <input type="text" class="form-control" id="staffId" name="staffId" placeholder="staffId.." value="<c:out value="${staff.staffId}"/>" required>   
- </div>
+  <div class="mb-3">
+    <input type="hidden" id="staffId" name="staffId" value="${staff.staffId}">   	
+  </div> 
  <div class="mb-3">
     <label for="adminFirstName" class="form-label">Admin First Name</label>    
     <input type="text" class="form-control" id="adminFirstName" name="adminFirstName" placeholder="adminFirstName.." required>   

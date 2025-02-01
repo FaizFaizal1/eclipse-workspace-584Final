@@ -86,14 +86,9 @@ if (session == null || session.getAttribute("sessionEmail") == null) {
                         <div class="dropdown-menu bg-transparent border-0">
                             <a href="DispatcherController?action=listDispatchers" class="dropdown-item">Manage Dispatcher</a> <!-- element.html -->
                             <a href="AdminController?action=listAdmins" class="dropdown-item">Manage Admin</a> <!-- element.html -->
-                            <a href="addDispatcher.jsp" class="dropdown-item">Add Dispatcher</a> <!-- typography.html -->
-                            <a href="SendStaffIdController?staffId=${staff.staffId}" class="dropdown-item">Update Staff</a> <!-- element.html -->
-                            <a href="DispatcherController?action=updateDispatcher&staffId=${staff.staffId}" class="dropdown-item">Update Dispatcher</a> <!-- element.html -->
-                            <a href="AdminController?action=updateProfile&staffId=${staff.staffId}" class="dropdown-item">Update Admin</a> <!-- element.html -->
-                            <a href="del_dispatcher.html" class="dropdown-item">Delete Dispatcher</a> <!-- element.html -->
                         </div>
                     </div>
-                    <a href="upd_profile.html" class="nav-item nav-link"><i class="fa fa-address-card me-2"></i>Update Profile</a> <!-- widget.html -->
+                    <a href="AdminController?action=updateAdminProfile&staffId=${staff.staffId}" class="nav-item nav-link"><i class="fa fa-address-card me-2"></i>Update Profile</a> <!-- widget.html -->
                     <a href="ParcelController?action=listParcels" class="nav-item nav-link"><i class="fa fa-boxes me-2"></i>Scan & Sort</a> <!-- form.html -->
                     <a href="PaymentController?action=listPayments" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Payment</a> <!-- chart.html -->
                     <div class="nav-item dropdown">

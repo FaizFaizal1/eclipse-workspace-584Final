@@ -28,6 +28,7 @@ public class AdminController extends HttpServlet {
 	private String action="", forward="";
 	private static String LIST = "manageAdmin.jsp";
 	private static String UPDATE = "updateAdmin.jsp";
+	private static String UPDATE_PROFILE = "updateAdminProfile.jsp";
 	private static String VIEW = "viewAdmin.jsp";
 	private static String ADD = "addAdmin.jsp";
        
@@ -44,17 +45,7 @@ public class AdminController extends HttpServlet {
 	 */
     
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		action = request.getParameter("action");
-
-		//view all parcels
-		if(action.equalsIgnoreCase("updateProfile")) {
-			System.out.println("UPDATE");
-			forward = UPDATE;
-			staffId = Integer.parseInt(request.getParameter("staffId"));
-			System.out.println(staffId);
-			request.setAttribute("staff", StaffDAO.getStaffById(staffId));
-		}
-		
+		action = request.getParameter("action");		
 		if(action.equalsIgnoreCase("listAdmins")) {
 			forward = LIST;
 			request.setAttribute("admins", AdminDAO.getAllAdmin());        
@@ -73,6 +64,12 @@ public class AdminController extends HttpServlet {
 			staffId = Integer.parseInt(request.getParameter("staffId"));
 			request.setAttribute("staff", StaffDAO.getStaffById(staffId));
 			request.setAttribute("admin", AdminDAO.getAdminById(staffId));	        
+		}
+		else if(action.equalsIgnoreCase("updateAdminProfile")) {
+			forward = UPDATE_PROFILE;
+			staffId = Integer.parseInt(request.getParameter("staffId"));
+			request.setAttribute("staff", StaffDAO.getStaffById(staffId));
+			request.setAttribute("admin", AdminDAO.getAdminById(staffId));
 		}
 		else if(action.equalsIgnoreCase("deleteAdmin")) {
 			forward = LIST;

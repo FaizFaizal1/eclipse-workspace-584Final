@@ -63,7 +63,7 @@ public class RegisterController extends HttpServlet {
 				e.printStackTrace();
 			}
 			//redirect to dashboard.jsp
-			RequestDispatcher view = request.getRequestDispatcher("index.html"); // staff page
+			RequestDispatcher view = request.getRequestDispatcher("signin.jsp"); // staff page
 			view.forward(request, response);
 		}        
 	}
