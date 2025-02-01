@@ -79,13 +79,13 @@
 				</div>
 				<div class="navbar-nav w-100">
 					<a href="DashboardController?staffId=${staff.staffId}" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
-					<c:if test="${staff.staffRole} == 'Admin'}">
+					<c:if test="${staff.staffRole == 'Admin'}">
 						<div class="nav-item dropdown">
 							<a href="#" class="nav-link dropdown-toggle"
 								data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Manage Staff</a>
 							<div class="dropdown-menu bg-transparent border-0">
-								<a href="manageAdmin.jsp" class="dropdown-item">Admin</a>
-								<a href="manageDispatcher.jsp" class="dropdown-item">Dispatcher</a> 
+                            <a href="DispatcherController?action=listDispatchers&staffId=${staff.staffId}" class="dropdown-item">Manage Dispatchers</a> <!-- element.html -->
+                            <a href="AdminController?action=listAdmins&staffId=${staff.staffId}" class="dropdown-item">Manage Admins</a> <!-- element.html --> 
 							</div>
 						</div>
 					</c:if>
