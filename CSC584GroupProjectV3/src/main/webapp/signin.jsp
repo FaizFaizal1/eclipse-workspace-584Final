@@ -69,12 +69,10 @@
 	                            <input type="password" class="form-control" id="staffPassword" name="staffPassword" placeholder="Password">
 	                            <label for="staffPassword">Password</label>
 	                        </div>
-	                        <div class="d-flex align-items-center justify-content-between mb-4">
-                        		<p class="text-center mb-0">Customer? <a href="register.jsp">Sign Up</a></p>
-	                        </div>
 	                      		<button type="submit" class="btn btn-primary py-3 w-100 mb-4"> Sign In</button>
 	                    </form>
                         <p class="text-center mb-0">Don't have a staff account? <a href="register.jsp">Sign Up</a></p>
+                        <p class="text-center mb-0">Customer? <a href="customerSearch.jsp">Search Parcel</a></p>
                     </div>
                 </div>
             </div>
