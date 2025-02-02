@@ -84,7 +84,7 @@ if (session == null || session.getAttribute("sessionEmail") == null) {
 				</a>
 				<div class="d-flex align-items-center ms-4 mb-4">
 					<div class="position-relative">
-						<img class="rounded-circle" src="img/blankProfile.jpg" alt=""
+						<img class="rounded-circle" src="img/user.jpg" alt=""
 							style="width: 40px; height: 40px;">
 						<div
 							class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
@@ -135,7 +135,7 @@ if (session == null || session.getAttribute("sessionEmail") == null) {
 					<div class="nav-item dropdown">
 						<a href="#" class="nav-link dropdown-toggle"
 							data-bs-toggle="dropdown"> <img
-							class="rounded-circle me-lg-2" src="img/blankProfile.jpg" alt=""
+							class="rounded-circle me-lg-2" src="img/user.jpg" alt=""
 							style="width: 40px; height: 40px;"> <span
 							class="d-none d-lg-inline-flex"><c:out value="${sessionFirstName}"/></span>
 						</a>
@@ -174,9 +174,9 @@ if (session == null || session.getAttribute("sessionEmail") == null) {
 										<td><c:out value="${payment.paymentDate}" /></td>
 										<td><c:out value="${payment.paymentStatus}" /></td>
 										<td><c:out value="${payment.parcelId}" /></td>
-									<td><a href="PaymentController?action=viewPayment&paymentId=<c:out value="${payment.paymentId}"/>">View</a> |
-									<a href="PaymentController?action=updatePayment&paymentId=<c:out value="${payment.paymentId}"/>">Update</a> |
-									<a href="PaymentController?action=deletePayment&paymentId=<c:out value="${payment.paymentId}"/>">Delete</a> </td>
+									<td><a href="PaymentController?action=viewPayment&paymentId=<c:out value="${payment.paymentId}"/>" class="btn btn-primary">View</a> |
+									<a href="PaymentController?action=updatePayment&paymentId=<c:out value="${payment.paymentId}"/>" class="btn btn-primary">Update</a> |
+									<a href="PaymentController?action=deletePayment&paymentId=<c:out value="${payment.paymentId}"/>" class="btn btn-primary">Delete</a> </td>
 									</tr>
 								</c:forEach>
 							</tbody>
