@@ -108,6 +108,7 @@ public class AdminDAO {
 	public static void deleteAdmin(int staffId) {
 		try {
 			//call getConnection() method 
+			
 			con = ConnectionManager.getConnection();
 
 			//3. create statement 

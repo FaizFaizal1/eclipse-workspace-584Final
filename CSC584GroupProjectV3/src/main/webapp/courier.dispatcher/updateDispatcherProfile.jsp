@@ -22,7 +22,7 @@ if (session == null || session.getAttribute("sessionEmail") == null) {
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Update Dispatcher</title>
+    <title>Update Dispatcher Profile</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -78,7 +78,7 @@ if (session == null || session.getAttribute("sessionEmail") == null) {
                 </div>
                 <div class="navbar-nav w-100">
                     <a href="DashboardController" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
-                    <a href="DispatcherController?action=updateDispatcherProfile" class="nav-item nav-link active"><i class="fa fa-address-card me-2"></i>Update Profile</a>
+					<a href="${sessionRole}Controller?action=update${sessionRole}Profile" class="nav-item nav-link active"><i class="fa fa-address-card me-2"></i>Update Profile</a>  
                     <a href="ParcelController?action=listParcels" class="nav-item nav-link"><i class="fa fa-boxes me-2"></i>Scan & Sort</a>
                     <a href="PaymentController?action=listPayments" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Payment</a>
                 </div>
@@ -118,7 +118,7 @@ if (session == null || session.getAttribute("sessionEmail") == null) {
                 <div class="row g-4">
                     <div class="col-sm-12 col-xl-6">
                         <div class="bg-secondary rounded h-100 p-4">
-                            <h6 class="mb-4">Update Dispatcher</h6>
+                            <h6 class="mb-4">Update Dispatcher Profile</h6>
                             <form action="DispatcherController" method="POST">
                                 <div class="row mb-3">
                                     <input type="hidden" id="staffId" name="staffId" value="${staff.staffId}">
@@ -187,6 +187,9 @@ if (session == null || session.getAttribute("sessionEmail") == null) {
                                 </div>
                                 <div class="row mb-3">
                                     <input type="hidden" id="staffRole" name="staffRole" value="Dispatcher">
+                                </div>
+                                <div class="row mb-3">
+                                    <input type="hidden" id="updateDispatcherProfile" name="updateDispatcherProfile" value="Yes">
                                 </div>
                                 <button type="submit" class="btn btn-primary">Submit</button>
                                 <button type="reset" class="btn btn-secondary">Reset</button>

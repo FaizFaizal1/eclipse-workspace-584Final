@@ -23,7 +23,7 @@ import courier.model.Staff;
  * Servlet implementation class DispatcherController
  */
 public class DispatcherController extends HttpServlet {
-	private static final long serialVersionUId = 1L;
+	private static final long serialVersionUId  = 1L;
 	private RequestDispatcher view;
 	private int staffId, sessionStaffId;
 	HttpSession session;
@@ -32,6 +32,7 @@ public class DispatcherController extends HttpServlet {
 	private static String UPDATE = "/courier.dispatcher/updateDispatcher.jsp";
 	private static String UPDATE_PROFILE = "/courier.dispatcher/updateDispatcherProfile.jsp";
 	private static String VIEW = "/courier.dispatcher/viewDispatcher.jsp";
+	private static String VIEW_PROFILE = "/courier.dispatcher/viewDispatcherProfile.jsp";
 	private static String ADD = "/courier.dispatcher/addDispatcher.jsp";
        
     /**
@@ -129,10 +130,18 @@ public class DispatcherController extends HttpServlet {
 			}
 		}
 
-		forward = LIST;
-		request.setAttribute("dispatchers", DispatcherDAO.getAllDispatchers()); 
-		view = request.getRequestDispatcher(forward);
-		view.forward(request, response);	
+		if(request.getParameter("updateDispatcherProfile").equalsIgnoreCase("Yes")) {
+			forward = "/courier.dispatcher/viewDispatcherProfile.jsp";
+			request.setAttribute("staff", StaffDAO.getStaffById(sessionStaffId));
+			request.setAttribute("dispatcher", DispatcherDAO.getDispatcherById(sessionStaffId));
+			view = request.getRequestDispatcher(forward);
+			view.forward(request, response);
+		} else {
+			forward = LIST;
+			request.setAttribute("dispatchers", DispatcherDAO.getAllDispatchers()); 
+			view = request.getRequestDispatcher(forward);
+			view.forward(request, response);	
+		}	
 	}
 
 }
