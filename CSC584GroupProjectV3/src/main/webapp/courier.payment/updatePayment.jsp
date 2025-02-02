@@ -167,9 +167,16 @@ if (session == null || session.getAttribute("sessionEmail") == null) {
                                 </div>
                                 <div class="row mb-3">
                                     <label for="paymentStatus" class="col-sm-2 col-form-label">Payment Status</label>
-                                    <div class="col-sm-10">
-                                        <input type="text" name="paymentStatus" id="paymentStatus" class="form-control" value="${payment.paymentStatus}"/>
-                                    </div>
+									<div class="col-sm-10">
+										<div class="form-check form-check-inline">
+											<input class="form-check-input" type="radio" id="paymentStatus" name="paymentStatus" value="Done" <c:if test="${payment.paymentStatus == 'Done'}">checked</c:if>>
+											<label class="form-check-label" for="paymentStatus">Done</label>
+										</div>
+										<div class="form-check form-check-inline">
+											<input class="form-check-input" type="radio" id="paymentStatus" name="paymentStatus" value="Not Done" <c:if test="${payment.paymentStatus == 'Not Done'}">checked</c:if>>
+											<label class="form-check-label" for="paymentStatus">Not Done</label>
+										</div>
+									</div>
                                 </div>
                                 <div class="row mb-3">
                                     <label for="parcelId" class="col-sm-2 col-form-label">Parcel Id </label>
