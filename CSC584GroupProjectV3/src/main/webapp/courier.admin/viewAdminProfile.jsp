@@ -19,8 +19,7 @@ if (session == null || session.getAttribute("sessionEmail") == null) {
 }
 %>
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
 <meta charset="utf-8">
 <title>FLDExpress</title>
@@ -91,24 +90,21 @@ if (session == null || session.getAttribute("sessionEmail") == null) {
 					</div>
 					<div class="ms-3">
 						<h6 class="mb-0"><c:out value="${sessionFirstName}"/></h6>
-						<span><c:out value="${sessionRole}"/></span>
+						<span>Admin</span>
 					</div>
 				</div>
 				<div class="navbar-nav w-100">
-					<a href="DashboardController" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
-					<c:if test="${sessionRole == 'Admin'}">
-						<div class="nav-item dropdown">
-							<a href="#" class="nav-link dropdown-toggle"
-								data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Manage Staff</a>
-							<div class="dropdown-menu bg-transparent border-0">
+					<a href="DashboardController" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a> <!-- index.html -->
+					<div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Manage Staff</a>
+                        <div class="dropdown-menu bg-transparent border-0">
                             <a href="DispatcherController?action=listDispatchers" class="dropdown-item">Manage Dispatchers</a> <!-- element.html -->
-                            <a href="AdminController?action=listAdmins" class="dropdown-item">Manage Admins</a> <!-- element.html --> 
-							</div>
-						</div>
-					</c:if>
-					<a href="${sessionRole}Controller?action=update${sessionRole}Profile" class="nav-item nav-link"><i class="fa fa-address-card me-2"></i>Update Profile</a>  
-                    <a href="ParcelController?action=listParcels"  class="nav-item nav-link"><i class="fa fa-boxes me-2"></i>Scan & Sort</a> <!-- form.html -->
-                    <a href="PaymentController?action=listPayments" class="nav-item nav-link active"><i class="fa fa-chart-bar me-2"></i>Payment</a> <!-- chart.html -->
+                            <a href="AdminController?action=listAdmins" class="dropdown-item">Manage Admins</a> <!-- element.html -->
+                        </div>
+                    </div>
+                    <a href="AdminController?action=updateAdminProfile" class="nav-item nav-link"><i class="fa fa-address-card me-2"></i>Update Profile</a> <!-- widget.html -->
+                    <a href="ParcelController?action=listParcels" class="nav-item nav-link"><i class="fa fa-boxes me-2"></i>Scan & Sort</a> <!-- form.html -->
+                    <a href="PaymentController?action=listPayments" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Payment</a> <!-- chart.html -->
 				</div>
 			</nav>
 		</div>
@@ -128,7 +124,7 @@ if (session == null || session.getAttribute("sessionEmail") == null) {
 					class="fa fa-bars"></i>
 				</a>
 				<form class="d-none d-md-flex ms-4">
-					<input class="form-control bg-white border-0" type="search"
+					<input class="form-control bg-dark border-0" type="search"
 						placeholder="Search">
 				</form>
 				<div class="navbar-nav align-items-center ms-auto">
@@ -139,7 +135,8 @@ if (session == null || session.getAttribute("sessionEmail") == null) {
 							style="width: 40px; height: 40px;"> <span
 							class="d-none d-lg-inline-flex"><c:out value="${sessionFirstName}"/></span>
 						</a>
-						<div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
+						<div
+							class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
 							<a href="LogoutController" class="dropdown-item">Log Out</a>
 						</div>
 					</div>
@@ -148,50 +145,22 @@ if (session == null || session.getAttribute("sessionEmail") == null) {
 			<!-- Navbar End -->
 
 
-			<!-- Payment Section Start -->
 			<div class="container-fluid pt-4 px-4">
-				<div class="bg-secondary rounded p-4">
-					<h5 class="mb-4">Payment Details</h5> <a href="PaymentController?action=addPayment" class="btn btn-primary">Add Payment</a>
-
-					<!-- Table -->
-					<div class="table-responsive">
-						<table class="table table-bordered table-striped table-hover mb-0">
-							<thead class="bg-primary text-white">
-								<tr>
-									<th>Payment Id</th>
-									<th>Payment Amount (RM)</th>
-									<th>Payment Date</th>
-									<th>Payment Status</th>
-									<th>Parcel Id</th>
-									<th>Actions</th>
-								</tr>
-							</thead>
-							<tbody>
-								<c:forEach items="${payments}" var="payment">
-									<tr>
-										<td><c:out value="${payment.paymentId}" /></td>
-										<td><c:out value="${payment.paymentAmount}" /></td>
-										<td><c:out value="${payment.paymentDate}" /></td>
-										<td><c:out value="${payment.paymentStatus}" /></td>
-										<td><c:out value="${payment.parcelId}" /></td>
-									<td><a href="PaymentController?action=viewPayment&paymentId=<c:out value="${payment.paymentId}"/>" class="btn btn-primary">View</a> |
-									<a href="PaymentController?action=updatePayment&paymentId=<c:out value="${payment.paymentId}"/>" class="btn btn-primary">Update</a> |
-									<a href="PaymentController?action=deletePayment&paymentId=<c:out value="${payment.paymentId}"/>" class="btn btn-primary">Delete</a> </td>
-									</tr>
-								</c:forEach>
-							</tbody>
-							<!-- 
-							<tfoot>
-								<tr>
-									<th colspan="5" class="text-end">Total Payment Amount: RM</th>
-								</tr>
-							</tfoot>
-							 -->
-						</table>
-					</div>
+				<div class="row g-4">
+					<div class="col-sm-12 col-xl-6">
+                        <div class="bg-secondary rounded h-100 p-4">
+                            <h6 class="mb-4">Admin <c:out value="${staff.staffId}"/> </h6>
+                            Admin First Name: <c:out value="${staff.staffFirstName}"/><br>
+                            Admin Last Name: <c:out value="${staff.staffLastName}"/><br>
+                            Admin Phone Number: <c:out value="${staff.staffPhoneNumber}"/><br>
+                            Admin Email: <c:out value="${staff.staffEmail}"/><br>
+                            Admin Address: <c:out value="${staff.staffAddress}"/><br>
+                            Admin Password: <c:out value="${staff.staffPassword}"/><br>
+                            Admin Role: <c:out value="${admin.adminRole}"/><br>
+                    	</div>
+                    </div>
 				</div>
 			</div>
-			<!-- Payment Section End -->
 
 
 			<!-- Footer Start -->
@@ -234,5 +203,4 @@ if (session == null || session.getAttribute("sessionEmail") == null) {
 	<!-- Template Javascript -->
 	<script src="js/main.js"></script>
 </body>
-
 </html>

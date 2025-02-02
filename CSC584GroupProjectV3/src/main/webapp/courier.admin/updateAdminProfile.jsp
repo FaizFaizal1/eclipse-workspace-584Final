@@ -22,7 +22,7 @@ if (session == null || session.getAttribute("sessionEmail") == null) {
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Update Admin</title>
+    <title>Update Admin Profile</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -125,7 +125,7 @@ if (session == null || session.getAttribute("sessionEmail") == null) {
                 <div class="row g-4">
                     <div class="col-sm-12 col-xl-6">
                         <div class="bg-secondary rounded h-100 p-4">
-                            <h6 class="mb-4">Update Admin</h6>
+                            <h6 class="mb-4">Update Admin Profile</h6>
                             <form action="AdminController" method="POST">
                                 <div class="row mb-3">
                                     <input type="hidden" id="staffId" name="staffId" value="${staff.staffId}">
@@ -184,6 +184,9 @@ if (session == null || session.getAttribute("sessionEmail") == null) {
                                 </div>
                                 <div class="row mb-3">
                                     <input type="hidden" id="staffRole" name="staffRole" value="${staff.staffRole}">
+                                </div>
+                                <div class="row mb-3">
+                                    <input type="hidden" id="updateAdminProfile" name="updateAdminProfile" value="Yes">
                                 </div>
                                 <button type="submit" class="btn btn-primary">Submit</button>
                                 <button type="reset" class="btn btn-secondary">Reset</button>

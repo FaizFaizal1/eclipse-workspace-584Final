@@ -28,11 +28,12 @@ public class AdminController extends HttpServlet {
 	private RequestDispatcher view;
 	private int staffId, sessionStaffId;
 	HttpSession session;
-	private String action="", forward="";
+	private String action="", forward="", updateAdminProfile;
 	private static String LIST = "/courier.admin/manageAdmin.jsp";
 	private static String UPDATE = "/courier.admin/updateAdmin.jsp";
 	private static String UPDATE_PROFILE = "/courier.admin/updateAdminProfile.jsp";
 	private static String VIEW = "/courier.admin/viewAdmin.jsp";
+	private static String VIEW_PROFILE = "/courier.admin/viewAdminProfile.jsp";
 	private static String ADD = "/courier.admin/addAdmin.jsp";
        
     /**
@@ -126,11 +127,23 @@ public class AdminController extends HttpServlet {
 				e.printStackTrace();
 			}
 		}
-
-		forward = LIST;
-		request.setAttribute("admins", AdminDAO.getAllAdmin()); 
-		view = request.getRequestDispatcher(forward);
-		view.forward(request, response);	
+		
+		updateAdminProfile = request.getParameter("updateAdminProfile");
+		
+		if (updateAdminProfile != null) {
+			if(request.getParameter("updateAdminProfile").equalsIgnoreCase("Yes")) {
+				forward = VIEW_PROFILE;
+				request.setAttribute("staff", StaffDAO.getStaffById(sessionStaffId));
+				request.setAttribute("admin", AdminDAO.getAdminById(sessionStaffId));
+				view = request.getRequestDispatcher(forward);
+				view.forward(request, response);
+			} 
+		}
+		else {
+				forward = LIST;
+				request.setAttribute("admins", AdminDAO.getAllAdmin()); 
+				view = request.getRequestDispatcher(forward);
+				view.forward(request, response);
+		}	
 	}
-
 }
