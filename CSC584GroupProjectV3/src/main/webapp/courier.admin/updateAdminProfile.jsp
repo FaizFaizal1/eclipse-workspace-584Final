@@ -1,12 +1,23 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<%
-  response.addHeader("Pragma", "no-cache");
-  response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
-  response.addHeader("Cache-Control", "pre-check=0, post-check=0");
-  response.setDateHeader("Expires", 0);
-%> 
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%
+// Prevent browser caching
+response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+response.setHeader("Pragma", "no-cache");
+response.setDateHeader("Expires", 0);
+// Check if the session exists
+session = request.getSession(false);
+
+// If the session is null or no user email is stored in the session, invalidate and redirect
+if (session == null || session.getAttribute("sessionEmail") == null) {
+	if (session != null) {
+		session.invalidate(); // Invalidate session if it exists
+	}
+	response.sendRedirect(request.getContextPath() + "/signin.jsp"); // Redirect to the login page
+	return; // Prevent further processing
+}
+%><%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
