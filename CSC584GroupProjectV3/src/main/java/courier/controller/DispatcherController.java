@@ -78,7 +78,7 @@ public class DispatcherController extends HttpServlet {
 		else if(action.equalsIgnoreCase("deleteDispatcher")) {
 			forward = LIST;
 			staffId = Integer.parseInt(request.getParameter("staffId"));
-			DispatcherDAO.deleteDispatcher(staffId);
+			StaffDAO.deleteStaff(staffId);
 			request.setAttribute("dispatchers", DispatcherDAO.getAllDispatchers());        
 		}
 

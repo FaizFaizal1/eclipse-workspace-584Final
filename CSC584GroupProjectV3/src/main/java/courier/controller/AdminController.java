@@ -80,7 +80,7 @@ public class AdminController extends HttpServlet {
 		else if(action.equalsIgnoreCase("deleteAdmin")) {
 			forward = LIST;
 			staffId = Integer.parseInt(request.getParameter("staffId"));
-			AdminDAO.deleteAdmin(staffId);
+			StaffDAO.deleteStaff(staffId);
 			request.setAttribute("admins", AdminDAO.getAllAdmin());        
 		}
 
