@@ -9,3 +9,6 @@
   =>  Author Website   : https://htmlcodex.com
 
   =>  About HTML Codex : HTML Codex is one of the top creators and publishers of Free HTML templates, HTML landing pages, HTML email templates and HTML snippets in the world. Read more at ( https://htmlcodex.com/about-us )
+  
+  Picture sources:
+  1. blank profile picture: https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pinterest.com%2Fpin%2F89860955056203654%2F&psig=AOvVaw0QHRysFM4R8vYIPei2L66U&ust=1738570159188000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCNjwqurEpIsDFQAAAAAdAAAAABAf
