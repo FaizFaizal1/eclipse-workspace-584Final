@@ -127,7 +127,7 @@ if (session == null || session.getAttribute("sessionEmail") == null) {
 				</a> <a href="#" class="sidebar-toggler flex-shrink-0"> <i
 					class="fa fa-bars"></i>
 				</a>
-				<form action="ParcelController">
+				<form action="ParcelController" class="d-none d-md-flex ms-4">
 					<input type="hidden" id="action" name="action" value="searchParcel"/>
 					<input class="form-control bg-dark border-0" type="search" id="parcelSearch" name="parcelSearch" placeholder="Enter parcel ID">
 					<input type="submit" class="btn btn-primary" value="Search parcel">
