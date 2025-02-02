@@ -160,7 +160,7 @@ if (session == null || session.getAttribute("sessionEmail") == null) {
                             <i class="fa fa-chart-pie fa-3x text-primary"></i>
                             <div class="ms-3">
                                 <p class="mb-2">Total Revenue</p>
-                                <h6 class="mb-0">$1234</h6>
+                                <h6 class="mb-0">${paymentSum}</h6>
                             </div>
                         </div>
                     </div>

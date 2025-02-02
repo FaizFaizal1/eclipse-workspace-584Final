@@ -19,6 +19,7 @@ public class DashboardDAO {
 	private static PreparedStatement ps = null;
 	private static String sql = null;
 	private static int count = 0;
+	private static double result = 0;
 	
 	public static int countTotalDispatchers() {
 		try {
@@ -128,7 +129,32 @@ public class DashboardDAO {
 		return count;
 	}
 	
+	public static double sumOfPayments() {
+		try {
+			
+			result = 0;
+
+			con = ConnectionManager.getConnection();
+			
+			sql = "SELECT * FROM payment WHERE paymentStatus='Done'";
+			stmt = con.createStatement();
+
+			rs = stmt.executeQuery(sql);
+			
+			while(rs.next()) {
+				result += rs.getDouble("paymentAmount");
+			}
+
+			con.close();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return result;
+	}
+	
 	public static void main(String[] args) {
-		System.out.println(DashboardDAO.countTotalParcelsByType("Unreceived"));
+		System.out.println(DashboardDAO.sumOfPayments());
 	}
 }
