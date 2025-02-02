@@ -25,6 +25,7 @@ public class ParcelController extends HttpServlet {
 	private static String LIST = "/courier.parcel/scansort.jsp";
 	private static String UPDATE = "/courier.parcel/updateParcel.jsp";
 	private static String VIEW = "/courier.parcel/viewParcel.jsp";
+	private static String CUSTOMER_VIEW = "/courier.parcel/customerViewParcel.jsp";
 	private static String ADD = "/courier.parcel/addParcel.jsp";	
        
     /**
@@ -65,6 +66,11 @@ public class ParcelController extends HttpServlet {
 		}
 		else if(action.equalsIgnoreCase("searchParcel")) {
 			forward = VIEW;
+			parcelId = Integer.parseInt(request.getParameter("parcelSearch"));
+			request.setAttribute("parcel", ParcelDAO.getParcelById(parcelId));
+		}
+		else if(action.equalsIgnoreCase("customerSearchParcel")) {
+			forward = CUSTOMER_VIEW;
 			parcelId = Integer.parseInt(request.getParameter("parcelSearch"));
 			request.setAttribute("parcel", ParcelDAO.getParcelById(parcelId));
 		}
