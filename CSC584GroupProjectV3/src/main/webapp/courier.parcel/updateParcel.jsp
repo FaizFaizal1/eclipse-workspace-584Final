@@ -173,9 +173,16 @@ if (session == null || session.getAttribute("sessionEmail") == null) {
                                 </div>
                                 <div class="row mb-3">
                                     <label for="parcelStatus" class="col-sm-2 col-form-label">Parcel Status</label>
-                                    <div class="col-sm-10">
-                                        <input type="text" name="parcelStatus" id="parcelStatus" class="form-control" value="${parcel.parcelStatus}"/>
-                                    </div>
+									<div class="col-sm-10">
+										<div class="form-check form-check-inline">
+											<input class="form-check-input" type="radio" id="parcelStatus" name="parcelStatus" value="Received" <c:if test="${parcel.parcelStatus == 'Received'}">checked</c:if>>
+											<label class="form-check-label" for="parcelStatus">Received</label>
+										</div>
+										<div class="form-check form-check-inline">
+											<input class="form-check-input" type="radio" id="parcelStatus" name="parcelStatus" value="Unreceived" <c:if test="${parcel.parcelStatus == 'Unreceived'}">checked</c:if>>
+											<label class="form-check-label" for="parcelStatus">Unreceived</label>
+										</div>
+									</div>
                                 </div>
                                 <div class="row mb-3">
                                     <label for="staffId" class="col-sm-2 col-form-label">Staff Id</label> <!-- TODO make it a selection -->

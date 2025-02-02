@@ -162,7 +162,7 @@ if (session == null || session.getAttribute("sessionEmail") == null) {
                                 <div class="row mb-3">
                                     <label for="paymentDate" class="col-sm-2 col-form-label">Payment Date</label>
                                     <div class="col-sm-10">
-                                        <input type="text" name="paymentDate" id="paymentDate" class="form-control" value="${payment.paymentDate}"/>
+                                        <input type="text" name="paymentDate" id="paymentDate" class="form-control" value="${payment.paymentDate}" placeholder="yyyy-mm-dd"/>
                                     </div>
                                 </div>
                                 <div class="row mb-3">
