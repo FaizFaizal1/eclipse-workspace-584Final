@@ -47,9 +47,9 @@ public class DashboardController extends HttpServlet {
             request.getRequestDispatcher("/courier.admin/adminDashboard.jsp").forward(request, response);
 		} 
 		else {
-			request.setAttribute("totalParcels", DashboardDAO.countTotalDispatchers());
-			request.setAttribute("totalUnreceivedParcels", DashboardDAO.countTotalDispatchersByType("Unreceived"));
-			request.setAttribute("totalReceivedParcels", DashboardDAO.countTotalDispatchersByType("Received"));
+			request.setAttribute("totalParcels", DashboardDAO.countTotalParcels());
+			request.setAttribute("totalUnreceivedParcels", DashboardDAO.countTotalParcelsByType("Unreceived"));
+			request.setAttribute("totalReceivedParcels", DashboardDAO.countTotalParcelsByType("Received"));
 			request.setAttribute("paymentSum", DashboardDAO.sumOfPayments());
             request.getRequestDispatcher("/courier.dispatcher/dispatcherDashboard.jsp").forward(request, response);
 		}	
