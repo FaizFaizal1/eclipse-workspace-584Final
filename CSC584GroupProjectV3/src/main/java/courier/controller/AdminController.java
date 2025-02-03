@@ -133,8 +133,13 @@ public class AdminController extends HttpServlet {
 		if (updateAdminProfile != null) {
 			if(request.getParameter("updateAdminProfile").equalsIgnoreCase("Yes")) {
 				forward = VIEW_PROFILE;
-				request.setAttribute("staff", StaffDAO.getStaffById(sessionStaffId));
-				request.setAttribute("admin", AdminDAO.getAdminById(sessionStaffId));
+				staff = StaffDAO.getStaffById(Integer.parseInt(staffId));
+				admin = AdminDAO.getAdminById(Integer.parseInt(staffId)); 
+				session.setAttribute("sessionEmail", staff.getStaffEmail()); //change session details after profile update
+				session.setAttribute("sessionRole", staff.getStaffRole());
+				session.setAttribute("sessionFirstName", staff.getStaffFirstName());
+				request.setAttribute("staff", staff);
+				request.setAttribute("admin", admin);
 				view = request.getRequestDispatcher(forward);
 				view.forward(request, response);
 			} 

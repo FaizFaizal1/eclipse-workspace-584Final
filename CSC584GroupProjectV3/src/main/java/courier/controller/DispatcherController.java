@@ -135,8 +135,13 @@ public class DispatcherController extends HttpServlet {
 		if(updateDispatcherProfile != null) {
 			if(updateDispatcherProfile.equalsIgnoreCase("Yes")) {
 				forward = VIEW_PROFILE;
-				request.setAttribute("staff", StaffDAO.getStaffById(sessionStaffId));
-				request.setAttribute("dispatcher", DispatcherDAO.getDispatcherById(sessionStaffId));
+				staff = StaffDAO.getStaffById(Integer.parseInt(staffId));
+				dispatcher = DispatcherDAO.getDispatcherById(Integer.parseInt(staffId));
+				session.setAttribute("sessionEmail", staff.getStaffEmail()); //change session details after profile update
+				session.setAttribute("sessionRole", staff.getStaffRole());
+				session.setAttribute("sessionFirstName", staff.getStaffFirstName());
+				request.setAttribute("staff", staff);
+				request.setAttribute("dispatcher", dispatcher);
 				view = request.getRequestDispatcher(forward);
 				view.forward(request, response);		
 			}
