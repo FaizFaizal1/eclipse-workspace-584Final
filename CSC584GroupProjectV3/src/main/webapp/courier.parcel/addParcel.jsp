@@ -173,7 +173,14 @@ if (session == null || session.getAttribute("sessionEmail") == null) {
                                 <div class="row mb-3">
                                     <label for="parcelStatus" class="col-sm-2 col-form-label">Parcel Status</label>
                                     <div class="col-sm-10">
-                                        <input type="text" name="parcelStatus" id="parcelStatus" class="form-control"/>
+										<div class="form-check form-check-inline">
+											<input class="form-check-input" type="radio" id="parcelStatus" name="parcelStatus" value="Received">
+											<label class="form-check-label" for="parcelStatus">Received</label>
+										</div>
+										<div class="form-check form-check-inline">
+											<input class="form-check-input" type="radio" id="parcelStatus" name="parcelStatus" value="Unreceived">
+											<label class="form-check-label" for="parcelStatus">Unreceived</label>
+										</div>
                                     </div>
                                 </div>
                                 <div class="row mb-3">

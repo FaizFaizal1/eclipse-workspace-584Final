@@ -167,7 +167,14 @@ if (session == null || session.getAttribute("sessionEmail") == null) {
                                 <div class="row mb-3">
                                     <label for="paymentStatus" class="col-sm-2 col-form-label">Payment Status</label>
                                     <div class="col-sm-10">
-                                        <input type="text" name="paymentStatus" id="paymentStatus" class="form-control"/>
+										<div class="form-check form-check-inline">
+											<input class="form-check-input" type="radio" id="paymentStatus" name="paymentStatus" value="Done">
+											<label class="form-check-label" for="paymentStatus">Done</label>
+										</div>
+										<div class="form-check form-check-inline">
+											<input class="form-check-input" type="radio" id="paymentStatus" name="paymentStatus" value="Not Done">
+											<label class="form-check-label" for="paymentStatus">Not Done</label>
+										</div>
                                     </div>
                                 </div>
                                 <div class="row mb-3">
